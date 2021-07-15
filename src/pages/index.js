@@ -65,7 +65,7 @@ const IndexPage = () => {
           </h2>
           <p>
             Currently working at Swiftly, as SCRUM Master and Frontend
-            developer, and on my personal projects to hone my skills in
+            developer, and on projects for my own company; Elysium Labs to hone my skills in
             frontend- and backend development, and design. Scroll down to see my
             latest released projects.
             <br></br>
