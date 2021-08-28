@@ -7,7 +7,7 @@ import Hero from "../components/hero/hero"
 import Status from "../components/status/status"
 import NotableWork from "../components/notableWork/notableWork"
 
-const IndexPage = () => {
+const Index = () => {
   return (
     <Layout>
       <SEO title="Software thinker" />
@@ -22,4 +22,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default Index

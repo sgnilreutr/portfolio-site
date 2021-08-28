@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import Header from "./header/header"
 import "./layout.css"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
+        <Header />
         <main>{children}</main>
         <footer>
           <div style={{ display: `flex` }}>

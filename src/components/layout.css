@@ -15,15 +15,16 @@
 }
 
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
 
 body {
+  font-family: "Inter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2a292e;
   background-color: #f6f6f7;
   margin: 0 auto;
   max-width: 900px;
@@ -38,14 +39,24 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-main {
-  font-family: "Inter", sans-serif;
-  color: #2a292e;
+body img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  opacity: 1;
+}
+
+body.dark {
+  color: rgba(238, 238, 238, 0.85);
+  background-color: #0f0f0f;
+}
+
+body.dark img {
+  -webkit-filter: grayscale(20%);
+          filter: grayscale(20%);
+  opacity: 0.9 !important;
 }
 
 footer {
-  font-family: "Inter", sans-serif;
-  color: #2a292e;
   padding: 2rem 0;
 }
 
@@ -299,7 +310,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Slabo", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Slabo", sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }

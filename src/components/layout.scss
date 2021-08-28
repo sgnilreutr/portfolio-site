@@ -15,17 +15,42 @@
       url("../fonts/Slabo13px-Regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+//Colors
+$color-text-LM: rgb(42, 41, 46);
+$color-text-DM: rgba(238, 238, 238, 0.85);
+$color-background-LM: rgb(246, 246, 247);
+$color-background-DM: #0f0f0f;
+
+//Font variables
+$inter: "Inter", serif;
+$slabo: "Slabo", sans-serif;
+
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
 body {
+  font-family: $inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-color: #0e0b22;
-  background-color: rgb(246, 246, 247);
+
+  color: $color-text-LM;
+  background-color: $color-background-LM;
+  img {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+  &.dark {
+    // @media (prefers-color-scheme: dark) {
+    color: $color-text-DM;
+    background-color: $color-background-DM;
+    img {
+      filter: grayscale(20%);
+      opacity: 0.9 !important;
+    }
+  }
+
   margin: 0 auto;
   max-width: 900px;
   padding: 0 1.0875rem 1.45rem;
@@ -39,14 +64,7 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-main {
-  font-family: "Inter", sans-serif;
-  // color: rgba(238, 238, 238, 0.85);
-  color: rgb(42, 41, 46);
-}
 footer {
-  font-family: "Inter", sans-serif;
-  color: rgb(42, 41, 46);
   padding: 2rem 0;
 }
 article,
@@ -252,8 +270,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Slabo", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $slabo;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
