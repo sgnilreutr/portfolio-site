@@ -1,13 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-import './layout.css'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import React from "react"
+import PropTypes from "prop-types"
+import Header from "./header/header"
+import "./layout.css"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Layout = ({ children }) => {
   return (
     <>
       <div>
+        <Header />
         <main>{children}</main>
         <footer>
           <div style={{ display: `flex` }}>
@@ -18,8 +19,8 @@ const Layout = ({ children }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {' '}
-                <FaLinkedin size={30} />{' '}
+                {" "}
+                <FaLinkedin size={30} />{" "}
               </a>
             </div>
             <div>
@@ -29,8 +30,8 @@ const Layout = ({ children }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {' '}
-                <FaGithub size={30} />{' '}
+                {" "}
+                <FaGithub size={30} />{" "}
               </a>
             </div>
           </div>

@@ -1,0 +1,12 @@
+.react-toggle--checked .react-toggle-track {
+  background-color: #242424 !important;
+}
+
+.react-toggle--checked .react-toggle-track:hover {
+  background-color: #2f2f2f !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  border-color: transparent;
+}
+/*# sourceMappingURL=modeSwitch.css.map */

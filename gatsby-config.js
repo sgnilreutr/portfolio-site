@@ -1,15 +1,15 @@
-const path = require('path')
+const path = require("path")
 
-require('dotenv').config({
-  path: `.env`
+require("dotenv").config({
+  path: `.env`,
 })
 
 module.exports = {
   siteMetadata: {
-		title: `Robbert Tuerlings`,
-		description: `The personal website of a Dutch tech savvy analytical human. Always looking out for a new adventure`,
-		author: `@sgnilreutr`,
-		siteUrl: `https://robberttuerlings.online`,
+    title: `Robbert Tuerlings`,
+    description: `The personal website of a Dutch tech savvy analytical human. Always looking out for a new adventure`,
+    author: `@sgnilreutr`,
+    siteUrl: `https://robberttuerlings.online`,
   },
   plugins: [
     {
@@ -44,20 +44,20 @@ module.exports = {
       },
     },
     {
-			resolve: `gatsby-plugin-hotjar`,
-			options: {
-				id: 1969414,
-				sv: 6,
-			},
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 1969414,
+        sv: 6,
+      },
     },
     {
-			resolve: 'gatsby-plugin-robots-txt',
-			options: {
-				host: 'https://robberttuerlings.online',
-				sitemap: 'https://robberttuerlings.online/sitemap.xml',
-				policy: [{ userAgent: '*', allow: '/' }],
-				output: '/robots.txt',
-			},
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://robberttuerlings.online",
+        sitemap: "https://robberttuerlings.online/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+        output: "/robots.txt",
+      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
