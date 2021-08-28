@@ -41,8 +41,8 @@ body {
     filter: grayscale(0);
     opacity: 1;
   }
+  transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
   &.dark {
-    // @media (prefers-color-scheme: dark) {
     color: $color-text-DM;
     background-color: $color-background-DM;
     img {

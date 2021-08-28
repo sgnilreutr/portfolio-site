@@ -1,9 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as S from "./headerStyles"
 import ModeSwitch from "./modeSwitch/modeSwitch"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <S.Header>
     <S.Inner>
       <ModeSwitch />

@@ -5,14 +5,14 @@ import { useColorScheme } from "../../../hooks/useColorScheme"
 import Sun from "../../../images/sun.png"
 import Moon from "../../../images/Moon.png"
 import * as S from "./modeSwitchStyles"
-import './modeSwitch.css'
+import "./modeSwitch.css"
 
 const ICON_SIZE = 10
 
 const ModeSwitch = () => {
   const { isDark, setIsDark } = useColorScheme()
   return (
-    <div className="toggle-container">
+    <div>
       <Toggle
         checked={isDark}
         onChange={event => setIsDark(event.target.checked)}
