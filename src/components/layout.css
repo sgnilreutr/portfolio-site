@@ -26,6 +26,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2a292e;
   background-color: #f6f6f7;
+  -webkit-transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
+  transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
   margin: 0 auto;
   max-width: 900px;
   padding: 0 1.0875rem 1.45rem;
