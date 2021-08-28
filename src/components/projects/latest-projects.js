@@ -1,11 +1,9 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import Projectcard from './projectCard'
-// import Gronebach from './projects/gronebach'
-// import ZuivereKoek from './projects/zuiverekoek'
-// import Omnia from './projects/omnia'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Projectcard from "./projectCard"
+import * as local from "../../constants/latestProjectsConstants"
 
-const NO_PROJECTS = 'No projects found.'
+const NO_PROJECTS = "No projects found."
 
 const LatestProjects = () => {
   const { projects } = useStaticQuery(graphql`
@@ -35,18 +33,21 @@ const LatestProjects = () => {
     }
   `)
 
-  console.log(projects)
-
   const { edges } = projects
 
   const mappedProjects =
-    projects && edges.length > 0 ? (
-      edges.map((item, index) => <Projectcard item={item} />)
+    projects && edges && edges.length > 0 ? (
+      edges.map((item, index) => <Projectcard key={index} item={item} />)
     ) : (
       <small>{NO_PROJECTS}</small>
     )
 
-  return <>{mappedProjects}</>
+  return (
+    <section className="container-attention">
+      <h2 className="section-header">{local.SECTION_HEADER}</h2>
+      {mappedProjects}
+    </section>
+  )
 }
 
 export default LatestProjects
