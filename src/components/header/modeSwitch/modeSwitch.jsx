@@ -9,7 +9,7 @@ import "./modeSwitch.css"
 
 const ModeSwitch = () => {
   const { isDark, setIsDark } = useColorScheme()
-  
+
   return (
     <div>
       <Toggle

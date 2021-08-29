@@ -498,6 +498,27 @@ h6 {
   }
 }
 
+.project-overview {
+  padding-top: 80px;
+}
+
+.project-overview-header-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
 .hero-image {
   max-width: 300px;
   display: block;
