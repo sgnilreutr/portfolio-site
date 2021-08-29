@@ -412,6 +412,18 @@ h6 {
   }
 }
 
+.project-overview {
+  padding-top: 80px;
+}
+
+.project-overview-header-button {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .hero-image {
   max-width: 300px;
   display: block;
