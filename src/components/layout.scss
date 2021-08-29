@@ -422,6 +422,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero-image {
@@ -430,6 +431,16 @@ h6 {
   margin: auto;
   z-index: 30;
   position: relative;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  a:not(:last-child) {
+    padding-right: 1rem;
+  }
 }
 
 .tech-container {
@@ -448,7 +459,7 @@ h6 {
 }
 
 .social-icons {
-  color: rgb(42, 41, 46);
+  opacity: 0.8;
 }
 
 .hover_effect:hover {

@@ -3,6 +3,8 @@ import isEmpty from "lodash/isEmpty"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as local from "../../constants/heroConstants"
+import * as global from "../../constants/globalConstants"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Hero = () => {
   const { HeroImage } = useStaticQuery(graphql`
@@ -27,7 +29,7 @@ const Hero = () => {
         </figure>
       )
     } else {
-      return null
+      return <span>{local.ERROR_LOADING_IMAGE}</span>
     }
   }
 
@@ -39,6 +41,24 @@ const Hero = () => {
       )}
       <div style={{ display: `flex`, marginTop: "2rem" }}>
         <div className="hero-image">{heroImage()}</div>
+      </div>
+      <div className="hero-buttons">
+        <a
+          className="hover_effect social-icons"
+          href={global.GITHUB_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub size={30} />
+        </a>
+        <a
+          className="hover_effect social-icons"
+          href={global.LINKEDIN_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin size={30} />
+        </a>
       </div>
     </section>
   )
