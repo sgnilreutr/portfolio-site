@@ -517,6 +517,8 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .hero-image {
@@ -525,6 +527,26 @@ h6 {
   margin: auto;
   z-index: 30;
   position: relative;
+}
+
+.hero-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-buttons a:not(:last-child) {
+  padding-right: 1rem;
 }
 
 .tech-container {
@@ -555,7 +577,7 @@ h6 {
 }
 
 .social-icons {
-  color: #2a292e;
+  opacity: 0.8;
 }
 
 .hover_effect:hover {
