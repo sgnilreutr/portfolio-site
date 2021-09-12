@@ -1,5 +1,11 @@
 import React from "react"
-import { FaJs, FaGithub, FaSketch, FaAtlassian, FaReact } from "react-icons/fa"
+import {
+  // FaJs,
+  FaGithub,
+  // FaSketch,
+  FaAtlassian,
+  FaReact
+} from "react-icons/fa"
 import { SiGraphql, SiRedux } from "react-icons/si";
 
 const ICON_SIZE = 40

@@ -9,7 +9,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 const Hero = () => {
   const { HeroImage } = useStaticQuery(graphql`
     query {
-      HeroImage: file(relativePath: { eq: "wave_robbert.png" }) {
+      HeroImage: file(relativePath: { eq: "Robbert_Tuerlings.jpg" }) {
         name
         childImageSharp {
           gatsbyImageData
