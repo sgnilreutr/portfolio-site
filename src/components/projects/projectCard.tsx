@@ -1,5 +1,5 @@
 import React from "react"
-// import ReactMarkdown from "react-markdown"
+import ReactMarkdown from "react-markdown"
 
 const ERROR_MESSAGE = "Something went wrong."
 
@@ -11,8 +11,7 @@ const Projectcard = ({ item }: { item: any }) => {
   const ContentCreator = ({ content }: { content: any }) => {
     console.log(content)
     if (content.text) {
-      return null
-      // return <ReactMarkdown>{content.text.text}</ReactMarkdown>
+      return <ReactMarkdown>{content.text.text}</ReactMarkdown>
     } else if (content.link) {
       return (
         <pre>
