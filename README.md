@@ -6,3 +6,10 @@
 <h1 align="center">
   Personal Portfolio Site build with Gatsby
 </h1>
+
+<h2>Contains</2>
+<ul>
+  <li>My current status</li>
+    <li>My latest projects</li>
+    <li>My notable work</li>
+</ul>
