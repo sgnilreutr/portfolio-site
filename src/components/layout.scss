@@ -22,6 +22,7 @@ $color-text-LM: rgb(42, 41, 46);
 $color-text-DM: rgba(238, 238, 238, 0.85);
 $color-background-LM: rgb(246, 246, 247);
 $color-background-DM: #0f0f0f;
+$color-orange: rgb(216, 136, 104);
 
 // //Font variables
 // $inter: "Inter", serif;
@@ -103,10 +104,12 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   color: inherit;
+  transition: color ease-in 0.1s;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: $color-orange;
 }
 abbr[title] {
   border-bottom: none;
@@ -481,8 +484,8 @@ h6 {
 }
 
 .hover_effect:hover {
-  color: #f1a502;
-  transition: ease-in-out 0.3s;
+  color: $color-orange;
+  transition: ease-in-out 0.2s;
 }
 
 hgroup {
