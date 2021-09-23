@@ -99,11 +99,14 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   color: inherit;
+  -webkit-transition: color ease-in 0.1s;
+  transition: color ease-in 0.1s;
 }
 
 a:active,
 a:hover {
   outline-width: 0;
+  color: #d88868;
 }
 
 abbr[title] {
@@ -594,9 +597,9 @@ h6 {
 }
 
 .hover_effect:hover {
-  color: #f1a502;
-  -webkit-transition: ease-in-out 0.3s;
-  transition: ease-in-out 0.3s;
+  color: #d88868;
+  -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
 }
 
 hgroup {

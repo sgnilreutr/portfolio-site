@@ -1,11 +1,12 @@
 import React from "react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import * as global from "../../constants/globalConstants"
+import * as S from './footerStyles'
 
 const Footer = () => {
   return (
-    <footer>
-      <div style={{ display: `flex` }}>
+    <S.FooterWrapper>
+      <S.SocialIcons>
         <div style={{ marginRight: `16px` }}>
           <a
             className="hover_effect social-icons"
@@ -26,9 +27,12 @@ const Footer = () => {
             <FaGithub size={30} />{" "}
           </a>
         </div>
+      </S.SocialIcons>
+      <div>
+        <small>Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on <a href="https://vercel.com/">Vercel</a>. </small>
+        <small>© {new Date().getFullYear()}</small>
       </div>
-      © {new Date().getFullYear()}
-    </footer>
+    </S.FooterWrapper>
   )
 }
 
