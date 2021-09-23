@@ -1,19 +1,21 @@
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../fonts/inter-v2-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/inter-v2-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: "Slabo";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../fonts/Slabo13px-Regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/Slabo13px-Regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+@import "./typography";
+
+// @font-face {
+//   font-family: "Inter";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local(""), url("../fonts/inter-v2-latin-regular.woff2") format("woff2"),
+//     /* Chrome 26+, Opera 23+, Firefox 39+ */
+//       url("../fonts/inter-v2-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// }
+// @font-face {
+//   font-family: "Slabo";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local(""), url("../fonts/Slabo13px-Regular.woff2") format("woff2"),
+//     /* Chrome 26+, Opera 23+, Firefox 39+ */
+//       url("../fonts/Slabo13px-Regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// }
 
 //Colors
 $color-text-LM: rgb(42, 41, 46);
@@ -21,9 +23,9 @@ $color-text-DM: rgba(238, 238, 238, 0.85);
 $color-background-LM: rgb(246, 246, 247);
 $color-background-DM: #0f0f0f;
 
-//Font variables
-$inter: "Inter", serif;
-$slabo: "Slabo", sans-serif;
+// //Font variables
+// $inter: "Inter", serif;
+// $slabo: "Slabo", sans-serif;
 
 html {
   -ms-text-size-adjust: 100%;
@@ -270,7 +272,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $slabo;
+  font-family: $lora;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }

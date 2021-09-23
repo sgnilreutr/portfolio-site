@@ -1,17 +1,15 @@
 @font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../fonts/inter-v2-latin-regular.woff2") format("woff2"), url("../fonts/inter-v2-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: "Lora Variable";
+  src: url("../fonts/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
 }
 
 @font-face {
-  font-family: "Slabo";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../fonts/Slabo13px-Regular.woff2") format("woff2"), url("../fonts/Slabo13px-Regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-family: "Inter Variable";
+  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
 }
 
 html {
@@ -21,7 +19,7 @@ html {
 }
 
 body {
-  font-family: "Inter", serif;
+  font-family: "Inter Variable", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2a292e;
@@ -312,7 +310,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Slabo", sans-serif;
+  font-family: "Lora Variable", sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
