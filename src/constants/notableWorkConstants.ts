@@ -19,7 +19,6 @@ export const CONTENT_ARRAY = [
   { text: NOT_7 },
   { text: NOT_6 },
   { text: NOT_5 },
-  { text: NOT_5 },
   { text: NOT_4 },
   { text: NOT_3 },
   { text: NOT_2 },
