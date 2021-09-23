@@ -1,8 +1,12 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-const ButtonInner = styled.span`
-  padding-right: ${props => (props.label ? "8px" : 0)};
+interface ButtonInnerProps {
+  label: string
+}
+
+const ButtonInner = styled.span<ButtonInnerProps>`
+  padding-right: ${ props => (props.label ? "8px" : 0) };
 `
 
 export const CustomButton = props => {
