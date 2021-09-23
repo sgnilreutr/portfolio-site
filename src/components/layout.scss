@@ -441,6 +441,11 @@ h6 {
       display: inherit;
       border-radius: 5%;
     }
+    .gatsby-image-wrapper {
+      img {
+        border-radius: 5%;
+      }
+    }
   }
 }
 
