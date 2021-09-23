@@ -3,13 +3,7 @@ import * as local from "../../constants/notableWorkConstants"
 
 const NotableWork = () => {
   return (
-    <section
-      data-sal="slide-up"
-      data-sal-delay="700"
-      data-sal-easing="ease"
-      data-sal-duration="400"
-      className="container-attention"
-    >
+    <section className="container-attention">
       <h2 className="section-header">{local.SECTION_HEADER}</h2>
       <div>
         {local.CONTENT_ARRAY &&

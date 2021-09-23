@@ -1,15 +1,14 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
+import { ContentType, ItemType } from './projectTypes'
 
 const ERROR_MESSAGE = "Something went wrong."
 
-const Projectcard = ({ item }: { item: any }) => {
-  console.log(item)
+const Projectcard = ({ item }: { item: ItemType }) => {
   const dataNode = item.node
   const { title, date, content } = dataNode
 
-  const ContentCreator = ({ content }: { content: any }) => {
-    console.log(content)
+  const ContentCreator = ({ content }: { content: ContentType }) => {
     if (content.text) {
       return <ReactMarkdown>{content.text.text}</ReactMarkdown>
     } else if (content.link) {

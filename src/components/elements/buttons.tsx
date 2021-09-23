@@ -1,15 +1,26 @@
 import React from "react"
 import styled from "@emotion/styled"
-
 interface ButtonInnerProps {
   label: string
+}
+
+interface ButtonProps {
+  onClick: {},
+  className: string,
+  type: string,
+  disabled: boolean,
+  title: string,
+  isLoading: boolean,
+  icon: {},
+  label: string,
 }
 
 const ButtonInner = styled.span<ButtonInnerProps>`
   padding-right: ${ props => (props.label ? "8px" : 0) };
 `
 
-export const CustomButton = props => {
+export const CustomButton = (props: ButtonProps) => {
+  console.log(props)
   const {
     onClick,
     className,
@@ -22,7 +33,7 @@ export const CustomButton = props => {
   } = props
   return (
     <button
-      onClick={onClick}
+      onClick={() => onClick}
       className={className}
       type={type !== "submit" ? "button" : "submit"}
       disabled={disabled}
@@ -36,11 +47,11 @@ export const CustomButton = props => {
   )
 }
 
-export const CustomButtonSmall = props => {
+export const CustomButtonSmall = (props: ButtonProps) => {
   const { onClick, className, type, disabled, isLoading, icon, label } = props
   return (
     <button
-      onClick={onClick}
+      onClick={() => onClick}
       className={className}
       type={type !== "submit" ? "button" : "submit"}
       disabled={disabled}
