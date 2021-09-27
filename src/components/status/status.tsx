@@ -1,25 +1,26 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { FaTerminal } from "react-icons/fa"
 import * as local from "../../constants/statusConstants"
 
 const Status = () => {
+  const { status } = useStaticQuery(graphql`
+    query {
+      status: contentfulComponentText(internalName: { eq: "Status" }) {
+        text {
+          text
+        }
+      }
+    }
+  `)
+
   return (
-    <section
-      className="container"
-      data-sal="slide-right"
-      data-sal-delay="300"
-      data-sal-easing="ease"
-    >
+    <section className="container">
       <h2 className="section-header">
         {local.STATUS}
         <FaTerminal size={15} />
       </h2>
-      <p>
-        {local.STATUS_PT1}
-        <br></br>
-        <br></br>
-        {local.STATUS_PT2}
-      </p>
+      {status && status.text.text && <p>{status.text.text}</p>}
     </section>
   )
 }

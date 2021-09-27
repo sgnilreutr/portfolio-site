@@ -1,6 +1,6 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
-import { ContentType, ItemType } from './projectTypes'
+import { ContentType, ItemType } from "./projectTypes"
 
 const ERROR_MESSAGE = "Something went wrong."
 
