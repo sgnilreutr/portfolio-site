@@ -1,7 +1,7 @@
 import React from "react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import * as global from "../../constants/globalConstants"
-import * as S from './footerStyles'
+import * as S from "./footerStyles"
 
 const Footer = () => {
   return (
@@ -29,7 +29,12 @@ const Footer = () => {
         </div>
       </S.SocialIcons>
       <div>
-        <small>Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on <a href="https://vercel.com/">Vercel</a>. </small>
+        <small>
+          Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on{" "}
+          <a href="https://vercel.com/">Vercel</a>. View the{" "}
+          <a href="https://github.com/sgnilreutr/portfolio-site">Source Code</a>
+          .{" "}
+        </small>
         <small>© {new Date().getFullYear()}</small>
       </div>
     </S.FooterWrapper>

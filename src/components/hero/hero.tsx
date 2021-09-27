@@ -2,18 +2,21 @@ import React from "react"
 import isEmpty from "lodash/isEmpty"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as local from "../../constants/heroConstants"
 import * as global from "../../constants/globalConstants"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Hero = () => {
-  const { HeroImage } = useStaticQuery(graphql`
+  const { HeroImage, HeroText } = useStaticQuery(graphql`
     query {
       HeroImage: file(relativePath: { eq: "Robbert_Tuerlings.jpg" }) {
         name
         childImageSharp {
           gatsbyImageData
         }
+      }
+      HeroText: contentfulMainBanner(internalName: { eq: "Hero" }) {
+        mainTitle
+        subTitle
       }
     }
   `)
@@ -29,15 +32,17 @@ const Hero = () => {
         </figure>
       )
     } else {
-      return <span>{local.ERROR_LOADING_IMAGE}</span>
+      return <span>{global.ERROR_LOADING_IMAGE}</span>
     }
   }
 
   return (
     <section className="hero-container">
-      <div>{local.HERO_TITLE && <h1>{local.HERO_TITLE}</h1>}</div>
-      {local.HERO_DESCRIPTION && (
-        <p className="description">{local.HERO_DESCRIPTION}</p>
+      <div>
+        {HeroText && HeroText.mainTitle && <h1>{HeroText.mainTitle}</h1>}
+      </div>
+      {HeroText && HeroText.subTitle && (
+        <p className="description">{HeroText.subTitle}</p>
       )}
       <div style={{ display: `flex`, marginTop: "2rem" }}>
         <div className="hero-image">{heroImage()}</div>

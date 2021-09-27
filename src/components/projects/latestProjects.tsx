@@ -4,6 +4,7 @@ import Projectcard from "./projectCard"
 import * as local from "../../constants/latestProjectsConstants"
 import * as project from "../../constants/allProjectsConstants"
 import * as S from "./projectStyles"
+import { ItemType } from "./projectTypes"
 
 const PROJECT_LINK = "/projects"
 
@@ -41,7 +42,9 @@ const LatestProjects = () => {
     projects && edges && edges.length > 0 ? (
       edges
         .slice(0, 3)
-        .map((item, index) => <Projectcard key={index} item={item} />)
+        .map((item: ItemType, index: number) => (
+          <Projectcard key={index} item={item} />
+        ))
     ) : (
       <small>{project.NO_PROJECTS}</small>
     )

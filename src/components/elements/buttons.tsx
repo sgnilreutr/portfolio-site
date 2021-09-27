@@ -5,18 +5,18 @@ interface ButtonInnerProps {
 }
 
 interface ButtonProps {
-  onClick: {},
-  className: string,
-  type: string,
-  disabled: boolean,
-  title: string,
-  isLoading: boolean,
-  icon: {},
-  label: string,
+  onClick: {}
+  className: string
+  type: string
+  disabled: boolean
+  title: string
+  isLoading: boolean
+  icon: {}
+  label: string
 }
 
 const ButtonInner = styled.span<ButtonInnerProps>`
-  padding-right: ${ props => (props.label ? "8px" : 0) };
+  padding-right: ${props => (props.label ? "8px" : 0)};
 `
 
 export const CustomButton = (props: ButtonProps) => {
