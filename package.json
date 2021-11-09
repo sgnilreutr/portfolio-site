@@ -16,7 +16,7 @@
     "gatsby-plugin-react-helmet-async": "^1.2.0",
     "gatsby-plugin-robots-txt": "^1.6.14",
     "gatsby-plugin-sharp": "^4.1.0",
-    "gatsby-plugin-sitemap": "^5.1.0",
+    "gatsby-plugin-sitemap": "^5.1.1",
     "gatsby-plugin-typescript": "^4.1.0",
     "gatsby-source-contentful": "^6.1.0",
     "gatsby-source-filesystem": "^4.1.0",
