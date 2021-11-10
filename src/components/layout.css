@@ -16,6 +16,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
+  font: 112.5%/1.45em serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 body {
@@ -43,6 +47,7 @@ body img {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
   opacity: 1;
+  border-style: none;
 }
 
 body.dark {
@@ -111,27 +116,12 @@ sup {
   top: -0.5em;
 }
 
-img {
-  border-style: none;
-}
-
 code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
-}
-
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible;
 }
 
 button,
@@ -145,13 +135,6 @@ textarea {
 
 textarea {
   overflow: auto;
-}
-
-html {
-  font: 112.5%/1.45em georgia, serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow-y: scroll;
 }
 
 * {
@@ -494,6 +477,9 @@ hr {
   background: rgba(0, 0, 0, 0.2);
   border: none;
   height: 1px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  overflow: visible;
 }
 
 b {

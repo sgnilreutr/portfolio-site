@@ -11,19 +11,26 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
+  font: 112.5%/1.45em serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
+
 body {
   font-family: $inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   color: $color-text-LM;
   background-color: $color-background-LM;
+
   img {
     filter: grayscale(0);
     opacity: 1;
+    border-style: none;
   }
+
   transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
+
   &.dark {
     color: $color-text-DM;
     background-color: $color-background-DM;
@@ -49,6 +56,7 @@ body {
 footer {
   padding: 2rem 0;
 }
+
 article,
 details,
 figure,
@@ -60,12 +68,14 @@ section,
 summary {
   display: block;
 }
+
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   color: inherit;
   transition: color ease-in 0.1s;
 }
+
 a:active,
 a:hover {
   outline-width: 0;
@@ -75,9 +85,11 @@ b,
 strong {
   font-weight: bolder;
 }
+
 small {
   font-size: 80%;
 }
+
 sub,
 sup {
   font-size: 75%;
@@ -85,31 +97,22 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
 sup {
   top: -0.5em;
 }
-img {
-  border-style: none;
-}
 
 code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
-figure {
-  margin: 1em 40px;
-}
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
+
 button,
 input,
 optgroup,
@@ -118,20 +121,19 @@ textarea {
   font: inherit;
   margin: 0;
 }
+
 textarea {
   overflow: auto;
 }
-html {
-  font: 112.5%/1.45em georgia, serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
+
 * {
   box-sizing: inherit;
 }
+
 *:before {
   box-sizing: inherit;
 }
+
 *:after {
   box-sizing: inherit;
 }
@@ -171,6 +173,7 @@ h2 {
   font-weight: 400;
   letter-spacing: normal;
 }
+
 h3 {
   margin: 0 0 0.6rem 0;
   padding: 0;
@@ -178,6 +181,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.1;
 }
+
 h4 {
   margin: 0 0 0.6rem 0;
   padding: 0;
@@ -185,6 +189,7 @@ h4 {
   font-size: 1rem;
   line-height: 1.1;
 }
+
 h5 {
   margin: 0 0 1.45rem 0;
   padding: 0;
@@ -192,6 +197,7 @@ h5 {
   font-size: 0.78405rem;
   line-height: 1.1;
 }
+
 .description {
   line-height: 1.4em;
   font-weight: 400;
@@ -336,17 +342,20 @@ ul {
   list-style-position: outside;
   list-style-image: none;
 }
+
 ol {
   margin: 0 0 1.45rem 1.45rem;
   padding: 0;
   list-style-position: outside;
   list-style-image: none;
 }
+
 p {
   margin: 0 0 1.45rem 0;
   padding: 0;
   letter-spacing: 0.05rem;
 }
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -354,6 +363,7 @@ figure {
   padding: 0;
   margin-bottom: 1.45rem;
 }
+
 pre {
   margin-left: 0;
   margin-right: 0;
@@ -364,6 +374,7 @@ pre {
   overflow: auto;
   word-wrap: normal;
 }
+
 form {
   margin-left: 0;
   margin-right: 0;
@@ -371,6 +382,7 @@ form {
   padding: 0;
   margin-bottom: 1.45rem;
 }
+
 hr {
   margin-left: 0;
   margin-right: 0;
@@ -380,51 +392,67 @@ hr {
   background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
+  box-sizing: content-box;
+  overflow: visible;
 }
+
 b {
   font-weight: bold;
 }
+
 strong {
   font-weight: bold;
 }
+
 th {
   font-weight: bold;
 }
+
 li {
   margin-bottom: calc(1.45rem / 2);
 }
+
 ol li {
   padding-left: 0;
 }
+
 ul li {
   padding-left: 0;
 }
+
 li > ol {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
+
 li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
+
 blockquote *:last-child {
   margin-bottom: 0;
 }
+
 li *:last-child {
   margin-bottom: 0;
 }
+
 p *:last-child {
   margin-bottom: 0;
 }
+
 li > p {
   margin-bottom: calc(1.45rem / 2);
 }
+
 code {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
+
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
@@ -435,10 +463,12 @@ code {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
+
 pre code {
   background: none;
   line-height: 1.42;
 }
+
 code:before,
 code:after,
 tt:before,
@@ -446,6 +476,7 @@ tt:after {
   letter-spacing: -0.2em;
   content: " ";
 }
+
 pre code:before,
 pre code:after,
 pre tt:before,
