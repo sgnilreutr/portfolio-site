@@ -1,32 +1,11 @@
 @import "./typography";
 
-// @font-face {
-//   font-family: "Inter";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local(""), url("../fonts/inter-v2-latin-regular.woff2") format("woff2"),
-//     /* Chrome 26+, Opera 23+, Firefox 39+ */
-//       url("../fonts/inter-v2-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-// }
-// @font-face {
-//   font-family: "Slabo";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local(""), url("../fonts/Slabo13px-Regular.woff2") format("woff2"),
-//     /* Chrome 26+, Opera 23+, Firefox 39+ */
-//       url("../fonts/Slabo13px-Regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-// }
-
 //Colors
 $color-text-LM: rgb(42, 41, 46);
 $color-text-DM: rgba(238, 238, 238, 0.85);
 $color-background-LM: rgb(246, 246, 247);
 $color-background-DM: #0f0f0f;
 $color-orange: rgb(216, 136, 104);
-
-// //Font variables
-// $inter: "Inter", serif;
-// $slabo: "Slabo", sans-serif;
 
 html {
   -ms-text-size-adjust: 100%;
@@ -83,23 +62,6 @@ section,
 summary {
   display: block;
 }
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-[hidden],
-template {
-  display: none;
-}
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -111,20 +73,9 @@ a:hover {
   outline-width: 0;
   color: $color-orange;
 }
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
-}
 b,
 strong {
   font-weight: bolder;
-}
-dfn {
-  font-style: italic;
-}
-mark {
-  background-color: #ff0;
-  color: #000;
 }
 small {
   font-size: 80%;
@@ -145,9 +96,7 @@ sup {
 img {
   border-style: none;
 }
-svg:not(:root) {
-  overflow: hidden;
-}
+
 code,
 kbd,
 pre,
@@ -171,76 +120,8 @@ textarea {
   font: inherit;
   margin: 0;
 }
-optgroup {
-  font-weight: 700;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-[type="reset"],
-[type="submit"],
-button,
-html [type="button"] {
-  -webkit-appearance: button;
-}
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
-button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring,
-button:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
 textarea {
   overflow: auto;
-}
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
 }
 html {
   font: 112.5%/1.45em georgia, serif;
@@ -259,14 +140,8 @@ html {
 
 img {
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0 0 1.45rem 0;
+  padding: 0;
 }
 
 h1,
@@ -299,53 +174,22 @@ h2 {
   letter-spacing: normal;
 }
 h3 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 0.6rem;
+  margin: 0 0 0.6rem 0;
+  padding: 0;
   color: inherit;
   font-size: 1.1rem;
   line-height: 1.1;
 }
 h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 0.6rem;
+  margin: 0 0 0.6rem 0;
+  padding: 0;
   color: inherit;
   font-size: 1rem;
   line-height: 1.1;
 }
 h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-size: 0.85028rem;
-  line-height: 1.1;
-}
-h6 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0 0 1.45rem 0;
+  padding: 0;
   color: inherit;
   font-size: 0.78405rem;
   line-height: 1.1;
