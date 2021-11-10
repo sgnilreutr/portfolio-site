@@ -6412,10 +6412,10 @@ gatsby-plugin-typescript@^4.1.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.1.0"
 
-gatsby-plugin-utils@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-2.1.0.tgz#90aaf61fa60d5d4c1730c7b204eb3fbc645da0c0"
-  integrity sha512-sJZWsiLhYOuBN56LCX2Qy2ZDoQvqlY1TntXH8ns+zZHzglvVR28xI/iQEP7bVhzmkMX47i+E87o1/EET0RuK4A==
+gatsby-plugin-utils@^2.1.0, gatsby-plugin-utils@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-2.1.1.tgz#00829e0c26300a9bae8d91556cb7b39d74caeba9"
+  integrity sha512-LzLLSg9CWCi4qMqYNYkt8vAoySkNWKfB8QKJKnpU5qzo/3vjZAx9iWHmoNRYLCCHg1bgJn2Kr5cwOMYAEJspyg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
@@ -6492,10 +6492,10 @@ gatsby-recipes@^1.1.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-source-contentful@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-6.1.0.tgz#ad5a1ccf1a67f32627ba6e4984bdae6971d3229b"
-  integrity sha512-heeZM8+aEkKaqdYaj9J8olH/6wmA6+j+QEsOxlKNB6/YQlSn2Kqs7xq9lO/UpNkxLCG5I345K8Emmx3EDsX6GQ==
+gatsby-source-contentful@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-6.1.1.tgz#7be631b2d553d0d9a266462c874deb8ce212eb2f"
+  integrity sha512-4TGQTfsi36SGdWgTbCNppd6HxABbZ6ZGG3THfQtapuRYkRnmD7SMU2XnbHEpQtsDmSC6BoY8y/UllHsRoWjwHw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@contentful/rich-text-react-renderer" "^14.1.3"
@@ -6508,7 +6508,7 @@ gatsby-source-contentful@^6.1.0:
     contentful "^8.4.2"
     fs-extra "^10.0.0"
     gatsby-core-utils "^3.1.0"
-    gatsby-plugin-utils "^2.1.0"
+    gatsby-plugin-utils "^2.1.1"
     gatsby-source-filesystem "^4.1.0"
     is-online "^8.5.1"
     json-stringify-safe "^5.0.1"
