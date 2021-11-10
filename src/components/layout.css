@@ -142,12 +142,12 @@ textarea {
           box-sizing: inherit;
 }
 
-*:before {
+*::before {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
-*:after {
+*::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
@@ -554,18 +554,18 @@ pre code {
   line-height: 1.42;
 }
 
-code:before,
-code:after,
-tt:before,
-tt:after {
+code::before,
+code::after,
+tt::before,
+tt::after {
   letter-spacing: -0.2em;
   content: " ";
 }
 
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
+pre code::before,
+pre code::after,
+pre tt::before,
+pre tt::after {
   content: "";
 }
 /*# sourceMappingURL=layout.css.map */

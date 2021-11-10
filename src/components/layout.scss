@@ -34,6 +34,7 @@ body {
   &.dark {
     color: $color-text-DM;
     background-color: $color-background-DM;
+
     img {
       filter: grayscale(20%);
       opacity: 0.9 !important;
@@ -81,6 +82,7 @@ a:hover {
   outline-width: 0;
   color: $color-orange;
 }
+
 b,
 strong {
   font-weight: bolder;
@@ -130,11 +132,11 @@ textarea {
   box-sizing: inherit;
 }
 
-*:before {
+*::before {
   box-sizing: inherit;
 }
 
-*:after {
+*::after {
   box-sizing: inherit;
 }
 
@@ -159,9 +161,11 @@ h1 {
   letter-spacing: normal;
   line-height: 60px;
   margin: 2.4rem 0 0 0;
+
   @media only screen and (min-width: 482px) {
     font-size: 3.6rem;
   }
+
   @media only screen and (max-width: 480px) {
     font-size: 2.7rem;
   }
@@ -203,12 +207,15 @@ h5 {
   font-weight: 400;
   margin-bottom: 0;
   animation: descAnim 1.25s;
+
   @media only screen and (min-width: 872px) {
     font-size: 2.143rem;
   }
+
   @media only screen and (max-width: 872px) {
     font-size: 1.9rem;
   }
+
   @media only screen and (max-width: 480px) {
     font-size: 1.3rem;
   }
@@ -219,13 +226,16 @@ h5 {
   margin-bottom: 0.7rem;
   margin-top: 0;
 }
+
 .hero-container {
   @media only screen and (min-width: 872px) {
     padding-top: 10rem;
   }
+
   @media only screen and (max-width: 872px) {
     padding-top: 8rem;
   }
+
   @media only screen and (max-width: 480px) {
     padding-top: 1rem;
   }
@@ -235,9 +245,11 @@ h5 {
   @media only screen and (min-width: 872px) {
     padding: 3rem 0;
   }
+
   @media only screen and (max-width: 872px) {
     padding: 2rem 0;
   }
+
   @media only screen and (max-width: 480px) {
     padding: 1rem 0;
   }
@@ -260,6 +272,7 @@ h5 {
     flex-flow: column;
     align-items: baseline;
   }
+
   @media only screen and (max-width: 480px) {
     margin-bottom: 1rem;
   }
@@ -284,16 +297,19 @@ h5 {
   margin: auto;
   z-index: 30;
   position: relative;
+
   figure {
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
       0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
       0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
       0 100px 80px rgba(0, 0, 0, 0.07);
     border-radius: 5%;
+
     .gatsby-image-wrapper-constrained {
       display: inherit;
       border-radius: 5%;
     }
+
     .gatsby-image-wrapper {
       img {
         border-radius: 5%;
@@ -307,6 +323,7 @@ h5 {
   flex-flow: row;
   align-items: center;
   justify-content: center;
+
   a:not(:last-child) {
     padding-right: 1rem;
   }
@@ -314,12 +331,14 @@ h5 {
 
 .tech-container {
   display: grid;
+
   @media only screen and (min-width: 740px) {
     grid-template-columns: 46.5% auto;
     grid-template-rows: auto;
     column-gap: 3.4rem;
     row-gap: 1.7rem;
   }
+
   @media only screen and (max-width: 738px) {
     row-gap: 1rem;
     grid-template-columns: 100%;
@@ -469,17 +488,17 @@ pre code {
   line-height: 1.42;
 }
 
-code:before,
-code:after,
-tt:before,
-tt:after {
+code::before,
+code::after,
+tt::before,
+tt::after {
   letter-spacing: -0.2em;
   content: " ";
 }
 
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
+pre code::before,
+pre code::after,
+pre tt::before,
+pre tt::after {
   content: "";
 }
