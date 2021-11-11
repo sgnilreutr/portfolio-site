@@ -6271,16 +6271,16 @@ gatsby-plugin-emotion@^7.1.0:
     "@babel/runtime" "^7.15.4"
     "@emotion/babel-preset-css-prop" "^11.2.0"
 
-gatsby-plugin-gatsby-cloud@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-4.1.0.tgz#ae38974879c87e88ce5e52fcb952be58faabf7b0"
-  integrity sha512-MbP7vMDe4tBBva6Z+cbjfpIC1KTc618XIM50xBfK+c1OjghIjMfjoO8YanCTGvuKZ/iNhYRxLdAB5QeyBOjPYA==
+gatsby-plugin-gatsby-cloud@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-4.1.1.tgz#ab00ee11d28e780f8173f3446cd486ac1ae20b99"
+  integrity sha512-TO1Ek7AGEOT9qzNKU62uFhaEMRKRTDzh+zPiL6jPNsAJeHaGTsJrnUarMFnilE21KsTHme/3bKNLoiVUoXxR6g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     date-fns "^2.25.0"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.1.0"
-    gatsby-telemetry "^3.1.0"
+    gatsby-core-utils "^3.1.1"
+    gatsby-telemetry "^3.1.1"
     kebab-hash "^0.1.2"
     lodash "^4.17.21"
     webpack-assets-manifest "^5.0.6"
