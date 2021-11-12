@@ -59,11 +59,10 @@ module.exports = {
         output: "/robots.txt",
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: ['/', '/projects']
-      }}
-    
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     precachePages: ['/', '/projects']
+    //   }}
   ],
 }
