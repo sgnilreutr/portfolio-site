@@ -7,7 +7,7 @@
     "@emotion/styled": "^11.6.0",
     "assert": "^2.0.0",
     "gatsby": "^4.2.0",
-    "gatsby-plugin-emotion": "^7.1.0",
+    "gatsby-plugin-emotion": "^7.2.0",
     "gatsby-plugin-hotjar": "^1.1.1",
     "gatsby-plugin-image": "^2.2.0",
     "gatsby-plugin-manifest": "^4.2.0",
