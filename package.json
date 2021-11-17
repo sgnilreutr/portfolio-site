@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "dependencies": {
-    "@emotion/react": "^11.5.0",
+    "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "assert": "^2.0.0",
     "gatsby": "^4.1.4",
