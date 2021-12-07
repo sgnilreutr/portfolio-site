@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import * as local from "../../constants/recentTechConstants"
 import { FaGithub, FaAtlassian, FaReact } from "react-icons/fa"
-import { SiGraphql, SiRedux } from "react-icons/si"
+import { SiGraphql, SiRedux, SiTypescript } from "react-icons/si"
 
 interface recentTechItemType {
   internalName: string
@@ -19,6 +19,8 @@ const techIconMap: { [key: string]: {} } = {
   GraphQL: <SiGraphql size={ICON_SIZE} />,
   Redux: <SiRedux size={ICON_SIZE} />,
   Github: <FaGithub size={ICON_SIZE} />,
+  TypeScript: <SiTypescript size={ICON_SIZE} />,
+  default: {}
 }
 
 const RecentTech = () => {
