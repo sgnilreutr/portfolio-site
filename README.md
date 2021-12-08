@@ -11,7 +11,7 @@
 
 <h2>Contains</2>
 <ul>
-  <li>My current status</li>
-    <li>My latest projects</li>
-    <li>My notable work</li>
+  <li><p>My current status</p></li>
+  <li><p>My latest projects</p></li>
+  <li><p>My notable work</p></li>
 </ul>
