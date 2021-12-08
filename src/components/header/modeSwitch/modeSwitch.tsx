@@ -16,8 +16,8 @@ const ModeSwitch = () => {
         checked={isDark}
         onChange={event => setIsDark(event.target.checked)}
         icons={{
-          checked: <S.Img src={Moon} />,
-          unchecked: <S.Img src={Sun} />,
+          checked: <S.Img src={Moon} alt="dark-mode-icon" />,
+          unchecked: <S.Img src={Sun} alt="light-mode-icon" />,
         }}
         aria-label="Dark mode"
       />

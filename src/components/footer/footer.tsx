@@ -1,6 +1,7 @@
 import React from "react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import * as global from "../../constants/globalConstants"
+import StyledSpan from "../elements/screenReaderSpan"
 import * as S from "./footerStyles"
 
 const Footer = () => {
@@ -14,7 +15,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin size={30} />{" "}
+            <FaLinkedin size={30} aria-hidden="true"
+              focusable="false" />
+            <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
           </a>
         </div>
         <div>
@@ -24,7 +27,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={30} />{" "}
+            <FaGithub size={30} aria-hidden="true"
+              focusable="false" />
+            <StyledSpan>{global.SR_GITHUB}</StyledSpan>
           </a>
         </div>
       </S.SocialIcons>

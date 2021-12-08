@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as global from "../../constants/globalConstants"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import StyledSpan from "../elements/screenReaderSpan"
 
 const Hero = () => {
   const { HeroImage, HeroText } = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ const Hero = () => {
         <figure>
           <GatsbyImage
             image={HeroImage.childImageSharp.gatsbyImageData}
-            alt={HeroImage.name}
+            alt={`An profile image of the owner of this portfolio, ${ HeroImage.name.replace('_', ' ') }`}
           />
         </figure>
       )
@@ -54,7 +55,9 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub size={30} />
+          <FaGithub size={30} aria-hidden="true"
+            focusable="false" />
+          <StyledSpan>{global.SR_GITHUB}</StyledSpan>
         </a>
         <a
           className="hover_effect social-icons"
@@ -62,7 +65,9 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin size={30} />
+          <FaLinkedin size={30} aria-hidden="true"
+            focusable="false" />
+          <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
         </a>
       </div>
     </section>
