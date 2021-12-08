@@ -3,14 +3,16 @@
   src: url("../fonts/Lora-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 1000;
   font-stretch: 25% 151%;
+  font-display: swap;
 }
 @font-face {
   font-family: "Inter Variable";
   src: url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
   font-weight: 100 1000;
   font-stretch: 25% 151%;
+  font-display: swap;
 }
 
 //Font variables
-$inter: "Inter Variable", serif;
-$lora: "Lora Variable", sans-serif;
+$inter: "Inter Variable", sans-serif;
+$lora: "Lora Variable", serif;
