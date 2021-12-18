@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  font-family: $inter;
+  font-family: $inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $color-text-LM;
@@ -152,7 +152,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $lora;
+  font-family: $lora, serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
