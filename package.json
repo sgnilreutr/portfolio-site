@@ -10,7 +10,7 @@
     "gatsby-plugin-emotion": "^7.5.0",
     "gatsby-plugin-hotjar": "^1.1.1",
     "gatsby-plugin-image": "^2.4.0",
-    "gatsby-plugin-manifest": "^4.4.0",
+    "gatsby-plugin-manifest": "^4.5.2",
     "gatsby-plugin-offline": "^5.5.2",
     "gatsby-plugin-react-helmet-async": "^1.2.1",
     "gatsby-plugin-robots-txt": "^1.7.0",
@@ -31,7 +31,7 @@
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.9",
+    "@types/node": "^17.0.12",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/react-toggle": "^4.0.3",
