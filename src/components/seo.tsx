@@ -25,7 +25,8 @@ function SEO({ description, lang, meta, title }: SeoTypes) {
     `
   )
 
-  // const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description
+  const defaultTitle = site.siteMetadata?.title
 
   return (
     <Helmet
@@ -34,39 +35,39 @@ function SEO({ description, lang, meta, title }: SeoTypes) {
       }}
       title={title}
       titleTemplate={`%s | ${ site.siteMetadata.title }`}
-    // meta={[
-    //   {
-    //     name: `description`,
-    //     content: metaDescription,
-    //   },
-    //   {
-    //     property: `og:title`,
-    //     content: title,
-    //   },
-    //   {
-    //     property: `og:description`,
-    //     content: metaDescription,
-    //   },
-    //   {
-    //     property: `og:type`,
-    //     content: `website`,
-    //   },
-    // ].concat(meta)}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+      ]}
     />
   )
 }
 
-// SEO.defaultProps = {
-//   lang: `en`,
-//   meta: [],
-//   description: ``,
-// }
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
 
-// SEO.propTypes = {
-//   description: PropTypes.string,
-//   lang: PropTypes.string,
-//   meta: PropTypes.arrayOf(PropTypes.object),
-//   title: PropTypes.string.isRequired,
-// }
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+}
 
 export default SEO
