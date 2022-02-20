@@ -1,7 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "version": "0.1.0",
+  "name": "portfolio-site-rtuerlings",
+  "version": "1.0.0",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
