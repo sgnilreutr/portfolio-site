@@ -6051,10 +6051,10 @@ gatsby-page-utils@^2.7.0:
     lodash "^4.17.21"
     micromatch "^4.0.4"
 
-gatsby-plugin-emotion@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-7.6.0.tgz#772d4fa662c32bcfd62f2348feb6cc4459010d9e"
-  integrity sha512-CGcJfiSgDdSVbBdQN/Uj34/LvOdtEtW4ee1CTkH1cImOi4SMNw+epMQRIytO4SSsv34MyXQhi/RJNhfPjM7NXg==
+gatsby-plugin-emotion@^7.7.0:
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-7.7.0.tgz#9968f7e620f39053b9a166295fbd60069d3f69ad"
+  integrity sha512-Y2bhXTOszdTwSBWqSq7AQ6PcYaWMnZ+eTSPjhGtlq++Jmama/U79SunTrBHDMQsGFCP2OLKVnlVHvl343nBvFQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@emotion/babel-preset-css-prop" "^11.2.0"
@@ -6256,7 +6256,7 @@ gatsby-source-filesystem@^4.4.0, gatsby-source-filesystem@^4.6.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.6.0, gatsby-telemetry@^3.7.0:
+gatsby-telemetry@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.7.0.tgz#898c3f158814ea11f924b85d14b9402baa5703de"
   integrity sha512-jhtUGZynyHM3r9a7po/rKffj5AjacmU0rqqarsee9dxlDqsamqRtyFPTjn7JubRrc958M6qzNW+z/Zi0hoeFHg==
@@ -8957,13 +8957,6 @@ node-fetch@2.6.1:
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-fetch@^2.6.1, node-fetch@^2.6.6, node-fetch@^2.6.7:
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
-  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
-  dependencies:
-    whatwg-url "^5.0.0"
-
-node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
