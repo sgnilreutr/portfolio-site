@@ -5,7 +5,7 @@
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.6.0",
     "assert": "^2.0.0",
-    "gatsby": "^4.7.2",
+    "gatsby": "^4.9.2",
     "gatsby-plugin-emotion": "^7.7.0",
     "gatsby-plugin-hotjar": "^1.1.1",
     "gatsby-plugin-image": "^2.6.0",
