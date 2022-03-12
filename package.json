@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.6.0",
+    "@emotion/styled": "^11.8.1",
     "assert": "^2.0.0",
     "gatsby": "^4.9.3",
     "gatsby-plugin-emotion": "^7.9.0",
