@@ -30,7 +30,7 @@
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.22",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.41",
     "@types/react-dom": "^17.0.14",
     "@types/react-toggle": "^4.0.3",
