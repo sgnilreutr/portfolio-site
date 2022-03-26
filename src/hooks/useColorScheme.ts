@@ -1,13 +1,13 @@
-import { useEffect, useMemo } from "react"
-import { useMediaQuery } from "react-responsive"
-import createPersistedState from "use-persisted-state"
+import { useEffect, useMemo } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import createPersistedState from 'use-persisted-state'
 
-const useColorSchemeState = createPersistedState("colorScheme")
+const useColorSchemeState = createPersistedState('colorScheme')
 
 export function useColorScheme() {
   const systemPrefersDark = useMediaQuery(
     {
-      query: "(prefers-color-scheme: dark)",
+      query: '(prefers-color-scheme: dark)',
     },
     undefined
   )
@@ -20,9 +20,9 @@ export function useColorScheme() {
 
   useEffect(() => {
     if (value) {
-      document.body.classList.add("dark")
+      document.body.classList.add('dark')
     } else {
-      document.body.classList.remove("dark")
+      document.body.classList.remove('dark')
     }
   }, [value])
 

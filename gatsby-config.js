@@ -1,6 +1,6 @@
-const path = require("path")
+// const path = require('path')
 
-require("dotenv").config({
+require('dotenv').config({
   path: `.env`,
 })
 
@@ -51,12 +51,12 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: "https://robberttuerlings.online",
-        sitemap: "https://robberttuerlings.online/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-        output: "/robots.txt",
+        host: 'https://robberttuerlings.online',
+        sitemap: 'https://robberttuerlings.online/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+        output: '/robots.txt',
       },
     },
     // {

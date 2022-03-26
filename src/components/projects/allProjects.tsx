@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Projectcard from "./projectCard"
-import * as local from "../../constants/allProjectsConstants"
-import { ItemType } from "./projectTypes"
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import Projectcard from './projectCard'
+import * as local from '../../constants/allProjectsConstants'
+import { ItemType } from './projectTypes'
 
 const AllProjects = () => {
   const { projects } = useStaticQuery(graphql`

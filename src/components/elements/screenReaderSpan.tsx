@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 const StyledSpan = styled.span`
   border: 0 !important;

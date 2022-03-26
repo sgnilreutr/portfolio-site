@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet-async"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet-async'
+import { useStaticQuery, graphql } from 'gatsby'
 
 interface SeoTypes {
   description?: string
@@ -26,7 +26,7 @@ function SEO({ description, lang, meta, title }: SeoTypes) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  // const defaultTitle = site.siteMetadata?.title
 
   return (
     <Helmet
@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title }: SeoTypes) {
         lang: 'en-US',
       }}
       title={title}
-      titleTemplate={`%s | ${ site.siteMetadata.title }`}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,

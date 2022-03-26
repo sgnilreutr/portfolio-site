@@ -1,10 +1,10 @@
-import React from "react"
-import isEmpty from "lodash/isEmpty"
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import * as global from "../../constants/globalConstants"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-import StyledSpan from "../elements/screenReaderSpan"
+import React from 'react'
+import isEmpty from 'lodash/isEmpty'
+import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import * as global from '../../constants/globalConstants'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import StyledSpan from '../elements/screenReaderSpan'
 
 const Hero = () => {
   const { HeroImage, HeroText } = useStaticQuery(graphql`
@@ -28,7 +28,10 @@ const Hero = () => {
         <figure>
           <GatsbyImage
             image={HeroImage.childImageSharp.gatsbyImageData}
-            alt={`An profile image of the owner of this portfolio, ${ HeroImage.name.replace('_', ' ') }`}
+            alt={`An profile image of the owner of this portfolio, ${HeroImage.name.replace(
+              '_',
+              ' '
+            )}`}
           />
         </figure>
       )
@@ -45,7 +48,7 @@ const Hero = () => {
       {HeroText && HeroText.subTitle && (
         <p className="description">{HeroText.subTitle}</p>
       )}
-      <div style={{ display: `flex`, marginTop: "2rem" }}>
+      <div style={{ display: `flex`, marginTop: '2rem' }}>
         <div className="hero-image">{heroImage()}</div>
       </div>
       <div className="hero-buttons">
@@ -55,8 +58,7 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub size={30} aria-hidden="true"
-            focusable="false" />
+          <FaGithub size={30} aria-hidden="true" focusable="false" />
           <StyledSpan>{global.SR_GITHUB}</StyledSpan>
         </a>
         <a
@@ -65,8 +67,7 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin size={30} aria-hidden="true"
-            focusable="false" />
+          <FaLinkedin size={30} aria-hidden="true" focusable="false" />
           <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
         </a>
       </div>

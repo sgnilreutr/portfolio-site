@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from 'react'
+import styled from '@emotion/styled'
 interface ButtonInnerProps {
   label: string
 }
@@ -16,26 +16,18 @@ interface ButtonProps {
 }
 
 const ButtonInner = styled.span<ButtonInnerProps>`
-  padding-right: ${props => (props.label ? "8px" : 0)};
+  padding-right: ${(props) => (props.label ? '8px' : 0)};
 `
 
 export const CustomButton = (props: ButtonProps) => {
   console.log(props)
-  const {
-    onClick,
-    className,
-    type,
-    disabled,
-    title,
-    isLoading,
-    icon,
-    label,
-  } = props
+  const { onClick, className, type, disabled, title, isLoading, icon, label } =
+    props
   return (
     <button
       onClick={() => onClick}
       className={className}
-      type={type !== "submit" ? "button" : "submit"}
+      type={type !== 'submit' ? 'button' : 'submit'}
       disabled={disabled}
       title={title}
     >
@@ -53,7 +45,7 @@ export const CustomButtonSmall = (props: ButtonProps) => {
     <button
       onClick={() => onClick}
       className={className}
-      type={type !== "submit" ? "button" : "submit"}
+      type={type !== 'submit' ? 'button' : 'submit'}
       disabled={disabled}
     >
       <div>
