@@ -1,6 +1,6 @@
-import React from "react"
-import * as S from "./headerStyles"
-import ModeSwitch from "./modeSwitch/modeSwitch"
+import React from 'react'
+import * as S from './headerStyles'
+import ModeSwitch from './modeSwitch/modeSwitch'
 
 const Header = () => (
   <S.Header>

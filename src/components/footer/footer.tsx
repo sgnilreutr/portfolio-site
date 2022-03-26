@@ -1,8 +1,8 @@
-import React from "react"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-import * as global from "../../constants/globalConstants"
-import StyledSpan from "../elements/screenReaderSpan"
-import * as S from "./footerStyles"
+import React from 'react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import * as global from '../../constants/globalConstants'
+import StyledSpan from '../elements/screenReaderSpan'
+import * as S from './footerStyles'
 
 const Footer = () => {
   return (
@@ -15,8 +15,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin size={30} aria-hidden="true"
-              focusable="false" />
+            <FaLinkedin size={30} aria-hidden="true" focusable="false" />
             <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
           </a>
         </div>
@@ -27,18 +26,17 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={30} aria-hidden="true"
-              focusable="false" />
+            <FaGithub size={30} aria-hidden="true" focusable="false" />
             <StyledSpan>{global.SR_GITHUB}</StyledSpan>
           </a>
         </div>
       </S.SocialIcons>
       <div>
         <small>
-          Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on{" "}
-          <a href="https://vercel.com/">Vercel</a>. View the{" "}
+          Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on{' '}
+          <a href="https://vercel.com/">Vercel</a>. View the{' '}
           <a href="https://github.com/sgnilreutr/portfolio-site">Source Code</a>
-          .{" "}
+          .{' '}
         </small>
         <small>© {new Date().getFullYear()}</small>
       </div>

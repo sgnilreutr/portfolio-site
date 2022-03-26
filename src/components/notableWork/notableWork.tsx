@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import * as local from "../../constants/notableWorkConstants"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import * as local from '../../constants/notableWorkConstants'
 
 interface WorkListItemType {
   notableListItem: string

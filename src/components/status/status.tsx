@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { FaTerminal } from "react-icons/fa"
-import * as local from "../../constants/statusConstants"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { FaTerminal } from 'react-icons/fa'
+import * as local from '../../constants/statusConstants'
 
 const Status = () => {
   const { status } = useStaticQuery(graphql`

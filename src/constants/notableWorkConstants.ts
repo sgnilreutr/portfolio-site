@@ -1,1 +1,1 @@
-export const SECTION_HEADER = "Notable work"
+export const SECTION_HEADER = 'Notable work'

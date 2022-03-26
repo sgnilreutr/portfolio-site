@@ -1,8 +1,8 @@
-import React from "react"
-import ReactMarkdown from "react-markdown"
-import { ContentType, ItemType } from "./projectTypes"
+import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import { ContentType, ItemType } from './projectTypes'
 
-const ERROR_MESSAGE = "Something went wrong."
+const ERROR_MESSAGE = 'Something went wrong.'
 
 const Projectcard = ({ item }: { item: ItemType }) => {
   const dataNode = item.node
@@ -35,7 +35,7 @@ const Projectcard = ({ item }: { item: ItemType }) => {
     <article className="project-container">
       <div className="project-header">
         <h3>{title}</h3>
-        <p style={{ fontSize: "0.7rem", margin: 0 }}>{date}</p>
+        <p style={{ fontSize: '0.7rem', margin: 0 }}>{date}</p>
       </div>
       {pageContent()}
     </article>
