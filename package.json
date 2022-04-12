@@ -5,7 +5,7 @@
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
     "assert": "2.0.0",
-    "framer-motion": "6.2.9",
+    "framer-motion": "6.2.10",
     "gatsby": "4.11.2",
     "gatsby-plugin-emotion": "7.11.0",
     "gatsby-plugin-hotjar": "1.1.1",
