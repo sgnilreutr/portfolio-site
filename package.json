@@ -57,7 +57,8 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint-staged": "lint-staged --config lint-staged.js",
-    "husky-install": "husky install"
+    "husky-install": "husky install",
+    "update-deps": "yarn upgrade-interactive --latest"
   },
   "repository": {
     "type": "git",
