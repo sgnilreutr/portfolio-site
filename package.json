@@ -2,8 +2,8 @@
   "name": "portfolio-site-rtuerlings",
   "version": "1.0.0",
   "dependencies": {
-    "@emotion/react": "11.10.0",
-    "@emotion/styled": "11.10.0",
+    "@emotion/react": "11.10.4",
+    "@emotion/styled": "11.10.4",
     "assert": "2.0.0",
     "framer-motion": "7.0.0",
     "gatsby": "4.20.0",
