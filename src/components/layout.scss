@@ -1,4 +1,4 @@
-@import "./typography";
+@import './typography';
 
 //Colors
 $color-text-LM: rgb(42, 41, 46);
@@ -48,10 +48,10 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
 footer {
@@ -346,6 +346,57 @@ h5 {
   }
 }
 
+.additional-tech-container {
+  margin-top: 40px;
+  @media only screen and (min-width: 740px) {
+    display: flex;
+    height: 80px;
+    flex-flow: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    div:nth-child(odd) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+    }
+    div:nth-child(even) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: auto;
+    }
+    span {
+      opacity: 0;
+      position: absolute;
+      padding: 10px;
+      background-color: #0f0f0f7b;
+      transition: all 0.2s ease-in-out;
+      font-weight: 600;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    i {
+      position: absolute;
+    }
+  }
+  @media only screen and (max-width: 738px) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    div {
+      align-items: center;
+      display: flex;
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
 .social-icons {
   opacity: 0.8;
 }
@@ -476,8 +527,8 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
+    'Liberation Mono', Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -493,12 +544,12 @@ code::after,
 tt::before,
 tt::after {
   letter-spacing: -0.2em;
-  content: " ";
+  content: ' ';
 }
 
 pre code::before,
 pre code::after,
 pre tt::before,
 pre tt::after {
-  content: "";
+  content: '';
 }
