@@ -1,9 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as local from '../../constants/notableWorkConstants'
+import Badge from '../elements/badge'
 
 interface WorkListItemType {
   notableListItem: string
+  label: 'dev' | 'pm'
 }
 
 const NotableWork = () => {
@@ -13,6 +15,7 @@ const NotableWork = () => {
         internalName
         notableWorkList {
           notableListItem
+          label
         }
       }
     }
@@ -28,7 +31,12 @@ const NotableWork = () => {
             (item: WorkListItemType, index: number) => {
               return (
                 <ul key={index}>
-                  <li>{item.notableListItem}</li>
+                  <li>
+                    <span style={{ marginRight: '10px' }}>
+                      {item.notableListItem}
+                    </span>
+                    <Badge label={item.label} variant={item.label} />
+                  </li>
                 </ul>
               )
             }

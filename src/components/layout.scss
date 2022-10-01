@@ -1,12 +1,5 @@
 @import './typography';
 
-//Colors
-$color-text-LM: rgb(42, 41, 46);
-$color-text-DM: rgba(238, 238, 238, 0.85);
-$color-background-LM: rgb(246, 246, 247);
-$color-background-DM: #0f0f0f;
-$color-orange: rgb(216, 136, 104);
-
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -14,14 +7,19 @@ html {
   font: 112.5%/1.45em serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  --color-text-LM: rgb(42, 41, 46);
+  --color-text-DM: rgba(238, 238, 238, 0.85);
+  --color-background-LM: rgb(246, 246, 247);
+  --color-background-DM: #0f0f0f;
+  --color-orange: rgb(216, 136, 104);
 }
 
 body {
   font-family: $inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $color-text-LM;
-  background-color: $color-background-LM;
+  color: vawr(--color-text-LM);
+  background-color: var(--color-background-LM);
 
   img {
     filter: grayscale(0);
@@ -29,11 +27,11 @@ body {
     border-style: none;
   }
 
-  transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
+  transition: color 0.2s ease-out 0s, background-color 0.2s ease-out 0s;
 
   &.dark {
-    color: $color-text-DM;
-    background-color: $color-background-DM;
+    color: var(--color-text-DM);
+    background-color: var(--color-background-DM);
 
     img {
       filter: grayscale(20%);
@@ -80,7 +78,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-  color: $color-orange;
+  color: var(--color-orange);
 }
 
 b,
@@ -347,7 +345,7 @@ h5 {
 }
 
 .additional-tech-container {
-  margin-top: 40px;
+  padding-top: 40px;
   @media only screen and (min-width: 740px) {
     display: flex;
     height: 80px;
@@ -402,7 +400,7 @@ h5 {
 }
 
 .hover_effect:hover {
-  color: $color-orange;
+  color: var(--color-orange);
   transition: ease-in-out 0.2s;
 }
 
