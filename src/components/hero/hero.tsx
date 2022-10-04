@@ -3,7 +3,7 @@ import isEmpty from 'lodash/isEmpty'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as global from '../../constants/globalConstants'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaRegCalendarCheck } from 'react-icons/fa'
 import StyledSpan from '../elements/screenReaderSpan'
 
 const Hero = () => {
@@ -69,6 +69,15 @@ const Hero = () => {
         >
           <FaLinkedin size={30} aria-hidden="true" focusable="false" />
           <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
+        </a>
+        <a
+          className="hover_effect social-icons"
+          href={global.CALENDLY_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaRegCalendarCheck size={30} aria-hidden="true" focusable="false" />
+          <StyledSpan>{global.SR_CALENDLY}</StyledSpan>
         </a>
       </div>
     </section>
