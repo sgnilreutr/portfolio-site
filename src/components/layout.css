@@ -25,11 +25,12 @@ html {
   --color-background-DM: #0f0f0f;
   --color-orange: rgb(216, 136, 104);
 }
+
 body {
   font-family: 'Inter Variable', sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: vawr(--color-text-LM);
+  color: var(--color-text-LM);
   background-color: var(--color-background-LM);
   transition: color 0.2s ease-out 0s, background-color 0.2s ease-out 0s;
   margin: 0 auto;
@@ -55,9 +56,11 @@ body.dark img {
   filter: grayscale(20%);
   opacity: 0.9 !important;
 }
+
 footer {
   padding: 2rem 0;
 }
+
 article,
 details,
 figure,
@@ -69,24 +72,29 @@ section,
 summary {
   display: block;
 }
+
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   color: inherit;
   transition: color ease-in 0.1s;
 }
+
 a:active,
 a:hover {
   outline-width: 0;
   color: var(--color-orange);
 }
+
 b,
 strong {
   font-weight: bolder;
 }
+
 small {
   font-size: 80%;
 }
+
 sub,
 sup {
   font-size: 75%;
@@ -94,12 +102,15 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
+
 code,
 kbd,
 pre,
@@ -107,6 +118,7 @@ samp {
   font-family: monospace;
   font-size: 1em;
 }
+
 button,
 input,
 optgroup,
@@ -115,23 +127,29 @@ textarea {
   font: inherit;
   margin: 0;
 }
+
 textarea {
   overflow: auto;
 }
+
 * {
   box-sizing: inherit;
 }
+
 *::before {
   box-sizing: inherit;
 }
+
 *::after {
   box-sizing: inherit;
 }
+
 img {
   max-width: 100%;
   margin: 0 0 1.45rem 0;
   padding: 0;
 }
+
 h1,
 h2,
 h3,
@@ -142,6 +160,7 @@ h6 {
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
+
 h1 {
   letter-spacing: normal;
   line-height: 60px;
@@ -157,12 +176,14 @@ h1 {
     font-size: 2.7rem;
   }
 }
+
 h2 {
   font-size: 1.3em;
   line-height: 1.4em;
   font-weight: 400;
   letter-spacing: normal;
 }
+
 h3 {
   margin: 0 0 0.6rem 0;
   padding: 0;
@@ -170,6 +191,7 @@ h3 {
   font-size: 1.1rem;
   line-height: 1.1;
 }
+
 h4 {
   margin: 0 0 0.6rem 0;
   padding: 0;
@@ -177,6 +199,7 @@ h4 {
   font-size: 1rem;
   line-height: 1.1;
 }
+
 h5 {
   margin: 0 0 1.45rem 0;
   padding: 0;
@@ -184,6 +207,7 @@ h5 {
   font-size: 0.78405rem;
   line-height: 1.1;
 }
+
 .description {
   line-height: 1.4em;
   font-weight: 400;
@@ -206,11 +230,13 @@ h5 {
     font-size: 1.3rem;
   }
 }
+
 .section-header {
   font-weight: bold;
   margin-bottom: 0.7rem;
   margin-top: 0;
 }
+
 @media only screen and (min-width: 872px) {
   .hero-container {
     padding-top: 10rem;
@@ -226,6 +252,7 @@ h5 {
     padding-top: 1rem;
   }
 }
+
 @media only screen and (min-width: 872px) {
   .container {
     padding: 3rem 0;
@@ -241,15 +268,18 @@ h5 {
     padding: 1rem 0;
   }
 }
+
 .container-attention {
   background: #232323;
-  color: #fff;
+  color: white;
   padding: 2rem 2.7rem 2rem 2.7rem;
   margin: 0 -50px;
 }
+
 .project-container {
   margin: 2rem auto 4rem;
 }
+
 @media only screen and (min-width: 482px) {
   .project-header {
     display: flex;
@@ -262,9 +292,11 @@ h5 {
     margin-bottom: 1rem;
   }
 }
+
 .project-overview {
   padding-top: 80px;
 }
+
 .project-overview-header-button {
   display: flex;
   flex-flow: row;
@@ -273,6 +305,7 @@ h5 {
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
+
 .hero-image {
   max-width: 500px;
   display: block;
@@ -294,6 +327,7 @@ h5 {
 .hero-image figure .gatsby-image-wrapper img {
   border-radius: 5%;
 }
+
 .hero-buttons {
   display: flex;
   flex-flow: row;
@@ -303,6 +337,7 @@ h5 {
 .hero-buttons a:not(:last-child) {
   padding-right: 1rem;
 }
+
 .tech-container {
   display: grid;
 }
@@ -322,8 +357,12 @@ h5 {
     grid-template-rows: auto;
   }
 }
+
 .additional-tech-container {
   padding-top: 40px;
+}
+.additional-tech-container.dark span {
+  background-color: rgba(15, 15, 15, 0.4823529412);
 }
 @media only screen and (min-width: 740px) {
   .additional-tech-container {
@@ -350,7 +389,7 @@ h5 {
     opacity: 0;
     position: absolute;
     padding: 10px;
-    background-color: #0f0f0f7b;
+    background-color: rgba(246, 246, 246, 0.4823529412);
     transition: all 0.2s ease-in-out;
     font-weight: 600;
   }
@@ -376,30 +415,36 @@ h5 {
     margin-left: 10px;
   }
 }
+
 .social-icons {
   opacity: 0.8;
 }
+
 .hover_effect:hover {
   color: var(--color-orange);
   transition: ease-in-out 0.2s;
 }
+
 ul {
   padding: 0;
   margin: 0 0 1.45rem 1.45rem;
   list-style-position: outside;
   list-style-image: none;
 }
+
 ol {
   margin: 0 0 1.45rem 1.45rem;
   padding: 0;
   list-style-position: outside;
   list-style-image: none;
 }
+
 p {
   margin: 0 0 1.45rem 0;
   padding: 0;
   letter-spacing: 0.05rem;
 }
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -407,6 +452,7 @@ figure {
   padding: 0;
   margin-bottom: 1.45rem;
 }
+
 pre {
   margin-left: 0;
   margin-right: 0;
@@ -417,6 +463,7 @@ pre {
   overflow: auto;
   word-wrap: normal;
 }
+
 form {
   margin-left: 0;
   margin-right: 0;
@@ -424,65 +471,80 @@ form {
   padding: 0;
   margin-bottom: 1.45rem;
 }
+
 hr {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   padding: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: rgba(0, 0, 0, 0.2);
+  background: hsla(0deg, 0%, 0%, 0.2);
   border: none;
   height: 1px;
   box-sizing: content-box;
   overflow: visible;
 }
+
 b {
   font-weight: bold;
 }
+
 strong {
   font-weight: bold;
 }
+
 th {
   font-weight: bold;
 }
+
 li {
   margin-bottom: 0.725rem;
 }
+
 ol li {
   padding-left: 0;
 }
+
 ul li {
   padding-left: 0;
 }
+
 li > ol {
   margin-left: 1.45rem;
   margin-bottom: 0.725rem;
   margin-top: 0.725rem;
 }
+
 li > ul {
   margin-left: 1.45rem;
   margin-bottom: 0.725rem;
   margin-top: 0.725rem;
 }
+
 blockquote *:last-child {
   margin-bottom: 0;
 }
+
 li *:last-child {
   margin-bottom: 0;
 }
+
 p *:last-child {
   margin-bottom: 0;
 }
+
 li > p {
   margin-bottom: 0.725rem;
 }
+
 code {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
+
 tt,
 code {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: hsla(0deg, 0%, 0%, 0.04);
   border-radius: 3px;
   font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
     'Liberation Mono', Menlo, Courier, monospace;
@@ -490,10 +552,12 @@ code {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
+
 pre code {
   background: none;
   line-height: 1.42;
 }
+
 code::before,
 code::after,
 tt::before,
@@ -501,9 +565,10 @@ tt::after {
   letter-spacing: -0.2em;
   content: ' ';
 }
+
 pre code::before,
 pre code::after,
 pre tt::before,
 pre tt::after {
   content: '';
-}
+} /*# sourceMappingURL=layout.css.map */

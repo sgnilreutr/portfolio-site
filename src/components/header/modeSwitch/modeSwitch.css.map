@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,sBAAsB,CAAC,mBAAmB,CAAC;EACzC,gBAAgB,EAAE,kBAAkB;CAIrC;;AALD,AAEE,sBAFoB,CAAC,mBAAmB,AAEvC,MAAM,CAAC;EACN,gBAAgB,EAAE,kBAAkB;CACrC;;AAGH,AAAA,sBAAsB,CAAC,mBAAmB,CAAC;EACzC,YAAY,EAAE,WAAW;CAC1B",
-    "sources": [
-        "modeSwitch.scss"
-    ],
-    "names": [],
-    "file": "modeSwitch.css"
-}
+{"version":3,"sources":["modeSwitch.scss","modeSwitch.css"],"names":[],"mappings":"AAAA;EACE,oCAAA;ACCF;ADAE;EACE,oCAAA;ACEJ;;ADEA;EACE,yBAAA;ACCF","file":"modeSwitch.css"}

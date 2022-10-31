@@ -346,6 +346,11 @@ h5 {
 
 .additional-tech-container {
   padding-top: 40px;
+  &.dark {
+    span {
+      background-color: #0f0f0f7b;
+    }
+  }
   @media only screen and (min-width: 740px) {
     display: flex;
     height: 80px;
@@ -369,7 +374,7 @@ h5 {
       opacity: 0;
       position: absolute;
       padding: 10px;
-      background-color: #0f0f0f7b;
+      background-color: #f6f6f67b;
       transition: all 0.2s ease-in-out;
       font-weight: 600;
       &:hover {
