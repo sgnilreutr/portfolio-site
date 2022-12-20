@@ -1,0 +1,9 @@
+query GetNotableWorkCollection {
+  notableWorkCollection {
+    items {
+      sys {
+        id
+      }
+    }
+  }
+}

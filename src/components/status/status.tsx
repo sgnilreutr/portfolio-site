@@ -1,18 +1,17 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { IIndex } from 'pages'
 import { FaTerminal } from 'react-icons/fa'
 import * as local from '../../constants/statusConstants'
 
-const Status = () => {
-  const { status } = useStaticQuery(graphql`
-    query {
-      status: contentfulComponentText(internalName: { eq: "Status" }) {
-        text {
-          text
-        }
-      }
-    }
-  `)
+const Status = ({ statusContent }: Pick<IIndex, 'statusContent'>) => {
+  // const { status } = useStaticQuery(graphql`
+  //   query {
+  //     status: contentfulComponentText(internalName: { eq: "Status" }) {
+  //       text {
+  //         text
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <section className="container">
@@ -20,7 +19,9 @@ const Status = () => {
         {local.STATUS}
         <FaTerminal size={15} />
       </h2>
-      {status && status.text.text && <p>{status.text.text}</p>}
+      {statusContent && statusContent?.text ? (
+        <p>{statusContent.text}</p>
+      ) : null}
     </section>
   )
 }

@@ -1,56 +1,29 @@
-import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import * as local from 'constants/allProjectsConstants'
+import Link from 'next/link'
+
 import Projectcard from './projectCard'
-import * as local from '../../constants/allProjectsConstants'
-import { ItemType } from './projectTypes'
 
-const AllProjects = () => {
-  const { projects } = useStaticQuery(graphql`
-    query {
-      projects: allContentfulProject {
-        edges {
-          node {
-            title
-            content {
-              ... on ContentfulComponentText {
-                id
-                internalName
-                text {
-                  text
-                }
-              }
-              ... on ContentfulHyperlink {
-                id
-                link
-                linkName
-              }
-            }
-            date(formatString: "DD MMMM YYYY")
-          }
-        }
-      }
-    }
-  `)
+import type { IProjects } from 'pages/projects'
 
-  const { edges } = projects
-
-  const mappedProjects = () => {
-    return projects && edges && edges.length > 0 ? (
-      edges.map((item: ItemType, index: string) => {
-        return <Projectcard key={index} item={item} />
-      })
-    ) : (
-      <small>{local.NO_PROJECTS}</small>
-    )
-  }
-
+const AllProjects = ({ projectContent }: IProjects) => {
   return (
     <div className="project-overview">
       <div className="project-overview-header-button">
         <h1 className="section-header">{local.SECTION_HEADER}</h1>
-        <Link to="/">{local.BUTTON_HOME}</Link>
+        <Link href="/">{local.BUTTON_HOME}</Link>
       </div>
-      <div className="container-attention">{mappedProjects()}</div>
+      <div className="container-attention">
+        {projectContent && projectContent.length > 0 ? (
+          projectContent.map((item) => {
+            if (item) {
+              return <Projectcard key={item.sys.id} item={item} />
+            }
+            return null
+          })
+        ) : (
+          <small>{local.NO_PROJECTS}</small>
+        )}
+      </div>
     </div>
   )
 }

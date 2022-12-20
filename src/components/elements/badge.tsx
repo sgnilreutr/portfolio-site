@@ -1,8 +1,8 @@
-import React from 'react'
 import styled from '@emotion/styled'
 
-interface IStyledBadge {
-  variant: 'dev' | 'pm'
+interface IBadge {
+  label: string
+  variant: string
 }
 
 const backgroundColorMap = {
@@ -19,10 +19,11 @@ const titleMap = {
   pm: 'I have participated in this project as a project manager',
 }
 
-const StyledBadge = styled.span<IStyledBadge>`
-    background-color: ${({ variant }) => backgroundColorMap[variant]};
+const StyledBadge = styled.span<Omit<IBadge, 'label'>>`
+    background-color: ${({ variant }) =>
+      backgroundColorMap[variant as keyof typeof backgroundColorMap]};
     border-radius: 0.375em;
-    color: ${({ variant }) => colorMap[variant]};
+    color: ${({ variant }) => colorMap[variant as keyof typeof colorMap]};
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 700;
@@ -33,15 +34,12 @@ const StyledBadge = styled.span<IStyledBadge>`
     white-space: nowrap;
 `
 
-const Badge = ({
-  label,
-  variant,
-}: {
-  label: string
-  variant: 'dev' | 'pm'
-}) => {
+const Badge = ({ label, variant }: { label: string; variant: string }) => {
   return (
-    <StyledBadge title={titleMap[variant]} variant={variant}>
+    <StyledBadge
+      title={titleMap[variant as keyof typeof titleMap]}
+      variant={variant}
+    >
       {label}
     </StyledBadge>
   )

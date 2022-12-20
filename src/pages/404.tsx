@@ -1,8 +1,6 @@
-import React from 'react'
-
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { Link } from 'gatsby'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
+import Link from 'next/link'
 
 const NotFoundPage = () => (
   <Layout>
@@ -14,8 +12,8 @@ const NotFoundPage = () => (
           🐴
         </span>
       </h1>
-      <p>I haven't made that page (yet).</p>
-      <Link to="/">Take me back!</Link>
+      <p>I haven&apost made that page (yet).</p>
+      <Link href="/">Take me back!</Link>
     </div>
   </Layout>
 )

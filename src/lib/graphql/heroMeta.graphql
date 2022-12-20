@@ -1,0 +1,9 @@
+query GetHeroMeta {
+  mainBannerCollection {
+    items {
+      sys {
+        id
+      }
+    }
+  }
+}

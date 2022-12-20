@@ -1,30 +1,38 @@
-import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { ContentType, ItemType } from './projectTypes'
+
+import type { ComponentText, Hyperlink, Project } from '__generated__/graphql'
 
 const ERROR_MESSAGE = 'Something went wrong.'
 
-const Projectcard = ({ item }: { item: ItemType }) => {
-  const dataNode = item.node
-  const { title, date, content } = dataNode
-
-  const ContentCreator = ({ content }: { content: ContentType }) => {
-    if (content.text) {
-      return <ReactMarkdown>{content.text.text}</ReactMarkdown>
-    } else if (content.link) {
-      return (
-        <pre>
-          <a href={content.link}>{content.linkName}</a>
-        </pre>
-      )
-    }
-    return null
+const ContentCreator = ({
+  content,
+}: {
+  content: ComponentText | Hyperlink | null
+}) => {
+  if (content && 'text' in content) {
+    return <ReactMarkdown>{content.text ?? ''}</ReactMarkdown>
+  } else if (
+    content &&
+    'link' in content &&
+    content?.link &&
+    content?.linkName
+  ) {
+    return (
+      <pre>
+        <a href={content.link}>{content.linkName}</a>
+      </pre>
+    )
   }
+  return null
+}
+
+const Projectcard = ({ item }: { item: Project }) => {
+  const { title, date, contentCollection } = item
 
   const pageContent = () => {
-    return content && content.length > 0 ? (
-      content.map((item: any, index: number) => (
-        <ContentCreator key={index} content={item} />
+    return contentCollection?.items && contentCollection.items.length > 0 ? (
+      contentCollection.items.map((item) => (
+        <ContentCreator key={item?.sys.id} content={item} />
       ))
     ) : (
       <div>{ERROR_MESSAGE}</div>

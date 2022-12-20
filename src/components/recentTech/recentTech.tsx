@@ -1,6 +1,4 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import * as local from '../../constants/recentTechConstants'
+import * as local from 'constants/recentTechConstants'
 import {
   SiAtlassian,
   SiGithub,
@@ -50,25 +48,25 @@ const additionalTechMap = [
   { title: 'Yarn', icon: <SiYarn size={ICON_SIZE} /> },
 ]
 const RecentTech = () => {
-  const { contentfulTechStack } = useStaticQuery(graphql`
-    query {
-      contentfulTechStack {
-        internalName
-        activeSkills {
-          internalName
-          text {
-            text
-          }
-        }
-      }
-    }
-  `)
+  // const { contentfulTechStack } = useStaticQuery(graphql`
+  //   query {
+  //     contentfulTechStack {
+  //       internalName
+  //       activeSkills {
+  //         internalName
+  //         text {
+  //           text
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <section className="container">
       <h2 className="section-header">{local.SECTION_HEADER}</h2>
       <div className="tech-container">
-        {contentfulTechStack &&
+        {/* {contentfulTechStack &&
           contentfulTechStack.activeSkills.length > 0 &&
           contentfulTechStack.activeSkills.map(
             (item: recentTechItemType, index: number) => (
@@ -82,7 +80,7 @@ const RecentTech = () => {
                 {item.text.text && <p>{item.text.text}</p>}
               </div>
             )
-          )}
+          )} */}
       </div>
       <h3 className="section-header">{local.ADDITIONAL_TECH}</h3>
       <div className="additional-tech-container">

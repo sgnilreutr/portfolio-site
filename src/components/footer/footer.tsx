@@ -1,7 +1,6 @@
-import React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import * as global from '../../constants/globalConstants'
-import StyledSpan from '../elements/screenReaderSpan'
+import * as global from 'constants/globalConstants'
+import StyledSpan from 'components/elements/screenReaderSpan'
 import * as S from './footerStyles'
 
 const Footer = () => {

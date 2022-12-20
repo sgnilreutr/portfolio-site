@@ -1,0 +1,13 @@
+query GetNotableWork($id: String!) {
+  notableWork(id: $id) {
+    internalName
+    notableWorkListCollection {
+      items {
+        ... on NotableItem {
+          label
+          notableListItem
+        }
+      }
+    }
+  }
+}

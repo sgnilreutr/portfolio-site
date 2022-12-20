@@ -1,36 +1,23 @@
-import React from 'react'
-import isEmpty from 'lodash/isEmpty'
-import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import * as global from '../../constants/globalConstants'
+import * as global from 'constants/globalConstants'
 import { FaGithub, FaLinkedin, FaRegCalendarCheck } from 'react-icons/fa'
-import StyledSpan from '../elements/screenReaderSpan'
+import StyledSpan from 'components/elements/screenReaderSpan'
+import Image from 'next/image'
+import type { IIndex } from 'pages'
 
-const Hero = () => {
-  const { HeroImage, HeroText } = useStaticQuery(graphql`
-    query {
-      HeroImage: file(relativePath: { eq: "Robbert_Tuerlings.jpg" }) {
-        name
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-      HeroText: contentfulMainBanner(internalName: { eq: "Hero" }) {
-        mainTitle
-        subTitle
-      }
-    }
-  `)
+const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
+  const { image, mainTitle, subTitle } = heroContent
 
-  const heroImage = () => {
-    if (!isEmpty(HeroImage)) {
+  const HeroImage = () => {
+    if (image && image?.url && image?.fileName) {
       return (
         <figure>
-          <GatsbyImage
-            image={HeroImage.childImageSharp.gatsbyImageData}
-            alt={`An profile image of the owner of this portfolio, ${HeroImage.name.replace(
-              '_',
-              ' '
+          <Image
+            width={200}
+            height={200}
+            src={image.url}
+            alt={`An profile image of the owner of this portfolio, ${image.fileName.replace(
+              '.png',
+              ''
             )}`}
           />
         </figure>
@@ -42,14 +29,12 @@ const Hero = () => {
 
   return (
     <section className="hero-container">
-      <div>
-        {HeroText && HeroText.mainTitle && <h1>{HeroText.mainTitle}</h1>}
-      </div>
-      {HeroText && HeroText.subTitle && (
-        <p className="description">{HeroText.subTitle}</p>
-      )}
+      <div>{mainTitle ? <h1>{mainTitle}</h1> : null}</div>
+      {subTitle ? <p className="description">{subTitle}</p> : null}
       <div style={{ display: `flex`, marginTop: '2rem' }}>
-        <div className="hero-image">{heroImage()}</div>
+        <div className="hero-image">
+          <HeroImage />
+        </div>
       </div>
       <div className="hero-buttons">
         <a
