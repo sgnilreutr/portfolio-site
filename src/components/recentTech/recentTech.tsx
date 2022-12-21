@@ -63,7 +63,7 @@ const RecentTech = ({
                   {techIconMap[internalName]}
                 </i>
               )}
-              {internalName && <h3>{internalName}</h3>}
+              {internalName && <h3 className="mt-2">{internalName}</h3>}
               {text && <p>{text}</p>}
             </div>
           )
