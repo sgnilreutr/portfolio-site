@@ -1,9 +1,8 @@
-import * as project from 'constants/allProjectsConstants'
-import * as local from 'constants/latestProjectsConstants'
+import * as project from '../allProjects/allProjectsConstants'
+import * as local from './latestProjectsConstants'
 import Link from 'next/link'
 
-import Projectcard from './projectCard'
-import * as S from './projectStyles'
+import Projectcard from '../projectCard'
 
 import type { IIndex } from 'pages'
 
@@ -13,8 +12,8 @@ const LatestProjects = ({
   latestProjectContent,
 }: Pick<IIndex, 'latestProjectContent'>) => {
   return (
-    <section className="container-attention">
-      <h2 className="section-header">{local.SECTION_HEADER}</h2>
+    <section className="px-10 py-8 mx-12 my-0 text-white bg-black dark:text-zinc-400 rounded-xl">
+      <h2 className="mt-0 mb-4">{local.SECTION_HEADER}</h2>
       {latestProjectContent.length > 0 ? (
         latestProjectContent.map((item) => {
           if (item) {
@@ -23,12 +22,12 @@ const LatestProjects = ({
           return null
         })
       ) : (
-        <small>{project.NO_PROJECTS}</small>
+        <span className="text-sm">{project.NO_PROJECTS}</span>
       )}
       {latestProjectContent.length > 3 && (
-        <S.ButtonContainer>
+        <div className="flex flex-col items-center justify-center">
           <Link href={PROJECT_LINK}>{local.VIEW_ARCHIVE}</Link>
-        </S.ButtonContainer>
+        </div>
       )}
     </section>
   )

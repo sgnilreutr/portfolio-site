@@ -2,56 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Lora Variable';
+  src: url('../fonts/Lora-VariableFont_wght.ttf');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-  font: 112.5%/1.45em serif;
+  font: 112.5%/1.45em sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
-  --color-text-LM: rgb(42, 41, 46);
-  --color-text-DM: rgba(238, 238, 238, 0.85);
-  --color-background-LM: rgb(246, 246, 247);
-  --color-background-DM: #0f0f0f;
-  --color-orange: rgb(216, 136, 104);
 }
 
 body {
-  font-family: $inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--color-text-LM);
-  background-color: var(--color-background-LM);
-
-  img {
-    filter: grayscale(0);
-    opacity: 1;
-    border-style: none;
-  }
-
-  transition: color 0.2s ease-out 0s, background-color 0.2s ease-out 0s;
-
-  &.dark {
-    color: var(--color-text-DM);
-    background-color: var(--color-background-DM);
-
-    img {
-      filter: grayscale(20%);
-      opacity: 0.9 !important;
-    }
-  }
-
   margin: 0 auto;
-  max-width: 900px;
-  padding: 0 1.0875rem 1.45rem;
   position: relative;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
-  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
 #__next {
@@ -61,4 +43,59 @@ body {
 
 a {
   color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora Variable', serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: normal;
+  line-height: 60px;
+  margin: 2.4rem 0 0 0;
+}
+
+h2 {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  letter-spacing: normal;
+}
+
+h3 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+
+h4 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+h5 {
+  margin: 0 0 1.45rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 0.78405rem;
+  line-height: 1.1;
+}
+
+p {
+  margin-bottom: 1.45rem;
+}
+
+pre {
+  margin: 1rem 0;
 }

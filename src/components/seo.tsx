@@ -4,6 +4,13 @@ const SITE_NAME = 'Robbert Tuerlings'
 const DEFAULT_META_DESC =
   'Software thinker. I build software that helps people and businesses.'
 
+// siteMetadata: {
+//   title: `Robbert Tuerlings`,
+//   description: `The personal website of a Dutch tech savvy analytical human. Always looking out for a new adventure`,
+//   author: `@sgnilreutr`,
+//   siteUrl: `https://robberttuerlings.online`,
+// },
+
 export default function SEO(seo: any) {
   const fullSeo = {
     ...seo,

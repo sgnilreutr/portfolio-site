@@ -18,5 +18,4 @@ export default {
     return [`eslint --max-warnings=10 ${filesToLint}`]
   },
   '*.{js,jsx,ts,tsx}': ['dprint fmt'],
-  // '*.{ts,tsx}': ['tsc-files --noEmit'],
 }

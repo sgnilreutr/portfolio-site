@@ -1,45 +1,65 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import * as global from 'constants/globalConstants'
-import StyledSpan from 'components/elements/screenReaderSpan'
-import * as S from './footerStyles'
 
 const Footer = () => {
   return (
-    <S.FooterWrapper>
-      <S.SocialIcons>
+    <footer className="flex flex-row flex-wrap justify-between px-10 py-4 mx-12 my-0 md:py-8 lg:py-12">
+      <div className="flex flex-row flex-wrap">
         <div style={{ marginRight: `16px` }}>
           <a
-            className="hover_effect social-icons"
+            className="duration-200 ease-in-out hover:text-orange-500 dark:hover:text-orange-700 opacity-80"
             href={global.LINKEDIN_LINK}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin size={30} aria-hidden="true" focusable="false" />
-            <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
+            <span className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-no-wrap border-0">
+              {global.SR_LINKEDIN}
+            </span>
           </a>
         </div>
         <div>
           <a
-            className="hover_effect social-icons"
+            className="duration-200 ease-in-out hover:text-orange-500 dark:hover:text-orange-700 opacity-80"
             href={global.GITHUB_LINK}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub size={30} aria-hidden="true" focusable="false" />
-            <StyledSpan>{global.SR_GITHUB}</StyledSpan>
+            <span className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-no-wrap border-0">
+              {global.SR_GITHUB}
+            </span>
           </a>
         </div>
-      </S.SocialIcons>
-      <div>
-        <small>
-          Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on{' '}
-          <a href="https://vercel.com/">Vercel</a>. View the{' '}
-          <a href="https://github.com/sgnilreutr/portfolio-site">Source Code</a>
-          .{' '}
-        </small>
-        <small>© {new Date().getFullYear()}</small>
       </div>
-    </S.FooterWrapper>
+      <div>
+        <span className="text-sm">
+          Build with{' '}
+          <a
+            className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700"
+            href="https://nextjs.org/"
+          >
+            NextJs
+          </a>
+          . Hosted on{' '}
+          <a
+            className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700"
+            href="https://vercel.com/"
+          >
+            Vercel
+          </a>
+          . View the{' '}
+          <a
+            className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700"
+            href="https://github.com/sgnilreutr/portfolio-site"
+          >
+            Source Code
+          </a>
+          .{' '}
+        </span>
+        <span className="text-sm">© {new Date().getFullYear()}</span>
+      </div>
+    </footer>
   )
 }
 

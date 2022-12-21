@@ -1,5 +1,5 @@
 import Layout from 'components/layout'
-import AllProjects from 'components/projects/allProjects'
+import AllProjects from 'components/projects/allProjects/allProjects'
 import getProjectData from 'lib/graphql/api/getProjectData'
 import type { ProjectCollection } from '__generated__/graphql'
 import convertDateInProjects from 'lib/convertDateInProjects'

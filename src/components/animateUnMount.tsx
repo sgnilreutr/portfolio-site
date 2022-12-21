@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 const AnimatedMountUnmount = ({ children }: { children: ReactNode }) => (
-  <div>{children}</div>
+  <div className="animate-fadeInUp">{children}</div>
 )
 
 export default AnimatedMountUnmount

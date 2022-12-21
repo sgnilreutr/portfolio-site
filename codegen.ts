@@ -1,11 +1,13 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
+import { loadEnvConfig } from '@next/env'
+loadEnvConfig(process.cwd())
 
 const config: CodegenConfig = {
   schema: [
     {
       'https://graphql.contentful.com/content/v1/spaces/qyxj595mgdfb': {
         headers: {
-          Authorization: `Bearer k6Q26ZH8o0Eh1l-bO6nGc20Fybfurd7dhiSKrb6YGe8`,
+          Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
         },
       },
     },

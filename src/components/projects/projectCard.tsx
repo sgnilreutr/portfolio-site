@@ -18,8 +18,13 @@ const ContentCreator = ({
     content?.linkName
   ) {
     return (
-      <pre>
-        <a href={content.link}>{content.linkName}</a>
+      <pre className="overflow-auto text-sm leading-normal">
+        <a
+          className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700 dark:active:text-orange-700"
+          href={content.link}
+        >
+          {content.linkName}
+        </a>
       </pre>
     )
   }
@@ -40,10 +45,10 @@ const Projectcard = ({ item }: { item: Project }) => {
   }
 
   return (
-    <article className="project-container">
-      <div className="project-header">
+    <article className="mx-auto mt-8 mb-16">
+      <div className="mb-4 sm:flex sm:flex-col sm:items-baseline">
         <h3>{title}</h3>
-        <p style={{ fontSize: '0.7rem', margin: 0 }}>{date}</p>
+        <p className="m-0 text-xs">{date}</p>
       </div>
       {pageContent()}
     </article>

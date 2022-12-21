@@ -1,17 +1,15 @@
-import styled from '@emotion/styled'
-
 interface IBadge {
   label: string
   variant: string
 }
 
 const backgroundColorMap = {
-  dev: `var(--color-orange)`,
-  pm: `var(--color-text-LM)`,
+  dev: `bg-orange-500 dark:bg-orange-700`,
+  pm: `bg-zinc-700`,
 }
 const colorMap = {
-  dev: `var(--color-text-LM)`,
-  pm: `var(--color-text-DM)`,
+  dev: `text-zinc-800`,
+  pm: `text-zinc-100 dark:text-zinc-400`,
 }
 
 const titleMap = {
@@ -19,29 +17,16 @@ const titleMap = {
   pm: 'I have participated in this project as a project manager',
 }
 
-const StyledBadge = styled.span<Omit<IBadge, 'label'>>`
-    background-color: ${({ variant }) =>
-      backgroundColorMap[variant as keyof typeof backgroundColorMap]};
-    border-radius: 0.375em;
-    color: ${({ variant }) => colorMap[variant as keyof typeof colorMap]};
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 1;
-    padding: 0.35em 0.65em;
-    text-align: center;
-    vertical-align; baseline;
-    white-space: nowrap;
-`
-
 const Badge = ({ label, variant }: { label: string; variant: string }) => {
   return (
-    <StyledBadge
+    <span
       title={titleMap[variant as keyof typeof titleMap]}
-      variant={variant}
+      className={`inline-block px-3 py-1 text-xs font-bold leading-none text-center whitespace-no-wrap rounded-md ${
+        backgroundColorMap[variant as keyof typeof backgroundColorMap]
+      } ${colorMap[variant as keyof typeof colorMap]}`}
     >
       {label}
-    </StyledBadge>
+    </span>
   )
 }
 
