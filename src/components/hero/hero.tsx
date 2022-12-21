@@ -1,6 +1,10 @@
+import {
+  CalendlySocial,
+  GithubSocial,
+  LinkedInSocial,
+} from 'components/socials/socials'
 import * as global from 'constants/globalConstants'
 import Image from 'next/image'
-import { FaGithub, FaLinkedin, FaRegCalendarCheck } from 'react-icons/fa'
 
 import type { IIndex } from 'pages'
 
@@ -28,30 +32,6 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
     }
   }
 
-  const SocialLink = ({
-    href,
-    icon,
-    label,
-  }: {
-    href: string
-    icon: JSX.Element
-    label: string
-  }) => {
-    return (
-      <a
-        className="mr-4 duration-200 ease-in-out hover:text-orange-500 dark:hover:bg-orange-700 opacity-80 last:mr-0"
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {icon}
-        <span className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-no-wrap border-0">
-          {label}
-        </span>
-      </a>
-    )
-  }
-
   return (
     <section className="px-10 py-4 mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
       <div>
@@ -70,27 +50,9 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
         </div>
       </div>
       <div className="flex flex-row items-center justify-center">
-        <SocialLink
-          href={global.GITHUB_LINK}
-          icon={<FaGithub size={30} aria-hidden="true" focusable="false" />}
-          label={global.SR_GITHUB}
-        />
-        <SocialLink
-          href={global.LINKEDIN_LINK}
-          icon={<FaLinkedin size={30} aria-hidden="true" focusable="false" />}
-          label={global.SR_LINKEDIN}
-        />
-        <SocialLink
-          href={global.CALENDLY_LINK}
-          icon={
-            <FaRegCalendarCheck
-              size={30}
-              aria-hidden="true"
-              focusable="false"
-            />
-          }
-          label={global.SR_CALENDLY}
-        />
+        <GithubSocial />
+        <LinkedInSocial />
+        <CalendlySocial />
       </div>
     </section>
   )
