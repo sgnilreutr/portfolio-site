@@ -1,36 +1,28 @@
-import React from 'react'
-import isEmpty from 'lodash/isEmpty'
-import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import * as global from '../../constants/globalConstants'
-import { FaGithub, FaLinkedin, FaRegCalendarCheck } from 'react-icons/fa'
-import StyledSpan from '../elements/screenReaderSpan'
+import {
+  CalendlySocial,
+  GithubSocial,
+  LinkedInSocial,
+} from 'components/socials/socials'
+import * as global from 'constants/globalConstants'
+import Image from 'next/image'
 
-const Hero = () => {
-  const { HeroImage, HeroText } = useStaticQuery(graphql`
-    query {
-      HeroImage: file(relativePath: { eq: "Robbert_Tuerlings.jpg" }) {
-        name
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-      HeroText: contentfulMainBanner(internalName: { eq: "Hero" }) {
-        mainTitle
-        subTitle
-      }
-    }
-  `)
+import type { IIndex } from 'pages'
 
-  const heroImage = () => {
-    if (!isEmpty(HeroImage)) {
+const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
+  const { image, mainTitle, subTitle } = heroContent
+
+  const HeroImage = () => {
+    if (image && image?.url && image?.fileName) {
       return (
-        <figure>
-          <GatsbyImage
-            image={HeroImage.childImageSharp.gatsbyImageData}
-            alt={`An profile image of the owner of this portfolio, ${HeroImage.name.replace(
-              '_',
-              ' '
+        <figure className="mb-6">
+          <Image
+            width={image?.width ?? 400}
+            height={image?.height ?? 400}
+            className="shadow-2xl rounded-xl dark:brightness-75"
+            src={image.url}
+            alt={`An profile image of the owner of this portfolio, ${image.fileName.replace(
+              '.png',
+              ''
             )}`}
           />
         </figure>
@@ -41,44 +33,26 @@ const Hero = () => {
   }
 
   return (
-    <section className="hero-container">
+    <section className="px-10 py-4 mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
       <div>
-        {HeroText && HeroText.mainTitle && <h1>{HeroText.mainTitle}</h1>}
+        {mainTitle ? (
+          <h1 className="text-5xl md:text-6xl">{mainTitle}</h1>
+        ) : null}
       </div>
-      {HeroText && HeroText.subTitle && (
-        <p className="description">{HeroText.subTitle}</p>
-      )}
-      <div style={{ display: `flex`, marginTop: '2rem' }}>
-        <div className="hero-image">{heroImage()}</div>
+      {subTitle ? (
+        <p className="mb-0 text-xl leading-6 md:text-3xl lg:text-4xl">
+          {subTitle}
+        </p>
+      ) : null}
+      <div className="flex mt-12">
+        <div className="block max-w-sm m-auto">
+          <HeroImage />
+        </div>
       </div>
-      <div className="hero-buttons">
-        <a
-          className="hover_effect social-icons"
-          href={global.GITHUB_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub size={30} aria-hidden="true" focusable="false" />
-          <StyledSpan>{global.SR_GITHUB}</StyledSpan>
-        </a>
-        <a
-          className="hover_effect social-icons"
-          href={global.LINKEDIN_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin size={30} aria-hidden="true" focusable="false" />
-          <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
-        </a>
-        <a
-          className="hover_effect social-icons"
-          href={global.CALENDLY_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaRegCalendarCheck size={30} aria-hidden="true" focusable="false" />
-          <StyledSpan>{global.SR_CALENDLY}</StyledSpan>
-        </a>
+      <div className="flex flex-row items-center justify-center">
+        <GithubSocial />
+        <LinkedInSocial />
+        <CalendlySocial />
       </div>
     </section>
   )

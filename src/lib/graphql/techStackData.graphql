@@ -1,0 +1,18 @@
+query GetTechStack {
+  techStackCollection {
+    items {
+      internalName
+      activeSkillsCollection {
+        items {
+          sys {
+            id
+          }
+          ... on ComponentText {
+            internalName
+            text
+          }
+        }
+      }
+    }
+  }
+}

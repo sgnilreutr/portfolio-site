@@ -1,0 +1,13 @@
+query GetHeroDetails($id: String!) {
+  mainBanner(id: $id) {
+    mainTitle
+    subTitle
+    image {
+      height
+      width
+      description
+      fileName
+      url
+    }
+  }
+}

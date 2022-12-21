@@ -1,46 +1,29 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import * as local from '../../constants/notableWorkConstants'
-import Badge from '../elements/badge'
+import * as local from './notableWorkConstants'
+import Badge from 'components/elements/badge'
+import { IIndex } from 'pages'
 
-interface WorkListItemType {
-  notableListItem: string
-  label: 'dev' | 'pm'
-}
-
-const NotableWork = () => {
-  const { WorkList } = useStaticQuery(graphql`
-    query {
-      WorkList: contentfulNotableWork(internalName: { eq: "Notable work" }) {
-        internalName
-        notableWorkList {
-          notableListItem
-          label
-        }
-      }
-    }
-  `)
-
+const NotableWork = ({ notableWorkList }: Pick<IIndex, 'notableWorkList'>) => {
   return (
-    <section className="container-attention">
-      <h2 className="section-header">{local.SECTION_HEADER}</h2>
+    <section className="px-10 py-8 mx-12 my-0 text-white bg-black rounded-xl dark:text-zinc-400">
+      <h2 className="mt-0 mb-4">{local.SECTION_HEADER}</h2>
       <div>
-        {WorkList &&
-          WorkList.notableWorkList.length > 0 &&
-          WorkList.notableWorkList.map(
-            (item: WorkListItemType, index: number) => {
-              return (
-                <ul key={index}>
-                  <li>
-                    <span style={{ marginRight: '10px' }}>
-                      {item.notableListItem}
-                    </span>
-                    <Badge label={item.label} variant={item.label} />
-                  </li>
-                </ul>
-              )
-            }
-          )}
+        {notableWorkList &&
+          notableWorkList.length > 0 &&
+          notableWorkList.map((item) => {
+            return (
+              <ul key={item?.sys.id} className="mb-4">
+                <li>
+                  <span style={{ marginRight: '10px' }}>
+                    {item?.notableListItem}
+                  </span>
+                  <Badge
+                    label={item?.label ?? ''}
+                    variant={item?.label ?? 'dev'}
+                  />
+                </li>
+              </ul>
+            )
+          })}
       </div>
     </section>
   )

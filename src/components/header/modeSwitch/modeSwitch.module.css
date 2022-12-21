@@ -1,0 +1,10 @@
+.react-toggle--checked .react-toggle-track {
+  background-color: bg-zinc-800 !important;
+}
+.react-toggle--checked .react-toggle-track:hover {
+  background-color: bg-zinc-700 !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  border-color: transparent;
+}

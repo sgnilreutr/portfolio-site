@@ -1,0 +1,5 @@
+query GetStatusDetails($id: String!) {
+  componentText(id: $id) {
+    text
+  }
+}

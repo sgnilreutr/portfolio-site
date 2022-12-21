@@ -1,73 +1,44 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet-async'
-import { useStaticQuery, graphql } from 'gatsby'
+import { NextSeo } from 'next-seo'
 
-interface SeoTypes {
-  description?: string
-  lang?: string
-  meta?: any[]
-  title: string
-}
+const SITE_NAME = 'Robbert Tuerlings'
+const DEFAULT_META_DESC =
+  'Software thinker. I build software that helps people and businesses.'
 
-function SEO({ description, lang, meta, title }: SeoTypes) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+// siteMetadata: {
+//   title: `Robbert Tuerlings`,
+//   description: `The personal website of a Dutch tech savvy analytical human. Always looking out for a new adventure`,
+//   author: `@sgnilreutr`,
+//   siteUrl: `https://robberttuerlings.online`,
+// },
 
-  const metaDescription = description || site.siteMetadata.description
-  // const defaultTitle = site.siteMetadata?.title
+export default function SEO(seo: any) {
+  const fullSeo = {
+    ...seo,
+    metaTitle: `${SITE_NAME} ${seo?.title && `| ${seo.title}`}`,
+    metaDescription: seo?.description ?? DEFAULT_META_DESC,
+    shareImage: seo?.image,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: 'en-US',
+    <NextSeo
+      title={fullSeo.metaTitle}
+      openGraph={{
+        url: `${fullSeo.url}`,
+        title: `${fullSeo.metaTitle}`,
+        description: `${fullSeo.metaDescription}`,
+        images: [
+          { url: fullSeo.shareImage },
+          // {
+          //   url: 'https://www.example.ie/og-image-01.jpg',
+          //   width: 800,
+          //   height: 600,
+          //   alt: 'Og Image Alt',
+          //   type: 'image/jpeg',
+          // },
+        ],
+        site_name: SITE_NAME,
+        type: fullSeo.type ?? 'website',
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-      ]}
     />
   )
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO

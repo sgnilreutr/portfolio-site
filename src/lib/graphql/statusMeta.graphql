@@ -1,0 +1,10 @@
+query GetStatusMeta {
+  componentTextCollection {
+    items {
+      sys {
+        id
+      }
+      internalName
+    }
+  }
+}

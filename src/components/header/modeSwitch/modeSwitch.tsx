@@ -1,11 +1,12 @@
-import React from 'react'
-import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
-import { useColorScheme } from '../../../hooks/useColorScheme'
-import Sun from '../../../images/sun.png'
+import './modeSwitch.module.css'
+
+import { useColorScheme } from 'hooks/useColorScheme'
+import Toggle from 'react-toggle'
+import Image from 'next/image'
+
 import Moon from '../../../images/moon.png'
-import * as S from './modeSwitchStyles'
-import './modeSwitch.css'
+import Sun from '../../../images/sun.png'
 
 const ModeSwitch = () => {
   const { isDark, setIsDark } = useColorScheme()
@@ -16,8 +17,20 @@ const ModeSwitch = () => {
         checked={isDark}
         onChange={(event) => setIsDark(event.target.checked)}
         icons={{
-          checked: <S.Img src={Moon} alt="dark-mode-icon" />,
-          unchecked: <S.Img src={Sun} alt="light-mode-icon" />,
+          checked: (
+            <Image
+              src={Moon}
+              alt="dark-mode-icon"
+              className="absolute max-h-4 max-w-4 top-[-3px] left-[-2px]"
+            />
+          ),
+          unchecked: (
+            <Image
+              src={Sun}
+              alt="light-mode-icon"
+              className="absolute max-h-4 max-w-4"
+            />
+          ),
         }}
         aria-label="Dark mode"
       />

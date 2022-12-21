@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lora Variable';
+  src: url('../fonts/Lora-VariableFont_wght.ttf');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-display: swap;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  font: 112.5%/1.45em sans-serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  position: relative;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora Variable', serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: normal;
+  line-height: 60px;
+  margin: 2.4rem 0 0 0;
+}
+
+h2 {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  letter-spacing: normal;
+}
+
+h3 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+
+h4 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+h5 {
+  margin: 0 0 1.45rem 0;
+  padding: 0;
+  color: inherit;
+  font-size: 0.78405rem;
+  line-height: 1.1;
+}
+
+p {
+  margin-bottom: 1.45rem;
+}
+
+pre {
+  margin: 1rem 0;
+}

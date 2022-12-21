@@ -1,10 +1,10 @@
-import React from 'react'
-import Header from './header/header'
-import Footer from './footer/footer'
-import './layout.css'
-import AnimatedMountUnmount from './animateUnMount'
+import AnimatedMountUnmount from 'components/animateUnMount'
+import Footer from 'components/footer/footer'
+import Header from 'components/header/header'
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+import type { ReactNode } from 'react'
+
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />

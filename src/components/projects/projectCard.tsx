@@ -1,30 +1,43 @@
-import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { ContentType, ItemType } from './projectTypes'
+
+import type { ComponentText, Hyperlink, Project } from '__generated__/graphql'
 
 const ERROR_MESSAGE = 'Something went wrong.'
 
-const Projectcard = ({ item }: { item: ItemType }) => {
-  const dataNode = item.node
-  const { title, date, content } = dataNode
-
-  const ContentCreator = ({ content }: { content: ContentType }) => {
-    if (content.text) {
-      return <ReactMarkdown>{content.text.text}</ReactMarkdown>
-    } else if (content.link) {
-      return (
-        <pre>
-          <a href={content.link}>{content.linkName}</a>
-        </pre>
-      )
-    }
-    return null
+const ContentCreator = ({
+  content,
+}: {
+  content: ComponentText | Hyperlink | null
+}) => {
+  if (content && 'text' in content) {
+    return <ReactMarkdown>{content.text ?? ''}</ReactMarkdown>
+  } else if (
+    content &&
+    'link' in content &&
+    content?.link &&
+    content?.linkName
+  ) {
+    return (
+      <pre className="overflow-auto text-sm leading-normal">
+        <a
+          className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700 dark:active:text-orange-700"
+          href={content.link}
+        >
+          {content.linkName}
+        </a>
+      </pre>
+    )
   }
+  return null
+}
+
+const Projectcard = ({ item }: { item: Project }) => {
+  const { title, date, contentCollection } = item
 
   const pageContent = () => {
-    return content && content.length > 0 ? (
-      content.map((item: any, index: number) => (
-        <ContentCreator key={index} content={item} />
+    return contentCollection?.items && contentCollection.items.length > 0 ? (
+      contentCollection.items.map((item) => (
+        <ContentCreator key={item?.sys.id} content={item} />
       ))
     ) : (
       <div>{ERROR_MESSAGE}</div>
@@ -32,10 +45,10 @@ const Projectcard = ({ item }: { item: ItemType }) => {
   }
 
   return (
-    <article className="project-container">
-      <div className="project-header">
+    <article className="mx-auto mt-8 mb-16">
+      <div className="mb-4 sm:flex sm:flex-col sm:items-baseline">
         <h3>{title}</h3>
-        <p style={{ fontSize: '0.7rem', margin: 0 }}>{date}</p>
+        <p className="m-0 text-xs">{date}</p>
       </div>
       {pageContent()}
     </article>

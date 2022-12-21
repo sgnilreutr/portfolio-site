@@ -1,46 +1,30 @@
-import React from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import * as global from '../../constants/globalConstants'
-import StyledSpan from '../elements/screenReaderSpan'
-import * as S from './footerStyles'
+import StyledLink from 'components/elements/styledLink'
+import { GithubSocial, LinkedInSocial } from 'components/socials/socials'
 
 const Footer = () => {
   return (
-    <S.FooterWrapper>
-      <S.SocialIcons>
-        <div style={{ marginRight: `16px` }}>
-          <a
-            className="hover_effect social-icons"
-            href={global.LINKEDIN_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={30} aria-hidden="true" focusable="false" />
-            <StyledSpan>{global.SR_LINKEDIN}</StyledSpan>
-          </a>
+    <footer className="flex flex-row flex-wrap justify-between px-10 py-4 mx-12 my-0 md:py-8 lg:py-12">
+      <div className="flex flex-row flex-wrap">
+        <div className="mr-4">
+          <GithubSocial />
         </div>
         <div>
-          <a
-            className="hover_effect social-icons"
-            href={global.GITHUB_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub size={30} aria-hidden="true" focusable="false" />
-            <StyledSpan>{global.SR_GITHUB}</StyledSpan>
-          </a>
+          <LinkedInSocial />
         </div>
-      </S.SocialIcons>
-      <div>
-        <small>
-          Build with <a href="https://www.gatsbyjs.com/">Gatsby</a>. Hosted on{' '}
-          <a href="https://vercel.com/">Vercel</a>. View the{' '}
-          <a href="https://github.com/sgnilreutr/portfolio-site">Source Code</a>
-          .{' '}
-        </small>
-        <small>© {new Date().getFullYear()}</small>
       </div>
-    </S.FooterWrapper>
+      <div>
+        <span className="text-sm">
+          Build with <StyledLink href="https://nextjs.org/">NextJs</StyledLink>.
+          Hosted on <StyledLink href="https://vercel.com/">Vercel</StyledLink>.
+          View the{' '}
+          <StyledLink href="https://github.com/sgnilreutr/portfolio-site">
+            Source Code
+          </StyledLink>
+          .{' '}
+        </span>
+        <span className="text-sm">© {new Date().getFullYear()}</span>
+      </div>
+    </footer>
   )
 }
 
