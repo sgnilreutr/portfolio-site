@@ -2,6 +2,7 @@ import {
   CalendlySocial,
   GithubSocial,
   LinkedInSocial,
+  TwitterSocial,
 } from 'components/socials/socials'
 import * as global from 'constants/globalConstants'
 import Image from 'next/image'
@@ -53,6 +54,7 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
         <GithubSocial />
         <LinkedInSocial />
         <CalendlySocial />
+        <TwitterSocial />
       </div>
     </section>
   )

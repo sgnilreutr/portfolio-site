@@ -1,5 +1,9 @@
 import StyledLink from 'components/elements/styledLink'
-import { GithubSocial, LinkedInSocial } from 'components/socials/socials'
+import {
+  GithubSocial,
+  LinkedInSocial,
+  TwitterSocial,
+} from 'components/socials/socials'
 
 const Footer = () => {
   return (
@@ -10,6 +14,9 @@ const Footer = () => {
         </div>
         <div>
           <LinkedInSocial />
+        </div>
+        <div>
+          <TwitterSocial />
         </div>
       </div>
       <div>
