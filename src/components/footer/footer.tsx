@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="mr-4">
           <GithubSocial />
         </div>
-        <div>
+        <div className="mr-4">
           <LinkedInSocial />
         </div>
         <div>
