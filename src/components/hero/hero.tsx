@@ -34,7 +34,7 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
   }
 
   return (
-    <section className="px-10 py-4 mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
+    <section className="px-4 md:px-10 py-4 mx-2 md:mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
       <div>
         {mainTitle ? (
           <h1 className="text-5xl md:text-6xl">{mainTitle}</h1>

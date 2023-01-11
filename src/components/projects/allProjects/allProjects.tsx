@@ -17,7 +17,7 @@ const AllProjects = ({ projectContent }: IProjects) => {
           {local.BUTTON_HOME}
         </Link>
       </div>
-      <div className="px-10 py-8 mx-12 my-0 text-white bg-black dark:text-zinc-400 rounded-xl">
+      <div className="px-4 md:px-10 py-8 mx-2 md:mx-12 my-0 text-white bg-black dark:text-zinc-400 rounded-xl">
         {projectContent && projectContent.length > 0 ? (
           projectContent.map((item) => {
             if (item) {

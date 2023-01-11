@@ -80,10 +80,10 @@ const RecentTech = ({
       <div
         key={title}
         title={title}
-        className="flex items-center justify-center md:odd:mb-auto md:even:mt-auto"
+        className="flex-col md:flex-row flex items-center justify-center md:odd:mb-auto md:even:mt-auto"
       >
-        <i className="absolute">{icon}</i>
-        <span className="absolute p-2 transition-opacity duration-200 ease-in-out opacity-0 hover:opacity-100 bg-zinc-100/[.8] dark:bg-zinc-900/[.8]">
+        <i className="relative p-4 md:p-0 md:absolute">{icon}</i>
+        <span className="text-center md:absolute p-2 transition-opacity duration-200 ease-in-out md:opacity-0 md:hover:opacity-100 bg-zinc-100/[.8] dark:bg-zinc-900/[.8]">
           {title}
         </span>
       </div>
@@ -91,13 +91,13 @@ const RecentTech = ({
   }
 
   return (
-    <section className="px-10 py-4 mx-12 my-0 md:py-8 lg:py-12">
+    <section className="px-4 md:px-10 py-4 mx-2 md:mx-12 my-0 md:py-8 lg:py-12">
       <h2 className="mt-0 mb-4">{local.SECTION_HEADER}</h2>
       <div className="grid grid-cols-1 gap-y-4 md:gap-y-6 md:gap-x-10 md:grid-cols-2">
         {pageContentRecentTech()}
       </div>
       <h3 className="mt-6 mb-4">{local.ADDITIONAL_TECH}</h3>
-      <div className="grid grid-cols-2 pt-10 md:flex md:flex-wrap md:flex-row md:justify-between md:relative md:h-20">
+      <div className="grid grid-cols-2 pt-4 md:pt-10 md:flex md:flex-wrap md:flex-row md:justify-between md:relative md:h-20">
         {pageContentAdditionalTech()}
       </div>
     </section>

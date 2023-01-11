@@ -12,7 +12,7 @@ const LatestProjects = ({
   latestProjectContent,
 }: Pick<IIndex, 'latestProjectContent'>) => {
   return (
-    <section className="px-10 py-8 mx-12 my-0 text-white bg-black dark:text-zinc-400 rounded-xl">
+    <section className="px-4 md:px-10 py-8 mx-2 md:mx-12 my-0 text-white bg-black dark:text-zinc-400 rounded-xl">
       <h2 className="mt-0 mb-4">{local.SECTION_HEADER}</h2>
       {latestProjectContent.length > 0 ? (
         latestProjectContent.map((item) => {
