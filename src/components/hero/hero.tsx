@@ -1,3 +1,4 @@
+import Stack from 'components/elements/stack'
 import {
   CalendlySocial,
   GithubSocial,
@@ -34,7 +35,7 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
   }
 
   return (
-    <section className="px-4 md:px-10 py-4 mx-2 md:mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
+    <section className="px-4 py-4 mx-2 my-0 md:px-10 md:mx-12 md:py-8 md:pt-32 lg:pt-40">
       <div>
         {mainTitle ? (
           <h1 className="text-5xl md:text-6xl">{mainTitle}</h1>
@@ -50,12 +51,12 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
           <HeroImage />
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center">
+      <Stack align="center" justify="center" spacing="large">
         <GithubSocial />
         <LinkedInSocial />
         <CalendlySocial />
         <TwitterSocial />
-      </div>
+      </Stack>
     </section>
   )
 }

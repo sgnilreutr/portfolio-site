@@ -1,3 +1,4 @@
+import Stack from 'components/elements/stack'
 import ReactMarkdown from 'react-markdown'
 
 import type { ComponentText, Hyperlink, Project } from '__generated__/graphql'
@@ -18,7 +19,7 @@ const ContentCreator = ({
     content?.linkName
   ) {
     return (
-      <pre className="overflow-auto text-sm leading-normal">
+      <pre className="overflow-auto text-sm">
         <a
           className="underline duration-100 ease-in bg-transparent hover:text-orange-500 active:text-orange-500 dark:hover:text-orange-700 dark:active:text-orange-700"
           href={content.link}
@@ -35,22 +36,28 @@ const Projectcard = ({ item }: { item: Project }) => {
   const { title, date, contentCollection } = item
 
   const pageContent = () => {
-    return contentCollection?.items && contentCollection.items.length > 0 ? (
-      contentCollection.items.map((item) => (
-        <ContentCreator key={item?.sys.id} content={item} />
-      ))
-    ) : (
-      <div>{ERROR_MESSAGE}</div>
+    return (
+      <Stack direction="vertical">
+        {contentCollection?.items && contentCollection.items.length > 0 ? (
+          contentCollection.items.map((item) => (
+            <ContentCreator key={item?.sys.id} content={item} />
+          ))
+        ) : (
+          <div>{ERROR_MESSAGE}</div>
+        )}
+      </Stack>
     )
   }
 
   return (
-    <article className="mx-auto mt-8 mb-16">
-      <div className="mb-4 sm:flex sm:flex-col sm:items-baseline">
-        <h3>{title}</h3>
-        <p className="m-0 text-xs">{date}</p>
-      </div>
-      {pageContent()}
+    <article>
+      <Stack direction="vertical" spacing="small">
+        <Stack direction="vertical" spacing="mini">
+          <h3>{title}</h3>
+          <p className="text-xs">{date}</p>
+        </Stack>
+        {pageContent()}
+      </Stack>
     </article>
   )
 }

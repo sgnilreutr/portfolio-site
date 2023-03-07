@@ -19,6 +19,8 @@ import {
 
 import type { IIndex } from 'pages'
 import type { ComponentText } from '__generated__/graphql'
+import ContentSection from 'components/elements/contentSection'
+import Stack from 'components/elements/stack'
 
 const ICON_SIZE = 40
 
@@ -57,15 +59,15 @@ const RecentTech = ({
         if (item) {
           const { internalName, text, sys } = item as ComponentText
           return (
-            <div key={sys.id}>
+            <Stack key={sys.id} direction="vertical" align="start">
               {internalName && (
-                <i className="duration-200 ease-in-out hover:text-orange-500 dark:hover:bg-orange-700">
+                <div className="duration-200 ease-in-out hover:text-orange-500 dark:hover:bg-orange-700">
                   {techIconMap[internalName]}
-                </i>
+                </div>
               )}
               {internalName && <h3>{internalName}</h3>}
               {text && <p>{text}</p>}
-            </div>
+            </Stack>
           )
         }
         return null
@@ -80,7 +82,7 @@ const RecentTech = ({
       <div
         key={title}
         title={title}
-        className="flex-col md:flex-row flex items-center justify-center md:odd:mb-auto md:even:mt-auto"
+        className="flex flex-col items-center justify-center md:flex-row md:odd:mb-auto md:even:mt-auto"
       >
         <i className="relative p-4 md:p-0 md:absolute">{icon}</i>
         <span className="text-center md:absolute p-2 transition-opacity duration-200 ease-in-out md:opacity-0 md:hover:opacity-100 bg-zinc-100/[.8] dark:bg-zinc-900/[.8]">
@@ -91,7 +93,7 @@ const RecentTech = ({
   }
 
   return (
-    <section className="px-4 md:px-10 py-4 mx-2 md:mx-12 my-0 md:py-8 lg:py-12">
+    <ContentSection>
       <h2 className="mt-0 mb-4">{local.SECTION_HEADER}</h2>
       <div className="grid grid-cols-1 gap-y-4 md:gap-y-6 md:gap-x-10 md:grid-cols-2">
         {pageContentRecentTech()}
@@ -100,7 +102,7 @@ const RecentTech = ({
       <div className="grid grid-cols-2 pt-4 md:pt-10 md:flex md:flex-wrap md:flex-row md:justify-between md:relative md:h-20">
         {pageContentAdditionalTech()}
       </div>
-    </section>
+    </ContentSection>
   )
 }
 

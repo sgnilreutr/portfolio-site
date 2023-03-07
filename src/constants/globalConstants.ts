@@ -7,3 +7,4 @@ export const SR_CALENDLY = 'Plan a 30 minute meeting with the author'
 export const SR_GITHUB = "A link to the author's GitHub profile"
 export const SR_LINKEDIN = "A link to the author's LinkedIn profile"
 export const SR_TWITTER = "A link to the author's Twitter profile"
+export const LOADING_CONTENT = 'Loading the content'

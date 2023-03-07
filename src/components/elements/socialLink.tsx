@@ -9,7 +9,7 @@ const SocialLink = ({
 }) => {
   return (
     <a
-      className="mr-4 duration-200 ease-in-out hover:text-orange-500 dark:text:bg-orange-700 opacity-80 last:mr-0"
+      className="duration-200 ease-in-out hover:text-orange-500 dark:text:bg-orange-700 opacity-80 last:mr-0"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

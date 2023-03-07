@@ -28,4 +28,15 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /gap-/,
+    },
+    {
+      pattern: /items-/,
+    },
+    {
+      pattern: /justify-/,
+    },
+  ],
 }
