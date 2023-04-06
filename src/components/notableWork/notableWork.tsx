@@ -14,9 +14,7 @@ const NotableWork = ({ notableWorkList }: Pick<IIndex, 'notableWorkList'>) => {
             return (
               <ul key={item?.sys.id} className="mb-4">
                 <li>
-                  <span style={{ marginRight: '10px' }}>
-                    {item?.notableListItem}
-                  </span>
+                  <span className="mr-2">{item?.notableListItem}</span>
                   <Badge
                     label={item?.label ?? ''}
                     variant={item?.label ?? 'dev'}
