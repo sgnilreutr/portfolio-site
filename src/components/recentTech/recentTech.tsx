@@ -4,7 +4,7 @@ import {
   SiGithub,
   SiGmail,
   SiGraphql,
-  SiMaterialui,
+  SiMui,
   SiNextdotjs,
   SiReact,
   SiRedux,
@@ -28,7 +28,7 @@ const techIconMap: { [key: string]: JSX.Element } = {
   React: <SiReact size={ICON_SIZE} />,
   Redux: <SiRedux size={ICON_SIZE} />,
   TypeScript: <SiTypescript size={ICON_SIZE} />,
-  MUI: <SiMaterialui size={ICON_SIZE} />,
+  MUI: <SiMui size={ICON_SIZE} />,
   default: <div />,
 }
 

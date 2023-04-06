@@ -1,6 +1,6 @@
+import InternalLink from 'components/elements/InternalLink'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
-import Link from 'next/link'
 
 const NotFoundPage = () => (
   <Layout>
@@ -16,12 +16,7 @@ const NotFoundPage = () => (
         I haven&apos; made that page (yet).
       </p>
       <div className="flex items-center justify-center mt-10">
-        <Link
-          className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
-          href="/"
-        >
-          Take me back!
-        </Link>
+        <InternalLink href="/">Take me back!</InternalLink>
       </div>
     </div>
   </Layout>

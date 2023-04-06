@@ -4,6 +4,13 @@ export function useColorScheme() {
   const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
+    const check =
+      window.localStorage.theme === 'dark' ||
+      (!('theme' in window.localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+    console.log(check)
+
     setIsDark(
       window.localStorage.theme === 'dark' ||
         (!('theme' in window.localStorage) &&

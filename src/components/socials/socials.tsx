@@ -7,10 +7,12 @@ import {
   FaTwitter,
 } from 'react-icons/fa'
 
+const ICON_SIZE = 30
+
 export const GithubSocial = () => (
   <SocialLink
     href={global.GITHUB_LINK}
-    icon={<FaGithub size={30} aria-hidden="true" focusable="false" />}
+    icon={<FaGithub size={ICON_SIZE} aria-hidden="true" focusable="false" />}
     label={global.SR_GITHUB}
   />
 )
@@ -18,7 +20,7 @@ export const GithubSocial = () => (
 export const LinkedInSocial = () => (
   <SocialLink
     href={global.LINKEDIN_LINK}
-    icon={<FaLinkedin size={30} aria-hidden="true" focusable="false" />}
+    icon={<FaLinkedin size={ICON_SIZE} aria-hidden="true" focusable="false" />}
     label={global.SR_LINKEDIN}
   />
 )
@@ -26,7 +28,7 @@ export const LinkedInSocial = () => (
 export const TwitterSocial = () => (
   <SocialLink
     href={global.TWITTER_LINK}
-    icon={<FaTwitter size={30} aria-hidden="true" focusable="false" />}
+    icon={<FaTwitter size={ICON_SIZE} aria-hidden="true" focusable="false" />}
     label={global.SR_TWITTER}
   />
 )
@@ -34,7 +36,13 @@ export const TwitterSocial = () => (
 export const CalendlySocial = () => (
   <SocialLink
     href={global.CALENDLY_LINK}
-    icon={<FaRegCalendarCheck size={30} aria-hidden="true" focusable="false" />}
+    icon={
+      <FaRegCalendarCheck
+        size={ICON_SIZE}
+        aria-hidden="true"
+        focusable="false"
+      />
+    }
     label={global.SR_CALENDLY}
   />
 )

@@ -6,18 +6,14 @@ import Projectcard from '../projectCard'
 import type { IProjects } from 'pages/projects'
 import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
+import InternalLink from 'components/elements/InternalLink'
 
 const AllProjects = ({ projectContent }: IProjects) => {
   return (
     <div className="pt-20">
       <Stack align="center" justify="between">
         <h1 className="mt-0 mb-4">{local.SECTION_HEADER}</h1>
-        <Link
-          href="/"
-          className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
-        >
-          {local.BUTTON_HOME}
-        </Link>
+        <InternalLink href="/">{local.BUTTON_HOME}</InternalLink>
       </Stack>
       <ContentSection withDarkBackground>
         <Stack direction="vertical" spacing="colossal">

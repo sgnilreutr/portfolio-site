@@ -9,8 +9,8 @@ const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={classNames(inter.variable)}>
-      <Component {...pageProps} />
+    <main className={classNames(inter.variable, lora.variable)}>
+      <Component {...pageProps} />;
     </main>
   )
 }

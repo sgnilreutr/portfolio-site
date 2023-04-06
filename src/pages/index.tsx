@@ -19,6 +19,8 @@ import type {
   Query,
   TechStackCollection,
 } from '__generated__/graphql'
+import Podcast from 'components/podcast/Podcast'
+import Stack from 'components/elements/stack'
 const SEO_TITLE = 'Software thinker'
 
 export interface IIndex {
@@ -40,7 +42,7 @@ const Index = ({
     <Layout>
       <SEO title={SEO_TITLE} />
       {heroContent ? <Hero heroContent={heroContent} /> : null}
-      <div>
+      <Stack direction="vertical" spacing="huge">
         {statusContent ? <Status statusContent={statusContent} /> : null}
         {latestProjectContent ? (
           <LatestProjects latestProjectContent={latestProjectContent} />
@@ -51,7 +53,8 @@ const Index = ({
         {notableWorkList ? (
           <NotableWork notableWorkList={notableWorkList} />
         ) : null}
-      </div>
+        <Podcast />
+      </Stack>
     </Layout>
   )
 }
