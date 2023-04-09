@@ -4,16 +4,8 @@
 
 @layer base {
   body {
-    @apply antialiased bg-black dark:text-white dark:bg-gray-900;
+    @apply antialiased text-zinc-800 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400;
   }
-}
-
-@font-face {
-  font-family: 'Lora Variable';
-  src: url('../fonts/Lora-VariableFont_wght.ttf');
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
-  font-display: swap;
 }
 
 #__next {
@@ -27,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lora Variable', serif;
+  font-family: var(--font-lora), serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }

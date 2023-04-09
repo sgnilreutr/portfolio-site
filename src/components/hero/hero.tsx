@@ -18,14 +18,15 @@ const Hero = ({ heroContent }: Pick<IIndex, 'heroContent'>) => {
       return (
         <figure className="mb-6">
           <Image
-            width={image?.width ?? 400}
-            height={image?.height ?? 400}
-            className="shadow-2xl rounded-xl dark:brightness-75"
-            src={image.url}
             alt={`An profile image of the owner of this portfolio, ${image.fileName.replace(
               '.png',
               ''
             )}`}
+            className="shadow-2xl rounded-xl dark:brightness-75"
+            height={image?.height ?? 400}
+            quality={100}
+            src={image.url}
+            width={image?.width ?? 400}
           />
         </figure>
       )
