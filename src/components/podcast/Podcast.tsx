@@ -7,8 +7,14 @@ import StyledLink from 'components/elements/styledLink'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 const PODCAST_NAME = 'Recursive podcast'
-const PODCAST_DESCRIPTION =
-  'My friend Albin Groen and I have a podcast where we discuss technology, design, side-projects, and various other topics.'
+const ALBIN_HOMEPAGE = 'https://abgn.me/'
+const PODCAST_DESCRIPTION = (
+  <>
+    My friend <StyledLink href={ALBIN_HOMEPAGE}>Albin Groen</StyledLink> and I
+    have a podcast where we discuss technology, design, side-projects, and
+    various other topics.
+  </>
+)
 const PODCAST_URL = 'https://www.recursivepod.com/'
 const LINK_TEXT = 'Visit our site'
 
