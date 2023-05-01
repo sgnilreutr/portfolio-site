@@ -1,5 +1,4 @@
 import * as local from './allProjectsConstants'
-import Link from 'next/link'
 
 import Projectcard from '../projectCard'
 
