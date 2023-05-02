@@ -1,5 +1,4 @@
 import Hero from 'components/hero/hero'
-import Layout from 'components/layout'
 // import NotableWork from 'components/notableWork/notableWork'
 import LatestProjects from 'components/projects/latestProjects/latestProjects'
 import SEO from 'components/seo'
@@ -24,7 +23,7 @@ const Index = ({
 }: // notableWorkList,
 IndexProps) => {
   return (
-    <Layout>
+    <>
       <SEO title={SEO_TITLE} />
       <Hero heroContent={heroContent} />
       <Stack direction="vertical" spacing="huge">
@@ -33,7 +32,7 @@ IndexProps) => {
         {/* <NotableWork notableWorkList={notableWorkList} /> */}
         <Podcast />
       </Stack>
-    </Layout>
+    </>
   )
 }
 

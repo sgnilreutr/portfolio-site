@@ -1,9 +1,8 @@
 import InternalLink from 'components/elements/internalLink'
-import Layout from 'components/layout'
 import SEO from 'components/seo'
 
 const NotFoundPage = () => (
-  <Layout>
+  <>
     <SEO title="404: Not found" />
     <div className="px-10 py-4 mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
       <h1 className="text-5xl md:text-6xl">
@@ -19,7 +18,7 @@ const NotFoundPage = () => (
         <InternalLink href="/">Take me back!</InternalLink>
       </div>
     </div>
-  </Layout>
+  </>
 )
 
 export default NotFoundPage

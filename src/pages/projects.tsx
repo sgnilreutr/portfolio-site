@@ -1,5 +1,4 @@
 import type { ProjectCollection } from '__generated__/graphql'
-import Layout from 'components/layout'
 import AllProjects from 'components/projects/allProjects/allProjects'
 import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
 
@@ -9,9 +8,9 @@ export interface ProjectsProps {
 
 const Projects = ({ projectContent }: ProjectsProps) => {
   return (
-    <Layout>
+    <>
       {projectContent ? <AllProjects projectContent={projectContent} /> : null}
-    </Layout>
+    </>
   )
 }
 

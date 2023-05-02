@@ -3,7 +3,6 @@ import { useColorScheme } from 'hooks/useColorScheme'
 import useMediaColorScheme from 'hooks/useMediaColorScheme'
 import classNames from 'lib/classNames'
 import type { ReactNode } from 'react'
-import { useEffect, useState } from 'react'
 import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
 export const colorSchemeMode = {
@@ -12,18 +11,11 @@ export const colorSchemeMode = {
   light: 'light',
 } as const
 
-const schemeToIcon: Record<
-  Exclude<keyof typeof colorSchemeMode, 'auto'>,
-  JSX.Element
-> = {
-  dark: <HiOutlineMoon />,
-  light: <HiOutlineSun />,
-}
+export type ColorSchemeMode =
+  (typeof colorSchemeMode)[keyof typeof colorSchemeMode]
+export type SystemColorSchemeMode = ColorSchemeMode | undefined
 
-const schemeToDisplay: Record<
-  keyof typeof colorSchemeMode,
-  Record<string, ReactNode>
-> = {
+const schemeToDisplay: Record<ColorSchemeMode, Record<string, ReactNode>> = {
   auto: {
     icon: null,
     before: 'hover:before:content-["system"]',
@@ -38,62 +30,48 @@ const schemeToDisplay: Record<
   },
 }
 
+const getActiveIcon = (
+  colorScheme: ColorSchemeMode,
+  systemScheme: SystemColorSchemeMode
+): ReactNode => {
+  if (colorScheme === 'auto') {
+    return systemScheme === 'dark'
+      ? schemeToDisplay.dark.icon
+      : schemeToDisplay.light.icon
+  }
+  return schemeToDisplay[colorScheme].icon
+}
+
 const DEFAULT_STYLES =
   'flex gap-2 items-center before:text-zinc-400 before:text-[12px] before:font-mono'
 
 const ModeSwitch = () => {
-  const [schemeMode, setSchemeMode] = useState<keyof typeof colorSchemeMode>(
-    colorSchemeMode.auto
-  )
-  const [activeIcon, setActiveIcon] = useState<JSX.Element | null>(null)
-  const { setColorScheme } = useColorScheme()
+  const { colorScheme, setColorScheme } = useColorScheme()
   const { systemScheme } = useMediaColorScheme()
 
   const toggleSchemeMode = () => {
-    switch (schemeMode) {
+    switch (colorScheme) {
       case 'auto':
-        setSchemeMode('dark')
         setColorScheme('dark')
         break
       case 'dark':
-        setSchemeMode('light')
         setColorScheme('light')
         break
       case 'light':
-        setSchemeMode('auto')
         setColorScheme('auto')
         break
     }
   }
 
-  useEffect(() => {
-    if (schemeMode === 'auto') {
-      const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? colorSchemeMode.dark
-        : colorSchemeMode.light
-      setActiveIcon(schemeToIcon[scheme])
-    }
-  }, [schemeMode, systemScheme])
+  const activeIcon = getActiveIcon(colorScheme, systemScheme)
+  const before = schemeToDisplay[colorScheme].before
 
-  if (schemeMode === 'auto') {
-    const before = schemeToDisplay[schemeMode].before
-    return (
-      <button
-        onClick={toggleSchemeMode}
-        className={classNames(`${before}`, DEFAULT_STYLES)}
-      >
-        <span className={DEFAULT_LINK_STYLES}>{activeIcon}</span>
-      </button>
-    )
-  }
-  const icon = schemeToDisplay[schemeMode].icon
-  const before = schemeToDisplay[schemeMode].before
   return (
     <button
       onClick={toggleSchemeMode}
       className={classNames(`${before}`, DEFAULT_STYLES)}
     >
-      <span className={DEFAULT_LINK_STYLES}>{icon}</span>
+      <span className={DEFAULT_LINK_STYLES}>{activeIcon}</span>
     </button>
   )
 }

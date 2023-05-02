@@ -1,5 +1,4 @@
 import ContentSection from 'components/elements/contentSection'
-import Layout from 'components/layout'
 import Projectcard from 'components/projects/projectDetail'
 import SEO from 'components/seo'
 import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
@@ -16,11 +15,9 @@ const Project = ({
   return (
     <>
       <SEO title={project.title ?? ''} />
-      <Layout>
-        <ContentSection>
-          <Projectcard item={project} />
-        </ContentSection>
-      </Layout>
+      <ContentSection>
+        <Projectcard item={project} />
+      </ContentSection>
     </>
   )
 }
@@ -28,7 +25,6 @@ const Project = ({
 export default Project
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  console.log({ params })
   const id = params?.id as string
 
   if (!id) {
