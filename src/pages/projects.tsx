@@ -1,14 +1,13 @@
+import type { ProjectCollection } from '__generated__/graphql'
 import Layout from 'components/layout'
 import AllProjects from 'components/projects/allProjects/allProjects'
-import getProjectData from 'lib/graphql/api/getProjectData'
-import type { ProjectCollection } from '__generated__/graphql'
-import convertDateInProjects from 'lib/convertDateInProjects'
+import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
 
-export interface IProjects {
+export interface ProjectsProps {
   projectContent: ProjectCollection['items']
 }
 
-const Projects = ({ projectContent }: IProjects) => {
+const Projects = ({ projectContent }: ProjectsProps) => {
   return (
     <Layout>
       {projectContent ? <AllProjects projectContent={projectContent} /> : null}
@@ -19,11 +18,11 @@ const Projects = ({ projectContent }: IProjects) => {
 export default Projects
 
 export async function getStaticProps() {
-  const projectData = await getProjectData()
+  const projectData = await getMultipleProjectData()
 
   return {
     props: {
-      projectContent: convertDateInProjects(projectData),
+      projectContent: projectData?.projectCollection?.items,
     },
   }
 }

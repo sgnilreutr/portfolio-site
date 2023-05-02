@@ -1,6 +1,7 @@
 import Stack from 'components/elements/stack'
 import type { Entry, Maybe, Project } from '__generated__/graphql'
 import ContentCreator from './helpers/ContentCreator'
+import dateFormatter from 'lib/formatDate'
 
 const ERROR_MESSAGE = 'Something went wrong.'
 
@@ -26,7 +27,11 @@ const PageContent = ({
   )
 
   return (
-    <Stack direction="vertical" className="pb-4 border-b border-neutral-800">
+    <Stack
+      direction="vertical"
+      className="pb-4 border-b border-zinc-500 dark:border-zinc-600"
+      spacing="large"
+    >
       {nonHyperlinks.map((item) => {
         return <ContentCreator key={item?.sys.id} content={item} />
       })}
@@ -44,10 +49,10 @@ const Projectcard = ({ item }: { item: Project }) => {
 
   return (
     <article>
-      <Stack direction="vertical" spacing="small">
+      <Stack direction="vertical" spacing="default">
         <Stack direction="vertical" spacing="mini">
           <h3>{title}</h3>
-          <p className="text-xs">{date}</p>
+          <p className="text-xs">{dateFormatter({ date })}</p>
         </Stack>
         <PageContent contentCollection={contentCollection} />
       </Stack>

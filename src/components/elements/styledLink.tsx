@@ -1,12 +1,12 @@
 import classNames from 'lib/classNames'
 import type { ReactNode } from 'react'
 
-interface IStyledLink extends React.HTMLAttributes<HTMLAnchorElement> {
+interface StyledLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href: string
   children: ReactNode
 }
 
-const StyledLink = ({ href, children, ...rest }: IStyledLink) => {
+const StyledLink = ({ href, children, ...rest }: StyledLinkProps) => {
   return (
     <a
       {...rest}

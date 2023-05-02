@@ -1,4 +1,4 @@
-import InternalLink from 'components/elements/InternalLink'
+import InternalLink from 'components/elements/internalLink'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 
