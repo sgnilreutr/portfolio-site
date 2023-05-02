@@ -22,7 +22,7 @@ const Index = ({
 }: IndexProps) => {
   return (
     <>
-      <SEO title={SEO_TITLE} />
+      <SEO title={SEO_TITLE} image={heroContent?.subTitle ?? ''} />
       <Hero heroContent={heroContent} />
       <Stack direction="vertical" spacing="huge">
         <Status statusContent={statusContent} />
