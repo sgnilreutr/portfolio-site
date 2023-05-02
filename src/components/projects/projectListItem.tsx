@@ -1,4 +1,4 @@
-import type { Project } from '__generated__/graphql'
+import type { Project } from 'gql/graphql'
 import dateFormatter from 'lib/formatDate'
 import { PROJECT_LINK } from 'lib/globalConstants'
 import Link from 'next/link'

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -1275,3 +1276,1079 @@ export enum TechStackOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
 }
+
+export type GetHeroDetailsQueryVariables = Exact<{
+  id: Scalars['String']
+}>
+
+export type GetHeroDetailsQuery = {
+  __typename?: 'Query'
+  mainBanner?: {
+    __typename?: 'MainBanner'
+    mainTitle?: string | null
+    subTitle?: string | null
+    image?: {
+      __typename?: 'Asset'
+      height?: number | null
+      width?: number | null
+      description?: string | null
+      fileName?: string | null
+      url?: string | null
+    } | null
+  } | null
+}
+
+export type GetHeroMetaQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetHeroMetaQuery = {
+  __typename?: 'Query'
+  mainBannerCollection?: {
+    __typename?: 'MainBannerCollection'
+    items: Array<{
+      __typename?: 'MainBanner'
+      sys: { __typename?: 'Sys'; id: string }
+    } | null>
+  } | null
+}
+
+export type GetNotableWorkQueryVariables = Exact<{
+  id: Scalars['String']
+}>
+
+export type GetNotableWorkQuery = {
+  __typename?: 'Query'
+  notableWork?: {
+    __typename?: 'NotableWork'
+    internalName?: string | null
+    notableWorkListCollection?: {
+      __typename?: 'NotableWorkNotableWorkListCollection'
+      items: Array<
+        | {
+            __typename?: 'ComponentImage'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | {
+            __typename?: 'ComponentText'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | { __typename?: 'Hyperlink'; sys: { __typename?: 'Sys'; id: string } }
+        | { __typename?: 'MainBanner'; sys: { __typename?: 'Sys'; id: string } }
+        | {
+            __typename?: 'NotableItem'
+            label?: string | null
+            notableListItem?: string | null
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | {
+            __typename?: 'NotableWork'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | { __typename?: 'Project'; sys: { __typename?: 'Sys'; id: string } }
+        | { __typename?: 'TechStack'; sys: { __typename?: 'Sys'; id: string } }
+        | null
+      >
+    } | null
+  } | null
+}
+
+export type GetNotableWorkCollectionQueryVariables = Exact<{
+  [key: string]: never
+}>
+
+export type GetNotableWorkCollectionQuery = {
+  __typename?: 'Query'
+  notableWorkCollection?: {
+    __typename?: 'NotableWorkCollection'
+    items: Array<{
+      __typename?: 'NotableWork'
+      sys: { __typename?: 'Sys'; id: string }
+    } | null>
+  } | null
+}
+
+export type GetProjectDataQueryVariables = Exact<{
+  id: Scalars['String']
+}>
+
+export type GetProjectDataQuery = {
+  __typename?: 'Query'
+  project?: {
+    __typename?: 'Project'
+    title?: string | null
+    date?: any | null
+    sys: { __typename?: 'Sys'; id: string }
+    contentCollection?: {
+      __typename?: 'ProjectContentCollection'
+      items: Array<
+        | {
+            __typename?: 'ComponentImage'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | {
+            __typename: 'ComponentText'
+            internalName?: string | null
+            text?: string | null
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | {
+            __typename: 'Hyperlink'
+            link?: string | null
+            linkName?: string | null
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | { __typename?: 'MainBanner'; sys: { __typename?: 'Sys'; id: string } }
+        | {
+            __typename?: 'NotableItem'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | {
+            __typename?: 'NotableWork'
+            sys: { __typename?: 'Sys'; id: string }
+          }
+        | { __typename?: 'Project'; sys: { __typename?: 'Sys'; id: string } }
+        | { __typename?: 'TechStack'; sys: { __typename?: 'Sys'; id: string } }
+        | null
+      >
+    } | null
+  } | null
+}
+
+export type GetProjectDataCollectionQueryVariables = Exact<{
+  limit?: InputMaybe<Scalars['Int']>
+}>
+
+export type GetProjectDataCollectionQuery = {
+  __typename?: 'Query'
+  projectCollection?: {
+    __typename?: 'ProjectCollection'
+    items: Array<{
+      __typename?: 'Project'
+      title?: string | null
+      date?: any | null
+      sys: { __typename?: 'Sys'; id: string }
+      contentCollection?: {
+        __typename?: 'ProjectContentCollection'
+        items: Array<
+          | {
+              __typename?: 'ComponentImage'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename: 'ComponentText'
+              internalName?: string | null
+              text?: string | null
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename: 'Hyperlink'
+              link?: string | null
+              linkName?: string | null
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'MainBanner'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'NotableItem'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'NotableWork'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | { __typename?: 'Project'; sys: { __typename?: 'Sys'; id: string } }
+          | {
+              __typename?: 'TechStack'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | null
+        >
+      } | null
+    } | null>
+  } | null
+}
+
+export type GetStatusDetailsQueryVariables = Exact<{
+  id: Scalars['String']
+}>
+
+export type GetStatusDetailsQuery = {
+  __typename?: 'Query'
+  componentText?: { __typename?: 'ComponentText'; text?: string | null } | null
+}
+
+export type GetStatusMetaQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetStatusMetaQuery = {
+  __typename?: 'Query'
+  componentTextCollection?: {
+    __typename?: 'ComponentTextCollection'
+    items: Array<{
+      __typename?: 'ComponentText'
+      internalName?: string | null
+      sys: { __typename?: 'Sys'; id: string }
+    } | null>
+  } | null
+}
+
+export type GetTechStackQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetTechStackQuery = {
+  __typename?: 'Query'
+  techStackCollection?: {
+    __typename?: 'TechStackCollection'
+    items: Array<{
+      __typename?: 'TechStack'
+      internalName?: string | null
+      activeSkillsCollection?: {
+        __typename?: 'TechStackActiveSkillsCollection'
+        items: Array<
+          | {
+              __typename?: 'ComponentImage'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'ComponentText'
+              internalName?: string | null
+              text?: string | null
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'Hyperlink'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'MainBanner'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'NotableItem'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | {
+              __typename?: 'NotableWork'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | { __typename?: 'Project'; sys: { __typename?: 'Sys'; id: string } }
+          | {
+              __typename?: 'TechStack'
+              sys: { __typename?: 'Sys'; id: string }
+            }
+          | null
+        >
+      } | null
+    } | null>
+  } | null
+}
+
+export const GetHeroDetailsDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetHeroDetails' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'mainBanner' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'mainTitle' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'subTitle' } },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'image' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'height' },
+                      },
+                      { kind: 'Field', name: { kind: 'Name', value: 'width' } },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'description' },
+                      },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'fileName' },
+                      },
+                      { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetHeroDetailsQuery, GetHeroDetailsQueryVariables>
+export const GetHeroMetaDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetHeroMeta' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'mainBannerCollection' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'items' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'sys' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'id' },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetHeroMetaQuery, GetHeroMetaQueryVariables>
+export const GetNotableWorkDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetNotableWork' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'notableWork' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'internalName' },
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'notableWorkListCollection' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'items' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'sys' },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'id' },
+                                  },
+                                ],
+                              },
+                            },
+                            {
+                              kind: 'InlineFragment',
+                              typeCondition: {
+                                kind: 'NamedType',
+                                name: { kind: 'Name', value: 'NotableItem' },
+                              },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'label' },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: {
+                                      kind: 'Name',
+                                      value: 'notableListItem',
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetNotableWorkQuery, GetNotableWorkQueryVariables>
+export const GetNotableWorkCollectionDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetNotableWorkCollection' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'notableWorkCollection' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'items' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'sys' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'id' },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  GetNotableWorkCollectionQuery,
+  GetNotableWorkCollectionQueryVariables
+>
+export const GetProjectDataDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetProjectData' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'project' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'date' } },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'sys' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                    ],
+                  },
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'contentCollection' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'items' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'sys' },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'id' },
+                                  },
+                                ],
+                              },
+                            },
+                            {
+                              kind: 'InlineFragment',
+                              typeCondition: {
+                                kind: 'NamedType',
+                                name: { kind: 'Name', value: 'ComponentText' },
+                              },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: '__typename' },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: {
+                                      kind: 'Name',
+                                      value: 'internalName',
+                                    },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'text' },
+                                  },
+                                ],
+                              },
+                            },
+                            {
+                              kind: 'InlineFragment',
+                              typeCondition: {
+                                kind: 'NamedType',
+                                name: { kind: 'Name', value: 'Hyperlink' },
+                              },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: '__typename' },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'sys' },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'id' },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'link' },
+                                  },
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'linkName' },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetProjectDataQuery, GetProjectDataQueryVariables>
+export const GetProjectDataCollectionDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetProjectDataCollection' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: {
+            kind: 'Variable',
+            name: { kind: 'Name', value: 'limit' },
+          },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectCollection' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'limit' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'limit' },
+                },
+              },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'order' },
+                value: { kind: 'EnumValue', value: 'date_DESC' },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'items' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'sys' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'id' },
+                            },
+                          ],
+                        },
+                      },
+                      { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+                      { kind: 'Field', name: { kind: 'Name', value: 'date' } },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'contentCollection' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'items' },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'sys' },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'id' },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  {
+                                    kind: 'InlineFragment',
+                                    typeCondition: {
+                                      kind: 'NamedType',
+                                      name: {
+                                        kind: 'Name',
+                                        value: 'ComponentText',
+                                      },
+                                    },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: {
+                                            kind: 'Name',
+                                            value: '__typename',
+                                          },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: {
+                                            kind: 'Name',
+                                            value: 'internalName',
+                                          },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'text' },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  {
+                                    kind: 'InlineFragment',
+                                    typeCondition: {
+                                      kind: 'NamedType',
+                                      name: {
+                                        kind: 'Name',
+                                        value: 'Hyperlink',
+                                      },
+                                    },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: {
+                                            kind: 'Name',
+                                            value: '__typename',
+                                          },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'sys' },
+                                          selectionSet: {
+                                            kind: 'SelectionSet',
+                                            selections: [
+                                              {
+                                                kind: 'Field',
+                                                name: {
+                                                  kind: 'Name',
+                                                  value: 'id',
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'link' },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: {
+                                            kind: 'Name',
+                                            value: 'linkName',
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  GetProjectDataCollectionQuery,
+  GetProjectDataCollectionQueryVariables
+>
+export const GetStatusDetailsDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetStatusDetails' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'componentText' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'text' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  GetStatusDetailsQuery,
+  GetStatusDetailsQueryVariables
+>
+export const GetStatusMetaDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetStatusMeta' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'componentTextCollection' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'items' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'sys' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'id' },
+                            },
+                          ],
+                        },
+                      },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'internalName' },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetStatusMetaQuery, GetStatusMetaQueryVariables>
+export const GetTechStackDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetTechStack' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'techStackCollection' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'items' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'internalName' },
+                      },
+                      {
+                        kind: 'Field',
+                        name: { kind: 'Name', value: 'activeSkillsCollection' },
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'Field',
+                              name: { kind: 'Name', value: 'items' },
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  {
+                                    kind: 'Field',
+                                    name: { kind: 'Name', value: 'sys' },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'id' },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  {
+                                    kind: 'InlineFragment',
+                                    typeCondition: {
+                                      kind: 'NamedType',
+                                      name: {
+                                        kind: 'Name',
+                                        value: 'ComponentText',
+                                      },
+                                    },
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        {
+                                          kind: 'Field',
+                                          name: {
+                                            kind: 'Name',
+                                            value: 'internalName',
+                                          },
+                                        },
+                                        {
+                                          kind: 'Field',
+                                          name: { kind: 'Name', value: 'text' },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetTechStackQuery, GetTechStackQueryVariables>

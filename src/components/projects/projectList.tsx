@@ -1,4 +1,4 @@
-import type { Project } from '__generated__/graphql'
+import type { Project } from 'gql/graphql'
 import ProjectListItem from './projectListItem'
 
 interface ProjectListProps {

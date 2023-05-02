@@ -1,4 +1,4 @@
-import { ComponentText, Hyperlink } from '__generated__/graphql'
+import { ComponentText, Hyperlink } from 'gql/graphql'
 import StyledLink from 'components/elements/styledLink'
 import ReactMarkdown from 'react-markdown'
 

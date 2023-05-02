@@ -4,7 +4,7 @@ import notableWorkCollectionQuery from 'lib/graphql/notableWorkCollection.graphq
 import client from '../../../../apollo-client'
 
 import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from '__generated__/graphql'
+import type { Query } from 'gql/graphql'
 
 export default async function getNotableWorkData() {
   const notableWorkCollectionResponse: ApolloQueryResult<

@@ -4,7 +4,7 @@ import heroDetailsQuery from 'lib/graphql/heroDetails.graphql'
 import client from '../../../../apollo-client'
 
 import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from '__generated__/graphql'
+import type { Query } from 'gql/graphql'
 
 export default async function getHeroData() {
   const heroCollectionResponse: ApolloQueryResult<

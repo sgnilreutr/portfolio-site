@@ -1,5 +1,5 @@
 import Stack from 'components/elements/stack'
-import type { Entry, Maybe, Project } from '__generated__/graphql'
+import type { Entry, Maybe, Project } from 'gql/graphql'
 import ContentCreator from './helpers/ContentCreator'
 import dateFormatter from 'lib/formatDate'
 

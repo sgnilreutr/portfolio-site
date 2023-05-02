@@ -1,4 +1,4 @@
-import type { ProjectCollection } from '__generated__/graphql'
+import type { ProjectCollection } from 'gql/graphql'
 import AllProjects from 'components/projects/allProjects/allProjects'
 import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
 

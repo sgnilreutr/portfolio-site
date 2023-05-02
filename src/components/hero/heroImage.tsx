@@ -1,4 +1,4 @@
-import { MainBanner } from '__generated__/graphql'
+import { MainBanner } from 'gql/graphql'
 import { ERROR_LOADING_IMAGE } from 'constants/globalConstants'
 import Image from 'next/image'
 
