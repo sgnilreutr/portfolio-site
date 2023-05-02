@@ -4,11 +4,11 @@ import Header from 'components/header/header'
 
 import type { ReactNode } from 'react'
 
-interface ILayout {
+interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({ children }: ILayout) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />

@@ -1,12 +1,12 @@
-import { ComponentText, Hyperlink } from '__generated__/graphql'
+import { ComponentText, Hyperlink } from 'gql/graphql'
 import StyledLink from 'components/elements/styledLink'
 import ReactMarkdown from 'react-markdown'
 
-interface IContentCreator {
+interface ContentCreatorProps {
   content: ComponentText | Hyperlink | null
 }
 
-const ContentCreator = ({ content }: IContentCreator) => {
+const ContentCreator = ({ content }: ContentCreatorProps) => {
   if (content && 'text' in content && content.text) {
     return <ReactMarkdown>{content.text}</ReactMarkdown>
   } else if (

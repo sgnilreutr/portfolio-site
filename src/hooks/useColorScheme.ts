@@ -1,35 +1,53 @@
+import { colorSchemeMode } from 'components/header/modeSwitch'
+import type { ColorSchemeMode } from 'components/header/modeSwitch'
 import { useEffect, useState } from 'react'
+import useMediaColorScheme from './useMediaColorScheme'
 
 export function useColorScheme() {
-  const [isDark, setIsDark] = useState(true)
+  const [colorScheme, setColorScheme] = useState<ColorSchemeMode>(
+    colorSchemeMode.auto
+  )
+  const { systemScheme } = useMediaColorScheme()
 
   useEffect(() => {
-    const check =
-      window.localStorage.theme === 'dark' ||
-      (!('theme' in window.localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-
-    console.log(check)
-
-    setIsDark(
-      window.localStorage.theme === 'dark' ||
-        (!('theme' in window.localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-    )
+    const storedSchemeValue = window.localStorage.theme || colorSchemeMode.auto
+    setColorScheme(storedSchemeValue)
   }, [])
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-      window.localStorage.theme = 'dark'
-    } else {
-      document.documentElement.classList.remove('dark')
-      window.localStorage.theme = 'light'
+    if (!systemScheme) {
+      return
     }
-  }, [isDark])
+    switch (colorScheme) {
+      case 'auto': {
+        const autoSchemeDark = systemScheme === colorSchemeMode.dark
+        localStorage.removeItem('theme')
+
+        document.documentElement.classList.add('theme-system')
+        if (autoSchemeDark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+        return
+      }
+      case 'dark': {
+        document.documentElement.classList.remove('theme-system')
+        document.documentElement.classList.add('dark')
+        window.localStorage.theme = 'dark'
+        return
+      }
+      case 'light': {
+        document.documentElement.classList.remove('theme-system')
+        document.documentElement.classList.remove('dark')
+        window.localStorage.theme = 'light'
+        return
+      }
+    }
+  }, [colorScheme, systemScheme])
 
   return {
-    isDark,
-    setIsDark,
+    colorScheme,
+    setColorScheme,
   }
 }

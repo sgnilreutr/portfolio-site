@@ -1,4 +1,4 @@
-query GetLatestProjectData($limit: Int) {
+query GetProjectDataCollection($limit: Int) {
   projectCollection(limit: $limit, order: date_DESC) {
     items {
       sys {

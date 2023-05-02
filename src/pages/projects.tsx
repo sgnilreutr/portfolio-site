@@ -1,29 +1,32 @@
-import Layout from 'components/layout'
 import AllProjects from 'components/projects/allProjects/allProjects'
-import getProjectData from 'lib/graphql/api/getProjectData'
-import type { ProjectCollection } from '__generated__/graphql'
-import convertDateInProjects from 'lib/convertDateInProjects'
+import SEO from 'components/seo'
+import type { ProjectCollection } from 'gql/graphql'
+import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
 
-export interface IProjects {
+export interface ProjectsProps {
   projectContent: ProjectCollection['items']
 }
 
-const Projects = ({ projectContent }: IProjects) => {
+const SEO_TITLE = 'Projects'
+const SEO_DESCRIPTION = 'My Personal Project Portfolio'
+
+const Projects = ({ projectContent }: ProjectsProps) => {
   return (
-    <Layout>
+    <>
+      <SEO title={SEO_TITLE} image={SEO_DESCRIPTION} />
       {projectContent ? <AllProjects projectContent={projectContent} /> : null}
-    </Layout>
+    </>
   )
 }
 
 export default Projects
 
 export async function getStaticProps() {
-  const projectData = await getProjectData()
+  const projectData = await getMultipleProjectData()
 
   return {
     props: {
-      projectContent: convertDateInProjects(projectData),
+      projectContent: projectData?.projectCollection?.items,
     },
   }
 }

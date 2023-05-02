@@ -7,7 +7,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa'
 
-const ICON_SIZE = 30
+const ICON_SIZE = 20
 
 export const GithubSocial = () => (
   <SocialLink

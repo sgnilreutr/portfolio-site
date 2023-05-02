@@ -1,11 +1,13 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   content: ['./src/pages/**/*.{tsx,mdx}', './src/components/**/*.tsx'],
   theme: {
     fontFamily: {
+      ...fontFamily,
       sans: ['Inter Variable', 'sans-serif'],
-      serif: ['Lora Variable', 'serif'],
     },
     extend: {
       animation: {

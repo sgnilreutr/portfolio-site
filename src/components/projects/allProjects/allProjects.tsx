@@ -1,21 +1,18 @@
 import * as local from './allProjectsConstants'
 
-import Projectcard from '../projectCard'
-
-import type { IProjects } from 'pages/projects'
+import type { ProjectsProps } from 'pages/projects'
 import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
-import InternalLink from 'components/elements/InternalLink'
+import Projectcard from '../projectDetail'
 
-const AllProjects = ({ projectContent }: IProjects) => {
+const AllProjects = ({ projectContent }: ProjectsProps) => {
   return (
-    <div className="pt-20">
-      <Stack align="center" justify="between">
-        <h1 className="mt-0 mb-4">{local.SECTION_HEADER}</h1>
-        <InternalLink href="/">{local.BUTTON_HOME}</InternalLink>
-      </Stack>
+    <div>
+      <div className="px-4 mx-2 my-0 md:px-10 md:mx-12">
+        <h1>{local.SECTION_HEADER}</h1>
+      </div>
       <ContentSection withDarkBackground>
-        <Stack direction="vertical" spacing="colossal">
+        <Stack direction="vertical" className="!gap-16">
           {projectContent && projectContent.length > 0 ? (
             projectContent.map((item) => {
               if (item) {

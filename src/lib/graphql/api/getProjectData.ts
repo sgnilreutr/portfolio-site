@@ -1,18 +1,18 @@
-import latestProjectQuery from 'lib/graphql/latestProjectData.graphql'
+import projectDataQuery from 'lib/graphql/projectData.graphql'
 
 import client from '../../../../apollo-client'
 
 import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from '__generated__/graphql'
+import type { Query } from 'gql/graphql'
 
-export default async function getLatestProjectData(limit?: number) {
-  const latestProjectData: ApolloQueryResult<Pick<Query, 'projectCollection'>> =
+export default async function getProjectData(id: string) {
+  const projectData: ApolloQueryResult<Pick<Query, 'project'>> =
     await client.query({
-      query: latestProjectQuery,
+      query: projectDataQuery,
       variables: {
-        limit,
+        id,
       },
     })
 
-  return latestProjectData?.data
+  return projectData?.data
 }

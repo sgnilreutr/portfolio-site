@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply antialiased text-zinc-800 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400;
+    @apply antialiased text-zinc-800 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-200;
   }
 }
 
@@ -19,15 +19,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-lora), serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
+  font-size: 1.5em;
   letter-spacing: normal;
   line-height: 60px;
-  margin: 2.4rem 0 0 0;
 }
 
 h2 {
@@ -37,7 +36,6 @@ h2 {
 }
 
 h3 {
-  margin: 0 0 0.6rem 0;
   padding: 0;
   color: inherit;
   font-size: 1.1rem;
@@ -45,7 +43,6 @@ h3 {
 }
 
 h4 {
-  margin: 0 0 0.6rem 0;
   padding: 0;
   color: inherit;
   font-size: 1rem;
@@ -53,7 +50,6 @@ h4 {
 }
 
 h5 {
-  margin: 0 0 1.45rem 0;
   padding: 0;
   color: inherit;
   font-size: 0.78405rem;

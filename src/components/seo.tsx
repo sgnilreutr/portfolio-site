@@ -7,7 +7,7 @@ const DEFAULT_META_DESC =
 
 const DEFAULT_URL = 'https://rtgs.me'
 
-interface ISeo {
+interface SeoProps {
   canonicalUrl?: string
   description?: string
   image?: string
@@ -21,12 +21,11 @@ export default function SEO({
   image = '',
   title,
   uri,
-}: ISeo) {
+}: SeoProps) {
   const fullSeo = {
     metaTitle: `${SITE_NAME} ${title && `| ${title}`}`,
     metaDescription: description,
     shareImage: image,
-    // shareImage: image || Logo,
     url: uri ? `${DEFAULT_URL}/${uri}` : DEFAULT_URL,
   }
 
@@ -43,13 +42,13 @@ export default function SEO({
       <meta property="og:url" content={fullSeo.url} />
       <meta property="og:title" content={fullSeo.metaTitle} />
       <meta property="og:description" content={fullSeo.metaDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullSeo.shareImage} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={fullSeo.url} />
       <meta property="twitter:title" content={fullSeo.metaTitle} />
       <meta property="twitter:description" content={fullSeo.metaDescription} />
-      <meta property="twitter:image" content={image} />
+      <meta property="twitter:image" content={fullSeo.shareImage} />
     </Head>
   )
 }

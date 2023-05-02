@@ -1,8 +1,3 @@
-interface IBadge {
-  label: string
-  variant: string
-}
-
 const backgroundColorMap = {
   dev: `bg-orange-500 dark:bg-orange-700`,
   pm: `bg-zinc-700`,
@@ -17,7 +12,12 @@ const titleMap = {
   pm: 'I have participated in this project as a project manager',
 }
 
-const Badge = ({ label, variant }: { label: string; variant: string }) => {
+interface BadgeProps {
+  label: string
+  variant: string
+}
+
+const Badge = ({ label, variant }: BadgeProps) => {
   return (
     <span
       title={titleMap[variant as keyof typeof titleMap]}

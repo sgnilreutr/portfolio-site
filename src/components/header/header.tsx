@@ -1,11 +1,24 @@
-import ModeSwitch from './modeSwitch/modeSwitch'
+import classNames from 'lib/classNames'
+import { useRouter } from 'next/router'
+import DummyHomeButton from './dummyHomeButton'
+import HomeButton from './homeButton'
+import ModeSwitch from './modeSwitch'
 
-const Header = () => (
-  <div className="sticky top-0 left-0 z-50 w-full pt-4 pb-1 pr-4 mb-6 md:pr-0 bg-zinc-100/30 dark:bg-zinc-900/30 backdrop-blur-md">
-    <div className="flex flex-row justify-end">
+const Header = () => {
+  const { asPath } = useRouter()
+
+  const isHome = asPath === '/'
+
+  return (
+    <div
+      className={classNames(
+        'flex flex-row items-center justify-between sticky top-0 left-0 z-50 pt-2 pb-1 mb-6 px-4 py-4 mx-2 my-0 md:px-10 md:mx-12',
+        'bg-zinc-100/80 dark:bg-zinc-900/30 backdrop-blur-sm'
+      )}
+    >
+      {!isHome ? <HomeButton /> : <DummyHomeButton />}
       <ModeSwitch />
     </div>
-  </div>
-)
-
+  )
+}
 export default Header

@@ -1,4 +1,4 @@
-import type { IIndex } from 'pages'
+import type { IndexProps } from 'pages'
 import { FaTerminal } from 'react-icons/fa'
 
 import * as local from './statusConstants'
@@ -8,7 +8,6 @@ import Stack from 'components/elements/stack'
 import { useEffect } from 'react'
 
 const changeAnchorStyles = () => {
-  // if (typeof window === 'object') {
   const statusText = document.getElementById('status-text')
   if (statusText) {
     const anchorTags = statusText.getElementsByTagName('a')
@@ -17,10 +16,9 @@ const changeAnchorStyles = () => {
       anchorTags[i]?.classList?.add('underline')
     }
   }
-  // }
 }
 
-const Status = ({ statusContent }: Pick<IIndex, 'statusContent'>) => {
+const Status = ({ statusContent }: Pick<IndexProps, 'statusContent'>) => {
   useEffect(() => {
     changeAnchorStyles()
   }, [])

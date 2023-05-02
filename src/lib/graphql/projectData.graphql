@@ -1,0 +1,29 @@
+query GetProjectData($id: String!) {
+  project(id: $id) {
+    title
+    date
+    sys {
+      id
+    }
+    contentCollection {
+      items {
+        sys {
+          id
+        }
+        ... on ComponentText {
+          __typename
+          internalName
+          text
+        }
+        ... on Hyperlink {
+          __typename
+          sys {
+            id
+          }
+          link
+          linkName
+        }
+      }
+    }
+  }
+}
