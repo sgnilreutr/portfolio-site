@@ -1,1 +1,1 @@
-export const STATUS = 'Status '
+export const STATUS = 'Status'

@@ -25,17 +25,17 @@ const Status = ({ statusContent }: Pick<IndexProps, 'statusContent'>) => {
 
   return (
     <ContentSection className="px-4 md:px-8">
-      <h2 className="flex items-baseline mt-0 mb-4">
-        {local.STATUS}
-        <span className="flex pl-2">
-          <FaTerminal size={15} />
-        </span>
-      </h2>
-      {statusContent && statusContent?.text ? (
-        <Stack direction="vertical" className="" id="status-text">
-          <ReactMarkdown>{statusContent.text}</ReactMarkdown>
-        </Stack>
-      ) : null}
+      <Stack direction='vertical'>
+        <h2 className="flex items-center mt-0 gap-2">
+          {local.STATUS}
+          <FaTerminal size={15} className='motion-safe:animate-pulse' />
+        </h2>
+        {statusContent && statusContent?.text ? (
+          <Stack direction="vertical" id="status-text">
+            <ReactMarkdown>{statusContent.text}</ReactMarkdown>
+          </Stack>
+        ) : null}
+      </Stack>
     </ContentSection>
   )
 }
