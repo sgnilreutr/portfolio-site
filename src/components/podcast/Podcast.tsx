@@ -20,7 +20,7 @@ const LINK_TEXT = 'Visit our site'
 
 const Podcast = () => {
   return (
-    <ContentSection className="bg-orange-500 dark:bg-orange-500/40">
+    <ContentSection className="bg-orange-500 dark:bg-orange-500/40 border dark:border-orange-600/40 border-transparent px-4 md:px-8">
       <Stack align="center" direction="vertical">
         <Image
           alt={PODCAST_NAME}
@@ -42,9 +42,9 @@ const Podcast = () => {
             href={PODCAST_URL}
             className="p-4 text-black dark:text-white hover:text-neutral-700"
           >
-            <span className="flex flex-row items-center gap-2">
+            <Stack align="center" spacing="mini">
               {LINK_TEXT} <FiArrowUpRight />
-            </span>
+            </Stack>
           </StyledLink>
         </Stack>
       </Stack>

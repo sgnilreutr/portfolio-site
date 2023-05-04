@@ -16,7 +16,7 @@ const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
   const { image, mainTitle, subTitle } = heroContent
 
   return (
-    <section className="px-4 py-4 mx-2 my-0 md:px-10 md:mx-12 md:py-8 md:pt-32 lg:pt-40">
+    <section className="px-4 py-4 md:px-8 mx-2 my-0 md:mx-12 md:py-8 md:pt-32 lg:pt-40">
       <div>
         {mainTitle ? (
           <h1 className="text-2xl md:text-3xl">{mainTitle}</h1>

@@ -3,7 +3,7 @@ import { NAME } from 'lib/globalConstants'
 
 const HomeButton = () => {
   return (
-    <InternalLink href="/" className="-ml-2 font-bold">
+    <InternalLink href="/" className="font-bold">
       <span>{NAME}</span>
     </InternalLink>
   )

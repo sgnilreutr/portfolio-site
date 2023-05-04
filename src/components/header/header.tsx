@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import DummyHomeButton from './dummyHomeButton'
 import HomeButton from './homeButton'
 import ModeSwitch from './modeSwitch'
+import ContentWrapper from 'components/elements/contentWrapper'
 
 const Header = () => {
   const { asPath } = useRouter()
@@ -12,12 +13,16 @@ const Header = () => {
   return (
     <div
       className={classNames(
-        'flex flex-row items-center justify-between sticky top-0 left-0 z-50 pt-2 pb-1 mb-6 px-4 py-4 mx-2 my-0 md:px-10 md:mx-12',
+        'sticky top-0 left-0 z-50',
         'bg-zinc-100/80 dark:bg-zinc-900/30 backdrop-blur-sm'
       )}
     >
-      {!isHome ? <HomeButton /> : <DummyHomeButton />}
-      <ModeSwitch />
+      <ContentWrapper>
+        <div className="flex flex-row items-center justify-between pt-2 pb-1 mb-6 py-4">
+          {!isHome ? <HomeButton /> : <DummyHomeButton />}
+          <ModeSwitch />
+        </div>
+      </ContentWrapper>
     </div>
   )
 }

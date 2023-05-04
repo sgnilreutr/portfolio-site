@@ -1,6 +1,8 @@
 import { ComponentText, Hyperlink } from 'gql/graphql'
 import StyledLink from 'components/elements/styledLink'
 import ReactMarkdown from 'react-markdown'
+import { FiArrowUpRight } from 'react-icons/fi'
+import Stack from 'components/elements/stack'
 
 interface ContentCreatorProps {
   content: ComponentText | Hyperlink | null
@@ -17,7 +19,11 @@ const ContentCreator = ({ content }: ContentCreatorProps) => {
   ) {
     return (
       <pre className="overflow-auto text-sm">
-        <StyledLink href={content.link}>{content.linkName}</StyledLink>
+        <StyledLink href={content.link}>
+          <Stack align="center" spacing="mini">
+            {content.linkName} <FiArrowUpRight />
+          </Stack>
+        </StyledLink>
       </pre>
     )
   }

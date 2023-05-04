@@ -44,7 +44,11 @@ const PageContent = ({
   )
 }
 
-const Projectcard = ({ item }: { item: Project }) => {
+interface ProjectCardProps {
+  item: Project
+}
+
+const Projectcard = ({ item }: ProjectCardProps) => {
   const { title, date, contentCollection } = item
 
   return (

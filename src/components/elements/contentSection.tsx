@@ -15,7 +15,7 @@ const ContentSection = ({
     <section
       {...rest}
       className={classNames(
-        'px-4 py-4 mx-2 my-0 md:px-10 md:mx-12 md:py-8 lg:py-12',
+        'py-4 mx-2 my-0 md:py-8 lg:py-12',
         `${withDarkBackground && 'text-white bg-black dark:text-zinc-300'}`,
         rest.className
       )}
