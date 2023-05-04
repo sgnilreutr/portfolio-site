@@ -5,7 +5,9 @@ interface ContentWrapperProps {
 }
 
 const ContentWrapper = ({ children }: ContentWrapperProps) => {
-  return <div className="max-w-2xl px-2 md:px-0 relative mx-auto">{children}</div>
+  return (
+    <div className="max-w-2xl px-2 md:px-0 relative mx-auto">{children}</div>
+  )
 }
 
 export default ContentWrapper

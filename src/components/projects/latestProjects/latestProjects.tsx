@@ -5,6 +5,7 @@ import { PROJECT_LINK } from 'lib/globalConstants'
 import type { IndexProps } from 'pages'
 import ProjectList from '../projectList'
 import * as local from './latestProjectsConstants'
+import { FiArrowRight } from 'react-icons/fi'
 
 const LatestProjects = ({
   latestProjectContent,
@@ -31,7 +32,11 @@ const LatestProjects = ({
               href={PROJECT_LINK}
               className="!text-zinc-200 hover:!bg-zinc-700 dark:hover:!bg-zinc-800"
             >
-              {local.VIEW_ARCHIVE}
+              <Stack align="center" spacing="mini">
+                {' '}
+                {local.VIEW_ARCHIVE}
+                <FiArrowRight />
+              </Stack>
             </InternalLink>
           </div>
         ) : null}

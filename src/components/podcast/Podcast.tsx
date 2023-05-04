@@ -42,9 +42,9 @@ const Podcast = () => {
             href={PODCAST_URL}
             className="p-4 text-black dark:text-white hover:text-neutral-700"
           >
-            <span className="flex flex-row items-center gap-2">
+            <Stack align="center" spacing="mini">
               {LINK_TEXT} <FiArrowUpRight />
-            </span>
+            </Stack>
           </StyledLink>
         </Stack>
       </Stack>

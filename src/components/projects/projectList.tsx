@@ -13,7 +13,13 @@ const ProjectList = ({ noDay, projects }: ProjectListProps) => {
         if (!project) {
           return null
         }
-        return <ProjectListItem key={project.sys.id} project={project} noDay={noDay} />
+        return (
+          <ProjectListItem
+            key={project.sys.id}
+            project={project}
+            noDay={noDay}
+          />
+        )
       })}
     </ul>
   )
