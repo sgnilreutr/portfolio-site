@@ -55,9 +55,6 @@ export async function getStaticProps() {
     return undefined
   }
 
-  const test = await enhanceMainBanner()
-  console.log({ enhanceMainBanner })
-
   return {
     props: {
       heroContent: await enhanceMainBanner(),
