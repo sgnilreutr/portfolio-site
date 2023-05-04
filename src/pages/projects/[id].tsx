@@ -1,4 +1,5 @@
 import ContentSection from 'components/elements/contentSection'
+import ContentWrapper from 'components/elements/contentWrapper'
 import Projectcard from 'components/projects/projectDetail'
 import SEO from 'components/seo'
 import getMultipleProjectData from 'lib/graphql/api/getMultipleProjectData'
@@ -15,9 +16,11 @@ const Project = ({
   return (
     <>
       <SEO title={project.title ?? ''} />
-      <ContentSection>
-        <Projectcard item={project} />
-      </ContentSection>
+      <ContentWrapper>
+        <ContentSection>
+          <Projectcard item={project} />
+        </ContentSection>
+      </ContentWrapper>
     </>
   )
 }

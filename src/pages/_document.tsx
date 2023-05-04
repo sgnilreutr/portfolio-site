@@ -5,7 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="relative max-w-4xl px-4 pt-0 pb-6 mx-auto my-0 font-normal transition-colors overflow-wrap: break-word">
+        <body className="relative pt-0 pb-6 my-0 font-normal transition-colors">
           <Main />
           <NextScript />
         </body>

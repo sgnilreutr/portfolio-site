@@ -24,7 +24,7 @@ const Status = ({ statusContent }: Pick<IndexProps, 'statusContent'>) => {
   }, [])
 
   return (
-    <ContentSection>
+    <ContentSection className="px-4 md:px-8">
       <h2 className="flex items-baseline mt-0 mb-4">
         {local.STATUS}
         <span className="flex pl-2">

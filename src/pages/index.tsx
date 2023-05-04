@@ -10,6 +10,7 @@ import Stack from 'components/elements/stack'
 import Podcast from 'components/podcast/Podcast'
 import type { InferGetStaticPropsType } from 'next'
 import { getPlaiceholder } from 'plaiceholder'
+import ContentWrapper from 'components/elements/contentWrapper'
 
 const SEO_TITLE = 'Software thinker'
 
@@ -23,12 +24,14 @@ const Index = ({
   return (
     <>
       <SEO title={SEO_TITLE} image={heroContent?.subTitle ?? ''} />
-      <Hero heroContent={heroContent} />
-      <Stack direction="vertical" spacing="huge">
-        <Status statusContent={statusContent} />
-        <LatestProjects latestProjectContent={latestProjectContent} />
-        <Podcast />
-      </Stack>
+      <ContentWrapper>
+        <Hero heroContent={heroContent} />
+        <Stack direction="vertical" spacing="huge">
+          <Status statusContent={statusContent} />
+          <LatestProjects latestProjectContent={latestProjectContent} />
+          <Podcast />
+        </Stack>
+      </ContentWrapper>
     </>
   )
 }

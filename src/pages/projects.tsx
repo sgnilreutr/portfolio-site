@@ -1,3 +1,4 @@
+import ContentWrapper from 'components/elements/contentWrapper'
 import AllProjects from 'components/projects/allProjects/allProjects'
 import SEO from 'components/seo'
 import type { ProjectCollection } from 'gql/graphql'
@@ -14,7 +15,11 @@ const Projects = ({ projectContent }: ProjectsProps) => {
   return (
     <>
       <SEO title={SEO_TITLE} image={SEO_DESCRIPTION} />
-      {projectContent ? <AllProjects projectContent={projectContent} /> : null}
+      <ContentWrapper>
+        {projectContent ? (
+          <AllProjects projectContent={projectContent} />
+        ) : null}{' '}
+      </ContentWrapper>
     </>
   )
 }
