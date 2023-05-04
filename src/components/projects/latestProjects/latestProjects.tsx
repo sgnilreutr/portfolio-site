@@ -1,11 +1,11 @@
-import InternalLink from 'components/elements/internalLink'
 import ContentSection from 'components/elements/contentSection'
+import InternalLink from 'components/elements/internalLink'
 import Stack from 'components/elements/stack'
 import { PROJECT_LINK } from 'lib/globalConstants'
 import type { IndexProps } from 'pages'
+import { FiArrowRight } from 'react-icons/fi'
 import ProjectList from '../projectList'
 import * as local from './latestProjectsConstants'
-import { FiArrowRight } from 'react-icons/fi'
 
 const LatestProjects = ({
   latestProjectContent,

@@ -1,3 +1,4 @@
+import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
 import {
   CalendlySocial,
@@ -5,9 +6,8 @@ import {
   LinkedInSocial,
   TwitterSocial,
 } from 'components/socials/socials'
-
-import HeroImage from './heroImage'
 import type { IndexProps } from 'pages'
+import HeroImage from './heroImage'
 
 const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
   if (!heroContent) {
@@ -16,7 +16,7 @@ const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
   const { image, mainTitle, subTitle } = heroContent
 
   return (
-    <section className="px-4 py-4 md:px-8 mx-2 my-0 md:mx-12 md:py-8 md:pt-32 lg:pt-40">
+    <ContentSection className="px-4 md:px-8 py-4 md:py-8 md:pt-32 lg:pt-40">
       <div>
         {mainTitle ? (
           <h1 className="text-2xl md:text-3xl">{mainTitle}</h1>
@@ -38,7 +38,7 @@ const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
         <CalendlySocial />
         <TwitterSocial />
       </Stack>
-    </section>
+    </ContentSection>
   )
 }
 
