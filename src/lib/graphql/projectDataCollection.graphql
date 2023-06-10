@@ -16,14 +16,6 @@ query GetProjectDataCollection($limit: Int) {
             internalName
             text
           }
-          ... on Hyperlink {
-            __typename
-            sys {
-              id
-            }
-            link
-            linkName
-          }
         }
       }
     }

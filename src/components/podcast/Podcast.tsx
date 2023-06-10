@@ -40,7 +40,7 @@ const Podcast = () => {
           </Stack>
           <StyledLink
             href={PODCAST_URL}
-            className="p-4 text-black dark:text-white hover:text-neutral-700"
+            className="p-4 text-black dark:text-white !hover:text-neutral-700"
           >
             <Stack align="center" spacing="mini">
               {LINK_TEXT} <FiArrowUpRight />
