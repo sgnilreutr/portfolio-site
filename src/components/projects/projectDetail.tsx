@@ -30,32 +30,35 @@ const PageContent = ({
     <Stack
       direction="vertical"
       className="pb-4 border-b border-zinc-500 dark:border-zinc-600"
-      spacing="large"
+      spacing="huge"
     >
       {nonHyperlinks.map((item) => {
         return <ContentCreator key={item?.sys.id} content={item} />
       })}
-      <Stack wrap>
-        {hyperlinks.map((item) => {
-          return <ContentCreator key={item?.sys.id} content={item} />
-        })}
-      </Stack>
+      <div>
+        <h4 className="text-lg font-bold">Links</h4>
+        <Stack wrap>
+          {hyperlinks.map((item) => {
+            return <ContentCreator key={item?.sys.id} content={item} />
+          })}
+        </Stack>
+      </div>
     </Stack>
   )
 }
 
-interface ProjectCardProps {
+interface ProjectDetailProps {
   item: Project
 }
 
-const Projectcard = ({ item }: ProjectCardProps) => {
+const ProjectDetail = ({ item }: ProjectDetailProps) => {
   const { title, date, contentCollection } = item
 
   return (
     <article>
-      <Stack direction="vertical" spacing="default">
-        <Stack direction="vertical" spacing="mini">
-          <h3>{title}</h3>
+      <Stack direction="vertical" className="!gap-12">
+        <Stack direction="vertical" spacing="none">
+          <h1>{title}</h1>
           <p className="text-xs">{dateFormatter({ date })}</p>
         </Stack>
         <PageContent contentCollection={contentCollection} />
@@ -64,4 +67,4 @@ const Projectcard = ({ item }: ProjectCardProps) => {
   )
 }
 
-export default Projectcard
+export default ProjectDetail
