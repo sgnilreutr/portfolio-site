@@ -6,15 +6,20 @@ query GetProjectDataCollection($limit: Int) {
       }
       title
       date
-      contentCollection {
+      contentCollection(limit: 1) {
         items {
           sys {
             id
           }
-          ... on ComponentText {
+          ... on ComponentImage {
             __typename
-            internalName
-            text
+            image {
+              title
+              description
+              url
+              width
+              height
+            }
           }
         }
       }

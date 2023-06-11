@@ -16,7 +16,7 @@ query GetProjectData($id: String!) {
             sys {
                 id
             }
-            image{
+            image {
                 title
                 description
                 url

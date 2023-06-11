@@ -1,6 +1,7 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
-import assertNonNullish from 'lib/assertNonNullish'
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { onError } from "@apollo/client/link/error";
+import assertNonNullish from 'lib/assertNonNullish';
 
 assertNonNullish(
   process.env.CONTENTFUL_SPACE_ID,
@@ -10,11 +11,11 @@ assertNonNullish(
   process.env.CONTENTFUL_ACCESS_TOKEN,
   'Undefined CONTENTFUL_ACCESS_TOKEN'
 )
-const gqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
+const gqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
 
 const httpLink = createHttpLink({
   uri: gqlEndpoint,
-})
+});
 
 const authLink = setContext((_, { headers }) => {
   // return the headers to the context so httpLink can read them
@@ -26,9 +27,21 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-})
+// Error Handling
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.map(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+      ),
+    );
 
-export default client
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+});
+
+const client = new ApolloClient({
+  link: errorLink.concat(authLink).concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+export default client;
