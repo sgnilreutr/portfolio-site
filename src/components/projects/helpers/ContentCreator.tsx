@@ -25,7 +25,17 @@ const ContentCreator = ({ content }: ContentCreatorProps) => {
     )
   }
   if ('image' in content && content.image) {
-    return <div className="mx-auto"><ImageComponent image={content.image} /></div>
+    const regex = /logo/i // i flag for case insensitive matching
+    const isLogo = regex.test(content?.title ?? '')
+    return (
+      <div className="mx-auto">
+        <ImageComponent
+          image={content.image}
+          customSize={isLogo ? 120 : undefined}
+          noDefaultStyles={isLogo}
+        />
+      </div>
+    )
   }
   if ('link' in content && content?.link && content?.linkName) {
     return (
