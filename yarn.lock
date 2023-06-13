@@ -2376,10 +2376,10 @@ dataloader@^2.2.2:
   resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-2.2.2.tgz#216dc509b5abe39d43a9b9d97e6e5e473dfbe3e0"
   integrity sha512-8YnDaaf7N3k/q5HnTJVuzSyLETjoZjVmHc4AeKAzOvKHEFQKcn64OKBfzHYtE9zGjctNM7V9I0MfnUVLpi7M5g==
 
-day-n-nite@^0.0.1-beta.2:
-  version "0.0.1-beta.2"
-  resolved "https://registry.yarnpkg.com/day-n-nite/-/day-n-nite-0.0.1-beta.2.tgz#85644aeeecab32484ee985d7106fba0c957b5d3b"
-  integrity sha512-eD726IxhR/Dbutioa39hKPOXqDmk35LYYhbOKvY3+sAm4P6FljoXHRdkdGKrabepRcvlcCyl3iS2rZVpJiz1eA==
+day-n-nite@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/day-n-nite/-/day-n-nite-0.0.2.tgz#a07c286a65abd112e1d136112553ab816e9bf75d"
+  integrity sha512-XNMQlZ8FfIYbGJIe1t4ikahsuIt4FyYnHkLydA2oAWm4I+Bdr7xmDYbgM4uFG1f2Kfy+sW95RHWW+TtwAQBqPw==
 
 debounce@^1.2.0:
   version "1.2.1"
@@ -4377,7 +4377,6 @@ next@13.3.1:
     caniuse-lite "^1.0.30001406"
     postcss "8.4.14"
     styled-jsx "5.1.1"
-    zod "3.21.4"
   optionalDependencies:
     "@next/swc-darwin-arm64" "13.3.1"
     "@next/swc-darwin-x64" "13.3.1"
