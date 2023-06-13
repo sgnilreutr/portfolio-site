@@ -9,7 +9,7 @@ interface InternalLinkProps extends LinkProps {
   href: string
 }
 
-export const DEFAULT_LINK_STYLES =
+const DEFAULT_LINK_STYLES =
   'p-2 rounded-sm hover:bg-zinc-300 text-zinc-900 transition dark:hover:bg-zinc-800 dark:text-zinc-100'
 
 const InternalLink = ({

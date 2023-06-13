@@ -2,7 +2,7 @@ import classNames from 'lib/classNames'
 import { useRouter } from 'next/router'
 import DummyHomeButton from './dummyHomeButton'
 import HomeButton from './homeButton'
-import ModeSwitch from './modeSwitch'
+import { ModeSwitch } from 'day-n-nite'
 import ContentWrapper from 'components/elements/contentWrapper'
 
 const Header = () => {
