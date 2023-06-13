@@ -4,7 +4,7 @@
   "dependencies": {
     "@apollo/client": "3.7.15",
     "@vercel/analytics": "^1.0.1",
-    "day-n-nite": "^0.0.1-beta.2",
+    "day-n-nite": "^0.0.2",
     "graphql": "16.6.0",
     "graphql-tag": "2.12.6",
     "next": "13.3.1",

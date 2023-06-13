@@ -43,12 +43,17 @@ const ProjectListItem = ({ noDay, project }: ProjectListItemProps) => {
             {dateFormatter({ date, noDay })}
           </span>
           <Stack align="center" spacing="huge">
-            <ImageComponent
-              image={logo?.image}
-              noDefaultStyles
-              customSize={ICON_SIZE}
-              className="rounded-md"
-            />
+            {logo?.image ? (
+              <ImageComponent
+                image={logo?.image}
+                noDefaultStyles
+                customSize={ICON_SIZE}
+                className="rounded-md"
+              />
+            ) : (
+              <div className="w-[30px] h-[30px] bg-orange-600" />
+            )}
+
             <span>{title}</span>
           </Stack>
         </div>
