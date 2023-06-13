@@ -6,6 +6,11 @@
   body {
     @apply antialiased text-zinc-800 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-200;
   }
+
+  .h-dynamic-screen {
+      height: 100vh; /* fallback for Opera, IE and etc. */
+      height: 100dvh;
+  }
 }
 
 #__next {

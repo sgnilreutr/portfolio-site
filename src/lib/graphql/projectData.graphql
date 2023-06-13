@@ -10,6 +10,20 @@ query GetProjectData($id: String!) {
         sys {
           id
         }
+        ... on ComponentImage {
+            __typename
+            title
+            sys {
+                id
+            }
+            image {
+                title
+                description
+                url
+                width
+                height
+            }
+        }
         ... on ComponentText {
           __typename
           internalName

@@ -39,10 +39,9 @@ const Index = ({
 export default Index
 
 export async function getStaticProps() {
-  const LIMIT_PROJECTS = 4
   const heroData = await getHeroData()
   const statusData = await getStatusData()
-  const latestProjectData = await getMultipleProjectData(LIMIT_PROJECTS)
+  const latestProjectData = await getMultipleProjectData()
 
   const enhanceMainBanner = async () => {
     if (heroData?.mainBanner?.image?.url) {
