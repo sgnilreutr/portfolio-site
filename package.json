@@ -5,7 +5,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@apollo/client": "3.7.16",
+    "@apollo/client": "3.7.17",
     "@vercel/analytics": "^1.0.1",
     "day-n-nite": "^0.0.2",
     "graphql": "16.7.1",
@@ -16,17 +16,17 @@
     "react-dom": "^18.2.0",
     "react-icons": "4.10.1",
     "react-markdown": "8.0.7",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "4.0.1",
     "@graphql-codegen/client-preset": "4.0.1",
     "@graphql-typed-document-node/core": "^3.2.0",
-    "@types/node": "20.4.0",
+    "@types/node": "20.4.1",
     "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
+    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
-    "dprint": "0.38.3",
+    "dprint": "0.39.0",
     "eslint": "8.44.0",
     "eslint-config-next": "^13.4.9",
     "graphql-codegen-apollo-next-ssr": "^1.7.4",
