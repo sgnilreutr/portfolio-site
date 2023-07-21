@@ -4,6 +4,7 @@ import ContentCreator from './helpers/ContentCreator'
 import dateFormatter from 'lib/formatDate'
 
 const ERROR_MESSAGE = 'Something went wrong.'
+const LINKS_HEADER = "links"
 
 const PageContent = ({
   contentCollection,
@@ -35,8 +36,8 @@ const PageContent = ({
       {nonHyperlinks.map((item) => {
         return <ContentCreator key={item?.sys.id} content={item} />
       })}
-      <div>
-        <h4 className="text-lg font-bold">Links</h4>
+      <div className="space-y-4">
+        <h4 className="text-md font-bold">{LINKS_HEADER}</h4>
         <Stack wrap>
           {hyperlinks.map((item) => {
             return <ContentCreator key={item?.sys.id} content={item} />

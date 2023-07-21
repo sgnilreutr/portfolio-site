@@ -19,12 +19,12 @@ const Footer = () => {
           </Stack>
           <div>
             <span className="text-sm">
-              Build with{' '}
-              <StyledLink href="https://nextjs.org/">NextJs</StyledLink>. Hosted
+              build with{' '}
+              <StyledLink href="https://nextjs.org/">NextJs</StyledLink>. hosted
               on <StyledLink href="https://vercel.com/">Vercel</StyledLink>.
-              View the{' '}
+              view the{' '}
               <StyledLink href="https://github.com/sgnilreutr/portfolio-site">
-                Source Code
+                source code
               </StyledLink>
               .{' '}
             </span>

@@ -37,7 +37,7 @@ const ContentCreator = ({ content }: ContentCreatorProps) => {
       </div>
     )
   }
-  if ('link' in content && content?.link && content?.linkName) {
+  if ('link' in content && content.link && content?.linkName) {
     return (
       <pre className="overflow-auto text-sm">
         <StyledLink href={content.link}>
