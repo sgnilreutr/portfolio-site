@@ -1,6 +1,7 @@
 import type { Project } from 'gql/graphql'
-import ProjectListItem from './projectListItem'
 import type { DateFormatter } from 'lib/formatDate'
+
+import ProjectListItem from './projectListItem'
 
 interface ProjectListProps extends Pick<DateFormatter, 'noDay'> {
   projects: Array<Project | null>

@@ -1,11 +1,13 @@
 'use client'
 
-import classNames from 'lib/classNames'
+import { ModeSwitch } from 'day-n-nite'
 import { usePathname } from 'next/navigation'
+
+import ContentWrapper from 'components/elements/contentWrapper'
+import classNames from 'lib/classNames'
+
 import DummyHomeButton from './dummyHomeButton'
 import HomeButton from './homeButton'
-import { ModeSwitch } from 'day-n-nite'
-import ContentWrapper from 'components/elements/contentWrapper'
 
 const Header = () => {
   const pathname = usePathname()

@@ -1,7 +1,8 @@
 import Stack from 'components/elements/stack'
 import type { Entry, Maybe, Project } from 'gql/graphql'
-import ContentCreator from './helpers/ContentCreator'
 import dateFormatter from 'lib/formatDate'
+
+import ContentCreator from './helpers/ContentCreator'
 
 const ERROR_MESSAGE = 'Something went wrong.'
 const LINKS_HEADER = 'links'
@@ -40,7 +41,7 @@ const PageContent = ({
         <h4 className="text-md font-bold">{LINKS_HEADER}</h4>
         <Stack wrap>
           {hyperlinks.map((item) => {
-            return <ContentCreator key={item?.sys.id} content={item} />
+            return <ContentCreator key={item.sys.id} content={item} />
           })}
         </Stack>
       </div>
@@ -53,7 +54,9 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
-  const { title, date, contentCollection } = project
+  const { title, contentCollection } = project
+  const date =
+    project.date && typeof project.date === 'string' ? project.date : ''
 
   return (
     <article>

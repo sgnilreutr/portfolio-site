@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
   return projectData.projectCollection.items.reduce(
     (projects, project) => {
-      if (project?.sys?.id) {
+      if (project?.sys.id) {
         return [...projects, { id: project.sys.id }]
       }
       return projects
@@ -42,7 +42,7 @@ export async function generateMetadata({
 }: {
   params: Awaited<ReturnType<typeof generateStaticParams>>[number]
 }) {
-  const project = await getProject(params?.id)
+  const project = await getProject(params.id)
   const title =  `${SITE_NAME} ${project?.title && `| ${project.title}`}`.replace('undefined', '')
 
   return {
@@ -64,7 +64,7 @@ export default async function Project({
 }: {
   params: Awaited<ReturnType<typeof generateStaticParams>>[number]
 }) {
-  const project = await getProject(params?.id)
+  const project = await getProject(params.id)
 
   if (!project) {
     return <div>404</div>

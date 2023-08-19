@@ -1,6 +1,7 @@
-import { HomePageProps } from 'app/page'
-import { ERROR_LOADING_IMAGE } from 'constants/globalConstants'
 import Image from 'next/image'
+
+import type { HomePageProps } from 'app/page'
+import { ERROR_LOADING_IMAGE } from 'constants/globalConstants'
 
 interface HeroImageProps {
   image: NonNullable<HomePageProps['heroContent']>['image'] | undefined

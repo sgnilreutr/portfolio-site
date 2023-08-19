@@ -1,11 +1,11 @@
+import { Analytics } from '@vercel/analytics/react'
+import { Inter } from 'next/font/google'
+import type { ReactNode } from 'react'
+
 import AnimatedMountUnmount from 'components/animateUnMount'
 import Footer from 'components/footer/footer'
 import Header from 'components/header/header'
 import 'styles/globals.css'
-
-import type { ReactNode } from 'react'
-import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
 
 interface LayoutProps {
   children: ReactNode

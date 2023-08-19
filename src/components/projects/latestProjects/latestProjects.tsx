@@ -1,8 +1,9 @@
+import type { HomePageProps } from 'app/page'
 import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
-import ProjectList from '../projectList'
+
 import * as local from './latestProjectsConstants'
-import { HomePageProps } from 'app/page'
+import ProjectList from '../projectList'
 
 const LatestProjects = ({
   latestProjectContent,

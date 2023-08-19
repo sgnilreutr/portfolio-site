@@ -11,11 +11,12 @@ const removeIgnoredFiles = async (files) => {
   return filteredFiles.join(' ')
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   '*.{js,jsx,ts,tsx}': async (files) => {
-    const filesToLint = await removeIgnoredFiles(files)
-    return [`eslint --max-warnings=10 ${filesToLint}`]
-  },
-  '*.{js,jsx,ts,tsx}': ['dprint fmt'],
-}
+    const filesToLint = await removeIgnoredFiles(files);
+    return [
+      `next lint --fix --max-warnings=10`,
+      `dprint fmt ${filesToLint}`
+    ];
+  }
+};
