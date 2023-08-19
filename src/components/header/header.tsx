@@ -1,14 +1,16 @@
+'use client'
+
 import classNames from 'lib/classNames'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import DummyHomeButton from './dummyHomeButton'
 import HomeButton from './homeButton'
 import { ModeSwitch } from 'day-n-nite'
 import ContentWrapper from 'components/elements/contentWrapper'
 
 const Header = () => {
-  const { asPath } = useRouter()
+  const pathname = usePathname()
 
-  const isHome = asPath === '/'
+  const isHome = pathname === '/'
 
   return (
     <div

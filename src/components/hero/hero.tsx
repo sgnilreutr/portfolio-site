@@ -6,10 +6,10 @@ import {
   LinkedInSocial,
   TwitterSocial,
 } from 'components/socials/socials'
-import type { IndexProps } from 'pages'
 import HeroImage from './heroImage'
+import { HomePageProps } from 'app/page'
 
-const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
+const Hero = ({ heroContent }: Pick<HomePageProps, 'heroContent'>) => {
   if (!heroContent) {
     return null
   }

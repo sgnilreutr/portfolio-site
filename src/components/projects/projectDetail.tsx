@@ -4,7 +4,7 @@ import ContentCreator from './helpers/ContentCreator'
 import dateFormatter from 'lib/formatDate'
 
 const ERROR_MESSAGE = 'Something went wrong.'
-const LINKS_HEADER = "links"
+const LINKS_HEADER = 'links'
 
 const PageContent = ({
   contentCollection,
@@ -49,11 +49,11 @@ const PageContent = ({
 }
 
 interface ProjectDetailProps {
-  item: Project
+  project: Project
 }
 
-const ProjectDetail = ({ item }: ProjectDetailProps) => {
-  const { title, date, contentCollection } = item
+const ProjectDetail = ({ project }: ProjectDetailProps) => {
+  const { title, date, contentCollection } = project
 
   return (
     <article>

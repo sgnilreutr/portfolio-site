@@ -1,4 +1,4 @@
-import type { IndexProps } from 'pages'
+'use client'
 import { FaTerminal } from 'react-icons/fa'
 
 import * as local from './statusConstants'
@@ -6,6 +6,7 @@ import ContentSection from 'components/elements/contentSection'
 import ReactMarkdown from 'react-markdown'
 import Stack from 'components/elements/stack'
 import { useEffect } from 'react'
+import { HomePageProps } from 'app/page'
 
 const changeAnchorStyles = () => {
   const statusText = document.getElementById('status-text')
@@ -18,7 +19,7 @@ const changeAnchorStyles = () => {
   }
 }
 
-const Status = ({ statusContent }: Pick<IndexProps, 'statusContent'>) => {
+const Status = ({ statusContent }: Pick<HomePageProps, 'statusContent'>) => {
   useEffect(() => {
     changeAnchorStyles()
   }, [])
