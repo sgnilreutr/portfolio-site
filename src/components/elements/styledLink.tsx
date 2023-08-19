@@ -1,5 +1,6 @@
-import classNames from 'lib/classNames'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+
+import classNames from 'lib/classNames'
 
 interface StyledLinkProps extends ComponentPropsWithoutRef<'a'> {
   href: string

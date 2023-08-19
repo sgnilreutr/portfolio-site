@@ -1,11 +1,12 @@
-import SocialLink from 'components/elements/socialLink'
-import * as global from 'constants/globalConstants'
 import {
   FaGithub,
   FaLinkedin,
   FaRegCalendarCheck,
   FaTwitter,
 } from 'react-icons/fa'
+
+import SocialLink from 'components/elements/socialLink'
+import * as global from 'constants/globalConstants'
 
 const ICON_SIZE = 20
 

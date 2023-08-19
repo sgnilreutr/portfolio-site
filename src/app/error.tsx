@@ -1,8 +1,10 @@
+'use client'
+
+import { FiArrowRight } from 'react-icons/fi'
+
 import ContentWrapper from 'components/elements/contentWrapper'
 import InternalLink from 'components/elements/internalLink'
 import Stack from 'components/elements/stack'
-import SEO from 'components/seo'
-import { FiArrowRight } from 'react-icons/fi'
 
 const NOT_FOUND_TITLE = (
   <>
@@ -15,9 +17,8 @@ const NOT_FOUND_TITLE = (
 const NOT_FOUND_DESCRIPTION = "I haven't made that page (yet)."
 const BACK_BUTTON = 'Take me back!'
 
-const NotFoundPage = () => (
-  <>
-    <SEO title="404: Not found" />
+export default function Error() {
+  return (
     <ContentWrapper>
       <div className="px-10 py-4 mx-12 my-0 md:py-8 md:pt-32 lg:pt-40">
         <Stack direction="vertical" align="center" spacing="enormous">
@@ -36,7 +37,5 @@ const NotFoundPage = () => (
         </Stack>
       </div>
     </ContentWrapper>
-  </>
-)
-
-export default NotFoundPage
+  )
+}

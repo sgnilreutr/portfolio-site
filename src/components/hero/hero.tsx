@@ -1,3 +1,4 @@
+import type { HomePageProps } from 'app/page'
 import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
 import {
@@ -6,10 +7,10 @@ import {
   LinkedInSocial,
   TwitterSocial,
 } from 'components/socials/socials'
-import type { IndexProps } from 'pages'
+
 import HeroImage from './heroImage'
 
-const Hero = ({ heroContent }: Pick<IndexProps, 'heroContent'>) => {
+const Hero = ({ heroContent }: Pick<HomePageProps, 'heroContent'>) => {
   if (!heroContent) {
     return null
   }

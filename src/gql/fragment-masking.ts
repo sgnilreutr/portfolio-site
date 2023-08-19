@@ -1,10 +1,11 @@
-import {
+import type {
   ResultOf,
   DocumentTypeDecoration,
   TypedDocumentNode,
 } from '@graphql-typed-document-node/core'
-import { FragmentDefinitionNode } from 'graphql'
-import { Incremental } from './graphql'
+import type { FragmentDefinitionNode } from 'graphql'
+
+import type { Incremental } from './graphql'
 
 export type FragmentType<
   TDocumentType extends DocumentTypeDecoration<any, any>
@@ -78,7 +79,7 @@ export function isFragmentReady<TQuery, TFrag>(
   const fragDef = fragmentNode.definitions[0] as
     | FragmentDefinitionNode
     | undefined
-  const fragName = fragDef?.name?.value
+  const fragName = fragDef?.name.value
 
   const fields = (fragName && deferredFields[fragName]) || []
   return fields.length > 0 && fields.every((field) => data && field in data)

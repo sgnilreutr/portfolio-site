@@ -1,10 +1,10 @@
-import heroMetaQuery from 'lib/graphql/heroMeta.graphql'
+import type { ApolloQueryResult } from '@apollo/client'
+
+import type { Query } from 'gql/graphql'
 import heroDetailsQuery from 'lib/graphql/heroDetails.graphql'
+import heroMetaQuery from 'lib/graphql/heroMeta.graphql'
 
 import client from '../../../../apollo-client'
-
-import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from 'gql/graphql'
 
 export default async function getHeroData() {
   const heroCollectionResponse: ApolloQueryResult<
@@ -17,10 +17,9 @@ export default async function getHeroData() {
     await client.query({
       query: heroDetailsQuery,
       variables: {
-        id: heroCollectionResponse?.data?.mainBannerCollection?.items[0]?.sys
-          .id,
+        id: heroCollectionResponse.data.mainBannerCollection?.items[0]?.sys.id,
       },
     })
 
-  return heroData?.data
+  return heroData.data
 }

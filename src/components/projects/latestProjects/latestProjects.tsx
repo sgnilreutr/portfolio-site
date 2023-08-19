@@ -1,12 +1,13 @@
+import type { HomePageProps } from 'app/page'
 import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
-import type { IndexProps } from 'pages'
-import ProjectList from '../projectList'
+
 import * as local from './latestProjectsConstants'
+import ProjectList from '../projectList'
 
 const LatestProjects = ({
   latestProjectContent,
-}: Pick<IndexProps, 'latestProjectContent'>) => {
+}: Pick<HomePageProps, 'latestProjectContent'>) => {
   if (!latestProjectContent) {
     return null
   }

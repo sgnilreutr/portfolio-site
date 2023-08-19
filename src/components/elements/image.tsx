@@ -1,6 +1,7 @@
+import Image from 'next/image'
+
 import type { ComponentImage } from 'gql/graphql'
 import classNames from 'lib/classNames'
-import Image from 'next/image'
 
 interface ImageComponentProps {
   image: ComponentImage['image'] | null

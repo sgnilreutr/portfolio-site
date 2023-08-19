@@ -1,10 +1,10 @@
-import statusMetaQuery from 'lib/graphql/statusMeta.graphql'
+import type { ApolloQueryResult } from '@apollo/client'
+
+import type { Query } from 'gql/graphql'
 import statusDetailsQuery from 'lib/graphql/statusDetails.graphql'
+import statusMetaQuery from 'lib/graphql/statusMeta.graphql'
 
 import client from '../../../../apollo-client'
-
-import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from 'gql/graphql'
 
 export default async function getStatusData() {
   const statusCollectionResponse: ApolloQueryResult<
@@ -17,11 +17,11 @@ export default async function getStatusData() {
     await client.query({
       query: statusDetailsQuery,
       variables: {
-        id: statusCollectionResponse?.data?.componentTextCollection?.items.find(
+        id: statusCollectionResponse.data.componentTextCollection?.items.find(
           (item) => item?.internalName === 'Status'
         )?.sys.id,
       },
     })
 
-  return statusData?.data
+  return statusData.data
 }

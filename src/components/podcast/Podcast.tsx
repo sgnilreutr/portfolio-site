@@ -1,10 +1,11 @@
-import ContentSection from 'components/elements/contentSection'
 import Image from 'next/image'
-import Logo from '../../../public/recursive.png'
+import { FiArrowUpRight } from 'react-icons/fi'
+
+import ContentSection from 'components/elements/contentSection'
 import Stack from 'components/elements/stack'
 import StyledLink from 'components/elements/styledLink'
 
-import { FiArrowUpRight } from 'react-icons/fi'
+import Logo from '../../../public/recursive.png'
 
 const PODCAST_NAME = 'Recursive podcast'
 const ALBIN_HOMEPAGE = 'https://abgn.me/'

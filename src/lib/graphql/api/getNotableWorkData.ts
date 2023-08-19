@@ -1,10 +1,10 @@
+import type { ApolloQueryResult } from '@apollo/client'
+
+import type { Query } from 'gql/graphql'
 import notableWorkQuery from 'lib/graphql/notableWork.graphql'
 import notableWorkCollectionQuery from 'lib/graphql/notableWorkCollection.graphql'
 
 import client from '../../../../apollo-client'
-
-import type { ApolloQueryResult } from '@apollo/client'
-import type { Query } from 'gql/graphql'
 
 export default async function getNotableWorkData() {
   const notableWorkCollectionResponse: ApolloQueryResult<
@@ -17,10 +17,10 @@ export default async function getNotableWorkData() {
     await client.query({
       query: notableWorkQuery,
       variables: {
-        id: notableWorkCollectionResponse?.data?.notableWorkCollection?.items[0]
+        id: notableWorkCollectionResponse.data.notableWorkCollection?.items[0]
           ?.sys.id,
       },
     })
 
-  return notableWorkData?.data
+  return notableWorkData.data
 }

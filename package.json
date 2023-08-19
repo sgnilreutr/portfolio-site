@@ -1,11 +1,13 @@
 {
   "name": "portfolio-site-rtuerlings",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "node": ">=16.0.0"
   },
   "dependencies": {
     "@apollo/client": "3.8.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "@vercel/analytics": "^1.0.2",
     "day-n-nite": "^0.0.2",
     "graphql": "16.8.0",
@@ -22,6 +24,8 @@
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/client-preset": "4.1.0",
     "@graphql-typed-document-node/core": "^3.2.0",
+    "@next/env": "^13.4.19",
+    "@parcel/watcher": "^2.2.0",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
