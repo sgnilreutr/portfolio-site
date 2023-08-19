@@ -14,15 +14,12 @@ export async function generateStaticParams() {
     return []
   }
 
-  return projectData.projectCollection.items.reduce(
-    (projects, project) => {
-      if (project?.sys.id) {
-        return [...projects, { id: project.sys.id }]
-      }
-      return projects
-    },
-    [] as Array<{ id: string }>
-  )
+  return projectData.projectCollection.items.reduce((projects, project) => {
+    if (project?.sys.id) {
+      return [...projects, { id: project.sys.id }]
+    }
+    return projects
+  }, [] as Array<{ id: string }>)
 }
 
 async function getProject(
@@ -43,7 +40,9 @@ export async function generateMetadata({
   params: Awaited<ReturnType<typeof generateStaticParams>>[number]
 }) {
   const project = await getProject(params.id)
-  const title =  `${SITE_NAME} ${project?.title && `| ${project.title}`}`.replace('undefined', '')
+  const title = `${SITE_NAME} ${
+    project?.title && `| ${project.title}`
+  }`.replace('undefined', '')
 
   return {
     ...metadata,
@@ -54,13 +53,13 @@ export async function generateMetadata({
     },
     twitter: {
       ...metadata.twitter,
-      title
+      title,
     },
   }
 }
 
 export default async function Project({
-  params
+  params,
 }: {
   params: Awaited<ReturnType<typeof generateStaticParams>>[number]
 }) {
