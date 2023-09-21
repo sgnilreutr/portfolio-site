@@ -10,7 +10,7 @@
     "@typescript-eslint/parser": "^6.7.2",
     "@vercel/analytics": "^1.0.2",
     "day-n-nite": "^0.0.2",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "graphql-tag": "2.12.6",
     "next": "13.5.2",
     "plaiceholder": "3.0.0",
