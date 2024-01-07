@@ -10,8 +10,8 @@
     "@typescript-eslint/parser": "^6.18.0",
     "@vercel/analytics": "^1.1.1",
     "day-n-nite": "^0.0.2",
-    "graphql": "16.8.1",
-    "graphql-tag": "2.12.6",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "next": "14.0.3",
     "plaiceholder": "3.0.0",
     "react": "^18.2.0",
@@ -21,8 +21,8 @@
     "sharp": "^0.33.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "5.0.0",
-    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@next/env": "^14.0.4",
     "@parcel/watcher": "^2.3.0",
